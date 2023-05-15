@@ -15,8 +15,15 @@
 # add(1, 2)
 
 # Key word arguments
-def speed(distance, time):
-    print(distance / time)
+# def speed(distance, time):
+#     print(distance / time)
+#
+#
+# speed(distance=100, time=2)
+
+# Default parameters
+def area(radius, pi=3.14):
+    print(pi*radius*radius)
 
 
-speed(distance=100, time=2)
+area(10)

@@ -6,15 +6,18 @@ products = [
     {"name": "Headphones", "price": 50, "description": "A pair of earphones worn over the head to listen to music"},
     {"name": "Smartwatch", "price": 300, "description": "A device used for fitness tracking"}
 ]
+
 # Declaring an empty list to store items the user would want to buy
 cart = []
 
 # The initialization of the loop that constantly asks the user if they would like to add another item
 while True:
     choice = input('Do you want to continue shopping? \n>>>')
-#   The check to verify the users choice and to either teminate the program or continue running it
+
+#   The check to verify the users choice and to either terminate the program or continue running it
     if choice.lower() == "yes":
         print('Here is a list of products and their prices')
+
 #       Displaying each product available along with the description and the price.
 #       The index was also added to ensure that the user gets an easy time while selecting an item.
         for index, product in enumerate(products):
@@ -36,8 +39,10 @@ while True:
             print(f"{product['name']}: ${product['price']}: Quantity = {product['quantity']}")
             total = total + product['price'] * product['quantity']
         print(f"Cart total is: ${total}")
+
+#   Breaking out of the loop
     else:
         break
 
-
+# Printing out the final contents of the cart
 print(f"Thank you, your current cart contents are {cart}")

@@ -24,9 +24,12 @@ while True:
             products[product_id]['quantity'] = 1
             cart.append(products[product_id])
 
+        total = 0
         print(f"Current cart contains {cart}")
         for product in cart:
             print(f"{product['name']}: ${product['price']}: Quantity = {product['quantity']}")
+            total = total + product['price'] * product['quantity']
+        print(f"Cart total is: ${total}")
     else:
         break
 

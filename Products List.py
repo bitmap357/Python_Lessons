@@ -18,9 +18,10 @@ while True:
         product_id = int(input("Enter the id of the product yu want to add to the cart:- "))
         cart.append(products[product_id])
         print(f"Current cart contains {cart}")
+        for product in cart:
+            print(f"{product['name']}: ${product['price']}")
     else:
         break
 
 
 print(f"Thank you, your current cart contents are {cart}")
-

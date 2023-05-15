@@ -19,12 +19,14 @@ while True:
 
 #       Check if product is already present in cart
         if products[product_id] in cart:
-            products[product_id] += 1
+            products[product_id]['quantity'] += 1
+        else:
+            products[product_id]['quantity'] = 1
+            cart.append(products[product_id])
 
-        cart.append(products[product_id])
         print(f"Current cart contains {cart}")
         for product in cart:
-            print(f"{product['name']}: ${product['price']}")
+            print(f"{product['name']}: ${product['price']}: Quantity = {product['quantity']}")
     else:
         break
 

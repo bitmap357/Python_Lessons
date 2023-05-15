@@ -8,8 +8,15 @@
 # hello()
 
 # Passing arguments to a function
-def add(a, b):
-    print(a+b)
+# def add(a, b):
+#     print(a+b)
+#
+#
+# add(1, 2)
+
+# Key word arguments
+def speed(distance, time):
+    print(distance / time)
 
 
-add(1, 2)
+speed(distance=100, time=2)

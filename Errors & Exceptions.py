@@ -13,7 +13,9 @@ try:
 except ZeroDivisionError:
     print("Cannot divide a number by zero")
 
-print(result)
 # Else block
+else:
+    print(result)
+
 # Finally block
 

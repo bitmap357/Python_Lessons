@@ -44,3 +44,7 @@ def cost(circle_area, cost_per_sqm):
 calculated_area = area(10, 3.15)
 tc = cost(calculated_area, 2)
 print(tc)
+
+# Calling a function in another function
+
+print(cost(area(10, 3.15), 2))

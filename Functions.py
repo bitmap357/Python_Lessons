@@ -22,8 +22,25 @@
 # speed(distance=100, time=2)
 
 # Default parameters
+# def area(radius, pi=3.14):
+#     print(pi*radius*radius)
+#
+#
+# area(10)
+
+
+# Making a function return a value
+
 def area(radius, pi=3.14):
-    print(pi*radius*radius)
+    result = pi*radius*radius
+    return result
 
 
-area(10)
+def cost(circle_area, cost_per_sqm):
+    total_cost = circle_area*cost_per_sqm
+    return total_cost
+
+
+calculated_area = area(10, 3.15)
+tc = cost(calculated_area, 2)
+print(tc)

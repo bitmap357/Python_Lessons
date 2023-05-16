@@ -18,4 +18,6 @@ else:
     print(result)
 
 # Finally block
+finally:
+    print('This will be executed no matter what')
 

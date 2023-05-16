@@ -48,3 +48,13 @@ print(tc)
 # Calling a function in another function
 
 print(cost(area(10, 3.15), 2))
+
+
+# importing module
+
+
+# import Modules
+# from Modules import hello, bye
+#
+# hello()
+# bye()

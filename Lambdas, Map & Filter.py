@@ -26,3 +26,7 @@ prices = [100, 200, 300, 400, 500]
 
 result = list(map(lambda x: x - x*5/100, prices))
 print(result)
+
+names = ['john', 'rob', 'mike']
+cap_names = list(map(str.capitalize, names))
+print(cap_names)

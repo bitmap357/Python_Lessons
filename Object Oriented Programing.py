@@ -29,24 +29,35 @@
 
 
 # Methods in OOP
-class Product:
-    quantity = 200
+# class Product:
+#     quantity = 200
+#
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
+#
+#     def summer_discount(self, discount_percent):
+#         self.price = self.price - self.price * discount_percent / 100
+#
+#
+# p1 = Product("Tshirt", 10)
+# print(p1.name)
+# print(p1.price)
+# p1.summer_discount(10)
+# print(p1.price)
+#
+#
+# p2 = Product('Phone', 400)
+# p2.summer_discount(10)
+# print(p2.price)
 
-    def __init__(self, name, price):
-        self.name = name
-        self.price = price
 
-    def summer_discount(self, discount_percent):
-        self.price = self.price - self.price * discount_percent / 100
+# Functional & OOP Based Way of Writing Code
+# Functional way
+def product_data():
+    product_name = input('Enter name of the product')
+    product_price = input('Enter price of the product')
+    print(product_name)
+    print(product_price)
 
-
-p1 = Product("Tshirt", 10)
-print(p1.name)
-print(p1.price)
-p1.summer_discount(10)
-print(p1.price)
-
-
-p2 = Product('Phone', 400)
-p2.summer_discount(10)
-print(p2.price)
+product_data()

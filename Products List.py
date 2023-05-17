@@ -22,7 +22,7 @@ while True:
 #       The index was also added to ensure that the user gets an easy time while selecting an item.
         for index, product in enumerate(products):
             print(f"{index}: {product['name']}: {product['description']}: ${product['price']}")
-        product_id = int(input("Enter the id of the product yu want to add to the cart:- "))
+        product_id = int(input("Enter the id of the product you want to add to the cart:- "))
 
 #       Check if product is already present in cart.
 #       If it is, it adds another one to the already existing number, if not, it adds one to the quantity

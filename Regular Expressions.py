@@ -3,10 +3,20 @@
 # print(r"Hello \n World")
 
 # import the regular expression module
+# Match
+# import re
+# string = "abc"
+# pattern = "a"
+# if re.match(pattern, string):
+#     print('Match found')
+# else:
+#     print('No match found')
+
+# Search
 import re
-string = "abc"
+string = "bca"
 pattern = "a"
-if re.match(pattern, string):
+if re.search(pattern, string):
     print('Match found')
 else:
     print('No match found')

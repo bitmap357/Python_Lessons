@@ -160,7 +160,23 @@
 
 
 # Polymorphism
-print(1+2)
-print('Hello'+'World')
-print(len('helloworld'))
-print(len(['Apple', 'Banana', 'Mango']))
+# print(1+2)
+# print('Hello'+'World')
+# print(len('helloworld'))
+# print(len(['Apple', 'Banana', 'Mango']))
+
+
+# Method Overriding
+class Food:
+    def type(self):
+        print('Food')
+
+
+class Fruit(Food):
+    def type(self):
+        print('Fruit')
+
+
+apple = Fruit()
+print(apple.type())
+

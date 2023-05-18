@@ -83,35 +83,56 @@
 
 
 # Inheritance
-class Product:
-    def __init__(self, name, price):
-        self.name = name
-        self.price = price
+# class Product:
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
+#
+#     def get_data(self):
+#         self.name = input('Enter name of the product')
+#         self.price = input('Enter price of the product')
+#
+#     def put_data(self):
+#         print(self.name)
+#         print(self.price)
+#
+#
+# class DigitalProducts(Product):
+#
+#     def __init__(self, link):
+#         self.link = link
+#
+#     def get_link(self):
+#         self.link = input('Enter product link')
+#
+#     def put_link(self):
+#         print(self.link)
+#
+#
+# ebook = DigitalProducts("")
+#
+# ebook.get_data()
+# ebook.get_link()
+# ebook.put_data()
+# ebook.put_link()
 
-    def get_data(self):
-        self.name = input('Enter name of the product')
-        self.price = input('Enter price of the product')
-
-    def put_data(self):
-        print(self.name)
-        print(self.price)
+# Multiple Inheritance
+class A:
+    def method_a(self):
+        print('method of class a')
 
 
-class DigitalProducts(Product):
-
-    def __init__(self, link):
-        self.link = link
-
-    def get_link(self):
-        self.link = input('Enter product link')
-
-    def put_link(self):
-        print(self.link)
+class B:
+    def method_b(self):
+        print('method of class b')
 
 
-ebook = DigitalProducts("")
+class C(A, B):
+    def method_c(self):
+        print('method of class c')
 
-ebook.get_data()
-ebook.get_link()
-ebook.put_data()
-ebook.put_link()
+
+cobject = C()
+cobject.method_b()
+cobject.method_c()
+cobject.method_a()

@@ -117,17 +117,38 @@
 # ebook.put_link()
 
 # Multiple Inheritance
+# class A:
+#     def method_a(self):
+#         print('method of class a')
+#
+#
+# class B:
+#     def method_b(self):
+#         print('method of class b')
+#
+#
+# class C(A, B):
+#     def method_c(self):
+#         print('method of class c')
+#
+#
+# cobject = C()
+# cobject.method_b()
+# cobject.method_c()
+# cobject.method_a()
+
+# Multi-level inheritance
 class A:
     def method_a(self):
         print('method of class a')
 
 
-class B:
+class B(A):
     def method_b(self):
         print('method of class b')
 
 
-class C(A, B):
+class C(B):
     def method_c(self):
         print('method of class c')
 

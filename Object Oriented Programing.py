@@ -138,22 +138,29 @@
 # cobject.method_a()
 
 # Multi-level inheritance
-class A:
-    def method_a(self):
-        print('method of class a')
+# class A:
+#     def method_a(self):
+#         print('method of class a')
+#
+#
+# class B(A):
+#     def method_b(self):
+#         print('method of class b')
+#
+#
+# class C(B):
+#     def method_c(self):
+#         print('method of class c')
+#
+#
+# cobject = C()
+# cobject.method_b()
+# cobject.method_c()
+# cobject.method_a()
 
 
-class B(A):
-    def method_b(self):
-        print('method of class b')
-
-
-class C(B):
-    def method_c(self):
-        print('method of class c')
-
-
-cobject = C()
-cobject.method_b()
-cobject.method_c()
-cobject.method_a()
+# Polymorphism
+print(1+2)
+print('Hello'+'World')
+print(len('helloworld'))
+print(len(['Apple', 'Banana', 'Mango']))

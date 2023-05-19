@@ -38,13 +38,21 @@
 # + - means that the character preceding it is present at least one times
 # Plus Metacharacter
 
+# import re
+# string = "abc"
+# pattern = r"ab+c"  # checking for weather b is present at least one times
+# if re.search(pattern, string):
+#     print('Match found')
+# else:
+#     print('No match found')
+
+# {} - means that the character preceding it is repeated the number of times that is stated inside the braces
+# Curly braces Metacharacter
+
 import re
-string = "abc"
-pattern = r"ab+c"  # checking for weather b is present at least one times
+string = "abb"
+pattern = r"ab{2}"  # checking for weather b is present at least 2 times
 if re.search(pattern, string):
     print('Match found')
 else:
     print('No match found')
-
-# {} - means that the character preceding it is repeated the number of times that is stated inside the braces
-# Curly braces Metacharacter

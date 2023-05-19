@@ -46,4 +46,5 @@ if re.search(pattern, string):
 else:
     print('No match found')
 
-
+# {} - means that the character preceding it is repeated the number of times that is stated inside the braces
+# Curly braces Metacharacter

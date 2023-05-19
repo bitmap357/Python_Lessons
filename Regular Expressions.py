@@ -38,3 +38,12 @@
 # + - means that the character preceding it is present at least one times
 # Plus Metacharacter
 
+import re
+string = "abc"
+pattern = r"ab+c"  # checking for weather b is present at least one times
+if re.search(pattern, string):
+    print('Match found')
+else:
+    print('No match found')
+
+

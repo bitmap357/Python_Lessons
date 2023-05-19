@@ -84,9 +84,19 @@
 # ^ - means that the match must start at the beginning of the line or string
 # Caret Metacharacter
 
+# import re
+# string = "91878889878"
+# pattern = r"^91"  # checking for weather string starts with 91
+# if re.search(pattern, string):
+#     print('Match found')
+# else:
+#     print('No match found')
+
+
+# Character class
 import re
-string = "91878889878"
-pattern = r"^91"  # checking for weather string starts with 91
+string = "asjndsLSJNMF"
+pattern = r"[a-zA-Z]"  # checking for weather string starts with any of those letters
 if re.search(pattern, string):
     print('Match found')
 else:

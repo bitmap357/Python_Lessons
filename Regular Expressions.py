@@ -72,9 +72,21 @@
 # ? - means that the character preceding it is optional, ie it may or may not be present
 # Wildcard Metacharacter
 
+# import re
+# string = "pythonfile"
+# pattern = r"python-?file"  # checking for weather character is present or not
+# if re.search(pattern, string):
+#     print('Match found')
+# else:
+#     print('No match found')
+
+
+# ^ - means that the match must start at the beginning of the line or string
+# Caret Metacharacter
+
 import re
-string = "pythonfile"
-pattern = r"python-?file"  # checking for weather character is present or not
+string = "91878889878"
+pattern = r"^91"  # checking for weather string starts with 91
 if re.search(pattern, string):
     print('Match found')
 else:

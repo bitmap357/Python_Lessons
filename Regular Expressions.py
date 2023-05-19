@@ -25,3 +25,13 @@
 # They are a special set of characters which don't match themselves, instead, they create some pattern which should be matched.
 # Examples: *, +, {...}, ., ?, ^
 # * - makes sure that a particular character preceding it is present 0 or more times
+
+# Star Metacharacter
+import re
+string = "bca"
+pattern = "ab*c"  # checking for weather b is present 0 or more times
+if re.search(pattern, string):
+    print('Match found')
+else:
+    print('No match found')
+

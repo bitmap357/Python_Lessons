@@ -59,3 +59,11 @@
 
 # . - means that the symbol can take place of any other symbol
 # Wildcard Metacharacter
+
+import re
+string = "adb"
+pattern = r"a.b"  # checking for weather b is present at least 2 times
+if re.search(pattern, string):
+    print('Match found')
+else:
+    print('No match found')

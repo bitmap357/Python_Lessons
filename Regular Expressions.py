@@ -72,4 +72,10 @@
 # ? - means that the character preceding it is optional, ie it may or may not be present
 # Wildcard Metacharacter
 
-
+import re
+string = "pythonfile"
+pattern = r"python-?file"  # checking for weather character is present or not
+if re.search(pattern, string):
+    print('Match found')
+else:
+    print('No match found')

@@ -117,7 +117,7 @@ from tkinter import *
 # Frames
 
 root = Tk()
-frame = Frame(root)
+frame = Frame(root, highlightthickness=1, highlightbackground='white', padx="20", pady="20")
 frame.pack()
 
 frame2 = Frame(root)

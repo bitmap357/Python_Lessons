@@ -166,25 +166,40 @@ from tkinter import *
 # root.mainloop()
 
 # Writing Tkinter apps using OOP
-class Demo:
+# class Demo:
+#
+#     def __init__(self, rootone):
+#         frame = Frame(rootone)
+#         frame.pack()
+#
+#         self.printbutton = Button(frame, text='Click here', command=self.printmessage)
+#         self.printbutton.pack()
+#
+#         self.quitbutton = Button(frame, text='Quit', command=frame.quit)
+#         self.quitbutton.pack()
+#
+#     def printmessage(self):
+#         print('Button Clicked')
+#
+# root = Tk()
+# b = Demo(root)
+# root.mainloop()
 
-    def __init__(self, rootone):
-        frame = Frame(rootone)
-        frame.pack()
-
-        self.printbutton = Button(frame, text='Click here', command=self.printmessage)
-        self.printbutton.pack()
-
-        self.quitbutton = Button(frame, text='Quit', command=frame.quit)
-        self.quitbutton.pack()
-
-    def printmessage(self):
-        print('Button Clicked')
-
-
+# Menus
+def function1():
+    print('Menu item is clicked')
 
 
 root = Tk()
-b = Demo(root)
-root.mainloop()
+mymenu = Menu(root)
+root.config(menu=mymenu)
 
+submenu = Menu(mymenu)
+
+mymenu.add_cascade(label='File', menu=submenu)
+
+submenu.add_command(label='Project', command=function1)
+submenu.add_command(label='Save', command=function1)
+
+
+root.mainloop()

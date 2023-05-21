@@ -116,18 +116,40 @@ from tkinter import *
 
 # Frames
 
+# root = Tk()
+# frame = Frame(root, highlightthickness=1, highlightbackground='white', padx="20", pady="20")
+# frame.pack()
+#
+# frame2 = Frame(root)
+# frame2.pack(side=BOTTOM)
+#
+# button = Button(frame, text='Button1')
+# button2 = Button(frame2, text='Button2')
+#
+# button.pack()
+# button2.pack()
+#
+# root.geometry('300x300')
+#
+# root.mainloop()
+
+# Grid Layout
+
 root = Tk()
-frame = Frame(root, highlightthickness=1, highlightbackground='white', padx="20", pady="20")
-frame.pack()
+label1 = Label(root, text='Email')
+label2 = Label(root, text='Password')
 
-frame2 = Frame(root)
-frame2.pack(side=BOTTOM)
+text1 = Entry(root)
+text2 = Entry(root)
 
-button = Button(frame, text='Button1')
-button2 = Button(frame2, text='Button2')
+label1.grid(row=0, column=0)
+text1.grid(row=0, column=1)
 
-button.pack()
-button2.pack()
+label2.grid(row=1, column=0)
+text2.grid(row=1, column=1)
+
+button = Button(root, text='Login')
+button.grid(column=1, row=2)
 
 root.geometry('300x300')
 

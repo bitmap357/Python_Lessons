@@ -155,12 +155,36 @@ from tkinter import *
 # root.mainloop()
 
 # Crating a Grid
-root = Tk()
-for x in range(3):
-    for y in range(3):
-        frame = Frame(root)
-        frame.grid(row=x, column=y)
-        button = Button(frame, text=f'Row {x} \n Column {y}')
-        button.pack(pady=5, padx=5)
+# root = Tk()
+# for x in range(3):
+#     for y in range(3):
+#         frame = Frame(root)
+#         frame.grid(row=x, column=y)
+#         button = Button(frame, text=f'Row {x} \n Column {y}')
+#         button.pack(pady=5, padx=5)
+#
+# root.mainloop()
 
+# Writing Tkinter apps using OOP
+class Demo:
+
+    def __init__(self, rootone):
+        frame = Frame(rootone)
+        frame.pack()
+
+        self.printbutton = Button(frame, text='Click here', command=self.printmessage)
+        self.printbutton.pack()
+
+        self.quitbutton = Button(frame, text='Quit', command=frame.quit)
+        self.quitbutton.pack()
+
+    def printmessage(self):
+        print('Button Clicked')
+
+
+
+
+root = Tk()
+b = Demo(root)
 root.mainloop()
+

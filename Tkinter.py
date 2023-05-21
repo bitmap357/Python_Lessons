@@ -53,41 +53,63 @@ from tkinter import *
 # root.mainloop()
 
 # Beverage Selector
-def selected():
-    sugar = sugar_var.get()
-    ice = ice_var.get()
-    cream = cream_var.get()
-    if sugar:
-        sugar = "Sugar"
-    else:
-        sugar = 'No Sugar'
-    if ice:
-        ice = "Ice"
-    else:
-        ice = 'No Ice'
-    if cream:
-        cream = "Cream"
-    else:
-        cream = 'No Cream'
+# def selected():
+#     sugar = sugar_var.get()
+#     ice = ice_var.get()
+#     cream = cream_var.get()
+#     if sugar:
+#         sugar = "Sugar"
+#     else:
+#         sugar = 'No Sugar'
+#     if ice:
+#         ice = "Ice"
+#     else:
+#         ice = 'No Ice'
+#     if cream:
+#         cream = "Cream"
+#     else:
+#         cream = 'No Cream'
+#
+#     label.config(text='Options selected are:' + "\n" + sugar + "\n" + ice + "\n" + cream)
+#
+#
+# root = Tk()
+# root.geometry('300x300')
+#
+# sugar_var = BooleanVar()
+# ice_var = BooleanVar()
+# cream_var = BooleanVar()
+#
+# sugar_checkbox = Checkbutton(root, text='Sugar', variable=sugar_var, command=selected)
+# ice_checkbox = Checkbutton(root, text='Ice', variable=ice_var, command=selected)
+# cream_checkbox = Checkbutton(root, text='Cream', variable=cream_var, command=selected)
+#
+# label = Label(root)
+#
+# sugar_checkbox.pack()
+# ice_checkbox.pack()
+# cream_checkbox.pack()
+# label.pack()
+#
+# root.mainloop()
 
-    label.config(text='Options selected are:' + "\n" + sugar + "\n" + ice + "\n" + cream)
+# Radio buttons
+def selected():
+    label.config(text='Choice of fuel is: ' + fuel.get())
+
 
 root = Tk()
 root.geometry('300x300')
 
-sugar_var = BooleanVar()
-ice_var = BooleanVar()
-cream_var = BooleanVar()
+fuel = StringVar(value='Petrol')
 
-sugar_checkbox = Checkbutton(root, text='Sugar', variable=sugar_var, command=selected)
-ice_checkbox = Checkbutton(root, text='Ice', variable=ice_var, command=selected)
-cream_checkbox = Checkbutton(root, text='Cream', variable=cream_var, command=selected)
+radio1 = Radiobutton(root, text='Petrol', variable=fuel, value='Petrol', command=selected)
+radio2 = Radiobutton(root, text='Diesel', variable=fuel, value='Diesel', command=selected)
+radio3 = Radiobutton(root, text='Electric', variable=fuel, value='Electric', command=selected)
 
-label =Label(root)
-
-sugar_checkbox.pack()
-ice_checkbox.pack()
-cream_checkbox.pack()
+label = Label(root)
+radio1.pack()
+radio2.pack()
+radio3.pack()
 label.pack()
-
 root.mainloop()

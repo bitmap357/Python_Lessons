@@ -214,10 +214,13 @@ from tkinter import *
 #
 # root.mainloop()
 
-# Message box
+# Message box & asking a question using a message box
 import tkinter.messagebox
 root = Tk()
 
-tkinter.messagebox.showinfo("Title", 'This is a message box')
+# tkinter.messagebox.showinfo("Title", 'This is a message box')
+response = tkinter.messagebox.askquestion("Question1", 'Do you like coffe')
+if response == "yes":
+    print('Here is a coffe for you')
 
 root.mainloop()

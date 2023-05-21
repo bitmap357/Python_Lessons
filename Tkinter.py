@@ -185,7 +185,7 @@ from tkinter import *
 # b = Demo(root)
 # root.mainloop()
 
-# Menus & Status bar
+# Menus, Status bar & Tool bar
 def function1():
     print('Menu item is clicked')
 
@@ -203,4 +203,13 @@ submenu.add_command(label='Save', command=function1)
 
 status = Label(root, text='This is the current status', bd=1, relief=SUNKEN, anchor=W)
 status.pack(side=BOTTOM, fill=X)
+
+toolbar = Frame(root, bg='green')
+insertbutton = Button(toolbar, text='Insert Files', command=function1)
+deletebutton = Button(toolbar, text='Delete Files', command=function1)
+
+insertbutton.pack(side=LEFT, padx=2, pady=3)
+deletebutton.pack(side=LEFT, padx=2, pady=3)
+toolbar.pack()
+
 root.mainloop()

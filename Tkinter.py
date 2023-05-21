@@ -94,22 +94,41 @@ from tkinter import *
 # root.mainloop()
 
 # Radio buttons
-def selected():
-    label.config(text='Choice of fuel is: ' + fuel.get())
+# def selected():
+#     label.config(text='Choice of fuel is: ' + fuel.get())
+#
+#
+# root = Tk()
+# root.geometry('300x300')
+#
+# fuel = StringVar(value='Petrol')
+#
+# radio1 = Radiobutton(root, text='Petrol', variable=fuel, value='Petrol', command=selected)
+# radio2 = Radiobutton(root, text='Diesel', variable=fuel, value='Diesel', command=selected)
+# radio3 = Radiobutton(root, text='Electric', variable=fuel, value='Electric', command=selected)
+#
+# label = Label(root)
+# radio1.pack()
+# radio2.pack()
+# radio3.pack()
+# label.pack()
+# root.mainloop()
 
+# Frames
 
 root = Tk()
+frame = Frame(root)
+frame.pack()
+
+frame2 = Frame(root)
+frame2.pack(side=BOTTOM)
+
+button = Button(frame, text='Button1')
+button2 = Button(frame2, text='Button2')
+
+button.pack()
+button2.pack()
+
 root.geometry('300x300')
 
-fuel = StringVar(value='Petrol')
-
-radio1 = Radiobutton(root, text='Petrol', variable=fuel, value='Petrol', command=selected)
-radio2 = Radiobutton(root, text='Diesel', variable=fuel, value='Diesel', command=selected)
-radio3 = Radiobutton(root, text='Electric', variable=fuel, value='Electric', command=selected)
-
-label = Label(root)
-radio1.pack()
-radio2.pack()
-radio3.pack()
-label.pack()
 root.mainloop()

@@ -185,7 +185,7 @@ from tkinter import *
 # b = Demo(root)
 # root.mainloop()
 
-# Menus
+# Menus & Status bar
 def function1():
     print('Menu item is clicked')
 
@@ -201,5 +201,6 @@ mymenu.add_cascade(label='File', menu=submenu)
 submenu.add_command(label='Project', command=function1)
 submenu.add_command(label='Save', command=function1)
 
-
+status = Label(root, text='This is the current status', bd=1, relief=SUNKEN, anchor=W)
+status.pack(side=BOTTOM, fill=X)
 root.mainloop()

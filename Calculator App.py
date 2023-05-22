@@ -18,9 +18,11 @@ def get_operation(operator):
     i += length
 
 
+# Display Bar
 display = Entry(root)
 display.grid(row=1, columnspan=6)
 
+# Numbers
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 counter = 0
 for x in range(3):
@@ -33,6 +35,7 @@ for x in range(3):
 button = Button(root, text='0', width=3, height=2, command=lambda: get_number(0))
 button.grid(row=5, column=1)
 
+# Operators
 count = 0
 operations = ['+', '-', '*', '/', '3.14', '%', '(', '**', ')', '**2']
 for x in range(4):

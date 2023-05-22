@@ -11,6 +11,11 @@ for x in range(3):
         button.grid(row=x+2, column=y)
         counter += 1
 
-button = Button(root, text='0', width=2, height=2)
+button = Button(root, text='0', width=3, height=2)
 button.grid(row=5, column=1)
+
+count = 0
+operations = ['+', '-', '*', '/', '3.14', '%', '(', '**', ')', '**2']
+
+
 root.mainloop()

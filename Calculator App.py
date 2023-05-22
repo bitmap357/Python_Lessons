@@ -38,7 +38,7 @@ operations = ['+', '-', '*', '/', '3.14', '%', '(', '**', ')', '**2']
 for x in range(4):
     for y in range(3):
         if count < len(operations):
-            button = Button(root, text=operations[count], width=3, height=2)
+            button = Button(root, text=operations[count], width=3, height=2, command=lambda text=operations[count]: get_operation(text))
             count += 1
             button.grid(row=x + 2, column=y+3)
 

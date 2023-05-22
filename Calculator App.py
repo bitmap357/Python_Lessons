@@ -16,6 +16,11 @@ button.grid(row=5, column=1)
 
 count = 0
 operations = ['+', '-', '*', '/', '3.14', '%', '(', '**', ')', '**2']
-
+for x in range(4):
+    for y in range(3):
+        if count < len(operations):
+            button = Button(root, text=operations[count], width=3, height=2)
+            count += 1
+            button.grid(row=x + 2, column=y+3)
 
 root.mainloop()

@@ -11,6 +11,13 @@ def get_number(num):
     i += 1
 
 
+def get_operation(operator):
+    global i
+    length = len(operator)
+    display.insert(i, operator)
+    i += length
+
+
 display = Entry(root)
 display.grid(row=1, columnspan=6)
 

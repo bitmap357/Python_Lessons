@@ -45,7 +45,7 @@ counter = 0
 for x in range(3):
     for y in range(3):
         button_text = numbers[counter]
-        button = Button(root, text=button_text, width=2, height=2, command=lambda text=button_text: get_number(text))
+        button = Button(root, text=button_text, width=3, height=2, command=lambda text=button_text: get_number(text))
         button.grid(row=x+2, column=y)
         counter += 1
 
@@ -62,8 +62,10 @@ for x in range(4):
             count += 1
             button.grid(row=x + 2, column=y+3)
 
+# Buttons for AC and =
 Button(root, text='AC', width=3, height=2, command=clear_all).grid(row=5, column=0)
 Button(root, text='=', width=3, height=2, command=calculate).grid(row=5, column=2)
 
+Button(root, text='<-', width=6, height=2).grid(row=5, column=4)
 
 root.mainloop()

@@ -45,4 +45,8 @@ for x in range(4):
             count += 1
             button.grid(row=x + 2, column=y+3)
 
+Button(root, text='AC', width=3, height=2).grid(row=5, column=0)
+Button(root, text='=', width=3, height=2).grid(row=5, column=2)
+
+
 root.mainloop()

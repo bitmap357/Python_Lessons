@@ -23,6 +23,7 @@ def clear_all():
     display.delete(0, END)
 
 
+# function for the = sign
 def calculate():
     entire_string = display.get()
     try:

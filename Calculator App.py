@@ -18,6 +18,10 @@ def get_operation(operator):
     i += length
 
 
+def clear_all():
+    display.delete(0, END)
+
+
 # Display Bar
 display = Entry(root)
 display.grid(row=1, columnspan=6)
@@ -45,7 +49,7 @@ for x in range(4):
             count += 1
             button.grid(row=x + 2, column=y+3)
 
-Button(root, text='AC', width=3, height=2).grid(row=5, column=0)
+Button(root, text='AC', width=3, height=2, command=clear_all).grid(row=5, column=0)
 Button(root, text='=', width=3, height=2).grid(row=5, column=2)
 
 

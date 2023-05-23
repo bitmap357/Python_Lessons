@@ -1,4 +1,5 @@
 from tkinter import *
+import ast
 
 root = Tk()
 
@@ -20,6 +21,12 @@ def get_operation(operator):
 
 def clear_all():
     display.delete(0, END)
+
+
+def calculate():
+    entire_string = display.get()
+    node = ast.parse(entire_string, mode='eval')
+    result = eval(compile(node, '<string>', 'eval'))
 
 
 # Display Bar
@@ -50,7 +57,7 @@ for x in range(4):
             button.grid(row=x + 2, column=y+3)
 
 Button(root, text='AC', width=3, height=2, command=clear_all).grid(row=5, column=0)
-Button(root, text='=', width=3, height=2).grid(row=5, column=2)
+Button(root, text='=', width=3, height=2, command=calculate).grid(row=5, column=2)
 
 
 root.mainloop()

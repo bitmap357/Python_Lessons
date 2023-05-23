@@ -23,7 +23,7 @@ def clear_all():
     display.delete(0, END)
 
 
-# function for the = sign
+# Function for the = sign
 def calculate():
     entire_string = display.get()
     try:
@@ -36,6 +36,7 @@ def calculate():
         display.insert(0, 'Error')
 
 
+# Function for delete button
 def undo():
     entire_string = display.get()
     if len(entire_string):

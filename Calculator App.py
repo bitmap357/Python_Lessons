@@ -25,8 +25,14 @@ def clear_all():
 
 def calculate():
     entire_string = display.get()
-    node = ast.parse(entire_string, mode='eval')
-    result = eval(compile(node, '<string>', 'eval'))
+    try:
+        node = ast.parse(entire_string, mode='eval')
+        result = eval(compile(node, '<string>', 'eval'))
+        clear_all()
+        display.insert(0, result)
+    except Exception:
+        clear_all()
+        display.insert(0, 'Error')
 
 
 # Display Bar

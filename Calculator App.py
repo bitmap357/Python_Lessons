@@ -6,7 +6,7 @@ root = Tk()
 i = 0
 
 
-# Functions for operations
+# Functions for getting the numbers to reflect on the display
 def get_number(num):
     global i
     display.insert(i, num)

@@ -50,7 +50,7 @@ def undo():
 
 
 # Display Bar
-display = Entry(root)
+display = Entry(root, width=30)
 display.grid(row=1, columnspan=10)
 
 # Numbers

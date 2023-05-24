@@ -78,7 +78,7 @@ for x in range(4):
             count += 1
             button.grid(row=x + 2, column=y+3)
 
-# Buttons for AC and =
+# Button creation for AC and =
 Button(root, text='AC', width=3, height=2, command=clear_all).grid(row=5, column=0)
 Button(root, text='=', width=3, height=2, command=calculate).grid(row=5, column=2)
 

@@ -51,7 +51,7 @@ def undo():
 
 # Display Bar
 display = Entry(root)
-display.grid(row=1, columnspan=6)
+display.grid(row=1, columnspan=10)
 
 # Numbers
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -81,6 +81,6 @@ Button(root, text='AC', width=3, height=2, command=clear_all).grid(row=5, column
 Button(root, text='=', width=3, height=2, command=calculate).grid(row=5, column=2)
 
 # Button for delete
-Button(root, text='<-', width=3, height=2, command=lambda: undo()).grid(row=5, column=4)
+Button(root, text='<-', width=7, height=2, command=lambda: undo()).grid(row=5, column=4, columnspan=7)
 
 root.mainloop()

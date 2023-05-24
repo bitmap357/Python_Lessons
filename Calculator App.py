@@ -13,6 +13,7 @@ def get_number(num):
     i += 1
 
 
+# Function to get the operator symbols into the display
 def get_operation(operator):
     global i
     length = len(operator)

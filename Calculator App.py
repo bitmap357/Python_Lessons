@@ -55,7 +55,7 @@ def undo():
 display = Entry(root, width=30)
 display.grid(row=1, columnspan=10)
 
-# Numbers and number buttons
+# Numbers and number button generations
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 counter = 0
 for x in range(3):
@@ -68,7 +68,7 @@ for x in range(3):
 button = Button(root, text='0', width=3, height=2, command=lambda: get_number(0))
 button.grid(row=5, column=1)
 
-# Operators
+# Operators and operator button generation
 count = 0
 operations = ['+', '-', '*', '/', '3.14', '%', '(', '**', ')', '**2']
 for x in range(4):

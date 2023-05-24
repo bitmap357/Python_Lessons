@@ -55,7 +55,7 @@ def undo():
 display = Entry(root, width=30)
 display.grid(row=1, columnspan=10)
 
-# Numbers
+# Numbers and number buttons
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 counter = 0
 for x in range(3):

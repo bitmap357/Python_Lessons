@@ -20,6 +20,7 @@ def get_operation(operator):
     i += length
 
 
+# Function to clear everything out of the display
 def clear_all():
     display.delete(0, END)
 

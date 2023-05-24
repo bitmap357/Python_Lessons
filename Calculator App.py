@@ -82,7 +82,7 @@ for x in range(4):
 Button(root, text='AC', width=3, height=2, command=clear_all).grid(row=5, column=0)
 Button(root, text='=', width=3, height=2, command=calculate).grid(row=5, column=2)
 
-# Button for delete
+# Button creation for delete or backspace
 Button(root, text='<-', width=7, height=2, command=lambda: undo()).grid(row=5, column=4, columnspan=7)
 
 root.mainloop()

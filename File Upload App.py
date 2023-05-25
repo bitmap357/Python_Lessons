@@ -16,8 +16,13 @@ from tkinter import *
 
 upload_screen = Tk()
 upload_screen.geometry('880x500')
+
+
 file_upload_label = Label(upload_screen, text='FILE UPLOAD', font=('Times New Roman', '32'))
 file_upload_label.place(relx=0.5, rely=0.1, anchor=CENTER)
+
+choose_file_button = Button(upload_screen, text='CHOOSE FILE', padx=10, pady=3)
+choose_file_button.place(relx=0.01, rely=0.25, anchor=W)
 
 
 upload_screen.mainloop()

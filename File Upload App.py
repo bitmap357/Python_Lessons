@@ -16,9 +16,8 @@ from tkinter import *
 
 upload_screen = Tk()
 upload_screen.geometry('880x500')
-file_upload_label = Label(upload_screen, text='FILE UPLOAD', font=('Times New Roman', '32'), anchor=CENTER)
-# file_upload_label.place(relx=0.5, rely=0.5, anchor=CENTER)
-file_upload_label.grid(row=0, column=5, pady=20, padx=10)
+file_upload_label = Label(upload_screen, text='FILE UPLOAD', font=('Times New Roman', '32'))
+file_upload_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
 
 upload_screen.mainloop()

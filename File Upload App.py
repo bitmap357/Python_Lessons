@@ -17,6 +17,8 @@ browse_files_button.grid(row=3, column=0, padx=10, pady=10)
 
 root.mainloop()
 
+
+# Second screen for uploading of files
 upload_screen = Tk()
 upload_screen.geometry('880x500')
 

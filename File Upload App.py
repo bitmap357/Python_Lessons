@@ -34,5 +34,16 @@ frame_1.place(relx=0.05, rely=0.3)
 category_label = Label(frame_1, text='SELECT CATEGORY', font=('Times New Roman', '18'), padx=30)
 category_label.pack()
 
+category = StringVar(value='None')
+internal_radio = Radiobutton(frame_1, text='Internal File', value='Internal', variable=category, font=('Times New Roman', '14'))
+partners_radio = Radiobutton(frame_1, text='Partners File', value='Partners', variable=category, font=('Times New Roman', '14'))
+non_partners_radio = Radiobutton(frame_1, text='Non-Partners File', value='Non-Partners', variable=category, font=('Times New Roman', '14'))
+other_radio = Radiobutton(frame_1, text='Other File', value='Other', variable=category, font=('Times New Roman', '14'))
+
+
+internal_radio.pack(padx=10, pady=10)
+partners_radio.pack(padx=10, pady=10)
+non_partners_radio.pack(padx=10, pady=10)
+other_radio.pack(padx=10, pady=10)
 
 upload_screen.mainloop()

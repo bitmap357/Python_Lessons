@@ -31,6 +31,8 @@ choose_file_label.place(relx=0.13, rely=0.22)
 frame_1 = Frame(upload_screen, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)
 frame_1.place(relx=0.05, rely=0.3)
 
+category_label = Label(frame_1, text='SELECT CATEGORY', font=('Times New Roman', '18'), padx=30)
+category_label.pack()
 
 
 upload_screen.mainloop()

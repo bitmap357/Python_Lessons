@@ -55,5 +55,8 @@ description_label.pack()
 description_input = Entry(frame_2, width=30, border=2, font=('Times New Roman', '14'))
 description_input.pack()
 
+save_button = Button(upload_screen, text='SAVE', padx=150, pady=3)
+save_button.place(relx=0.3, rely=0.9)
+
 
 upload_screen.mainloop()

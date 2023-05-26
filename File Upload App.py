@@ -46,4 +46,10 @@ partners_radio.pack(padx=10, pady=10)
 non_partners_radio.pack(padx=10, pady=10)
 other_radio.pack(padx=10, pady=10)
 
+frame_2 = Frame(upload_screen, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)
+frame_2.place(relx=0.6, rely=0.3)
+
+description_label = Label(frame_2, text='DESCRIPTION', font=('Times New Roman', '18'), padx=30)
+description_label.pack()
+
 upload_screen.mainloop()

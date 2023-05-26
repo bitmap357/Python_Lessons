@@ -25,8 +25,12 @@ choose_file_button = Button(upload_screen, text='CHOOSE FILE', padx=10, pady=3)
 choose_file_button.place(relx=0.01, rely=0.25, anchor=W)
 
 
-choose_file_label = Label(upload_screen, text='dummy file name', borderwidth=1, relief='solid')
-choose_file_label.place(relx=0.13, rely=0.23)
+choose_file_label = Label(upload_screen, text='dummy file name', borderwidth=1, relief='solid', padx=330, pady=6)
+choose_file_label.place(relx=0.13, rely=0.22)
+
+frame_1 = Frame(upload_screen, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)
+frame_1.place(relx=0.05, rely=0.3)
+
 
 
 upload_screen.mainloop()

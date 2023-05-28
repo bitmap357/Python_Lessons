@@ -70,6 +70,9 @@ upload_screen.mainloop()
 category_screen = Tk()
 category_screen.geometry('880x500')
 
+categories_label = Label(category_screen, text='CATEGORIES', font=('Times New Roman', '32'))
+categories_label.place(relx=0.5, rely=0.1, anchor=CENTER)
+
 internal_button = Button(category_screen, text='INTERNAL')
 internal_button.pack()
 

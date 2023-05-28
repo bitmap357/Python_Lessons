@@ -76,4 +76,7 @@ internal_button.pack()
 partners_button = Button(category_screen, text='PARTNERS')
 partners_button.pack()
 
+non_partners_button = Button(category_screen, text='NON-PARTNERS')
+non_partners_button.pack()
+
 category_screen.mainloop()

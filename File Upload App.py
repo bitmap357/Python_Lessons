@@ -65,3 +65,10 @@ save_button.place(relx=0.3, rely=0.9)
 
 
 upload_screen.mainloop()
+
+# Category Screen
+category_screen = Tk()
+category_screen.geometry('880x500')
+
+
+category_screen.mainloop()

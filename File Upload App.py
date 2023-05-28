@@ -73,5 +73,7 @@ category_screen.geometry('880x500')
 internal_button = Button(category_screen, text='INTERNAL')
 internal_button.pack()
 
+partners_button = Button(category_screen, text='PARTNERS')
+partners_button.pack()
 
 category_screen.mainloop()

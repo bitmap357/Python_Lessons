@@ -70,5 +70,8 @@ upload_screen.mainloop()
 category_screen = Tk()
 category_screen.geometry('880x500')
 
+internal_button = Button(category_screen, text='INTERNAL')
+internal_button.pack()
+
 
 category_screen.mainloop()

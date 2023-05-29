@@ -98,5 +98,8 @@ search_screen.geometry('880x500')
 search_label = Label(search_screen, text='SEARCH FILES', font=('Times New Roman', '32'))
 search_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
+previous_button = Button(search_screen, text='PREVIOUS')
+
+
 
 search_screen.mainloop()

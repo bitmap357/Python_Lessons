@@ -86,7 +86,7 @@ other_button = Button(category_screen, text='OTHER', padx=60, pady=50)
 other_button.place(relx=0.2, rely=0.55)
 
 back_button = Button(category_screen, text='BACK', padx=60, pady=50)
-
+back_button.place(relx=0.6, rely=0.55)
 
 
 category_screen.mainloop()

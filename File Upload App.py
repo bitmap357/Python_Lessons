@@ -85,4 +85,7 @@ non_partners_button.place(relx=0.72, rely=0.2)
 other_button = Button(category_screen, text='OTHER', padx=60, pady=50)
 other_button.place(relx=0.2, rely=0.55)
 
+back_button = Button(category_screen, text='BACK')
+
+
 category_screen.mainloop()

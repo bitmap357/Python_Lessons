@@ -67,26 +67,33 @@ from tkinter import *
 # upload_screen.mainloop()
 
 # Category Screen
-category_screen = Tk()
-category_screen.geometry('880x500')
+# category_screen = Tk()
+# category_screen.geometry('880x500')
+#
+# categories_label = Label(category_screen, text='CATEGORIES', font=('Times New Roman', '32'))
+# categories_label.place(relx=0.5, rely=0.1, anchor=CENTER)
+#
+# internal_button = Button(category_screen, text='INTERNAL', padx=60, pady=50)
+# internal_button.place(relx=0.03, rely=0.2)
+#
+# partners_button = Button(category_screen, text='PARTNERS', padx=60, pady=50)
+# partners_button.place(relx=0.4, rely=0.2)
+#
+# non_partners_button = Button(category_screen, text='NON-PARTNERS', padx=60, pady=50)
+# non_partners_button.place(relx=0.72, rely=0.2)
+#
+# other_button = Button(category_screen, text='OTHER', padx=60, pady=50)
+# other_button.place(relx=0.2, rely=0.55)
+#
+# back_button = Button(category_screen, text='BACK', padx=60, pady=50)
+# back_button.place(relx=0.6, rely=0.55)
+#
+#
+# category_screen.mainloop()
 
-categories_label = Label(category_screen, text='CATEGORIES', font=('Times New Roman', '32'))
-categories_label.place(relx=0.5, rely=0.1, anchor=CENTER)
-
-internal_button = Button(category_screen, text='INTERNAL', padx=60, pady=50)
-internal_button.place(relx=0.03, rely=0.2)
-
-partners_button = Button(category_screen, text='PARTNERS', padx=60, pady=50)
-partners_button.place(relx=0.4, rely=0.2)
-
-non_partners_button = Button(category_screen, text='NON-PARTNERS', padx=60, pady=50)
-non_partners_button.place(relx=0.72, rely=0.2)
-
-other_button = Button(category_screen, text='OTHER', padx=60, pady=50)
-other_button.place(relx=0.2, rely=0.55)
-
-back_button = Button(category_screen, text='BACK', padx=60, pady=50)
-back_button.place(relx=0.6, rely=0.55)
+# Search Screen
+search_screen = Tk()
+search_screen.geometry('880x500')
 
 
-category_screen.mainloop()
+search_screen.mainloop()

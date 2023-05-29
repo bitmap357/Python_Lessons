@@ -83,6 +83,6 @@ non_partners_button = Button(category_screen, text='NON-PARTNERS', padx=60, pady
 non_partners_button.place(relx=0.72, rely=0.2)
 
 other_button = Button(category_screen, text='OTHER', padx=60, pady=50)
-other_button.pack()
+other_button.place(relx=0.2, rely=0.55)
 
 category_screen.mainloop()

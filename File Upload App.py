@@ -95,5 +95,7 @@ from tkinter import *
 search_screen = Tk()
 search_screen.geometry('880x500')
 
+search_label = Label(search_screen, text='SEARCH', font=('Times New Roman', '32'))
+
 
 search_screen.mainloop()

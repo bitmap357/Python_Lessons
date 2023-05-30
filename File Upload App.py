@@ -3,6 +3,11 @@ from tkinter import *
 root = Tk()
 root.geometry('880x500')
 
+main = Frame(root)
+upload = Frame(root)
+category = Frame(root)
+search = Frame(root)
+
 # Welcome text on the main screen
 main_label = Label(root, text='WELCOME\n WHAT WOULD YOU LIKE TO DO TODAY?', font=('Times New Roman', '32'))
 main_label.grid(row=0, column=0, pady=20, padx=10)

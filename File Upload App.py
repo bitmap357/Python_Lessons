@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 from tkinter.filedialog import askopenfile
+import sqlite3
 
 root = Tk()
 root.geometry('880x500')
@@ -16,16 +17,15 @@ search = Frame(root)
 main.pack()
 
 
-def upload_file():
-    file = filedialog.askopenfilename(filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx")])
+def upload_file_com():
+    file = filedialog.askopenfilename(filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx"), ("PDF files", ".pdf")])
     if file:
-        fob = open(file, 'r')
-        i = 0
-        for data in fob:
-            trv.insert("", 'end', iid=i, text=data)
-            i = i+1
+        fob = open(file).read()
+        preview.insert(END, fob)
+        choose_file_label.config(text=file)
     else:
-        print("No file chosen")
+        nada = "NO FILE CHOSEN"
+        choose_file_label.config(text=nada)
 
 
 def change_to_main():
@@ -78,11 +78,16 @@ browse_files_button.grid(row=3, column=0, padx=10, pady=10)
 file_upload_label = Label(upload, text='FILE UPLOAD', font=('Times New Roman', '32'))
 file_upload_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
-choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3, command=lambda: upload_file())
+choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3, command=lambda: upload_file_com())
 choose_file_button.place(relx=0.01, rely=0.25, anchor=W)
+preview = Text(upload, height=5, width=52)
+preview.pack()
+# trv = ttk.Treeview(upload, selectmode='browse')
+# trv.grid(row=3, column=1, columnspan=4, padx=20, pady=20)
+# trv['show'] = 'tree'
 
 
-choose_file_label = Label(upload, text='dummy file name', borderwidth=1, relief='solid', padx=330, pady=6)
+choose_file_label = Label(upload, text="", borderwidth=1, relief='solid', padx=330, pady=6)
 choose_file_label.place(relx=0.13, rely=0.22)
 
 frame_1 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)

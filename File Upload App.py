@@ -8,6 +8,35 @@ upload = Frame(root)
 category = Frame(root)
 search = Frame(root)
 
+
+def change_to_main():
+    main.pack(fill='both', expand=1)
+    upload.pack_forget()
+    category.pack_forget()
+    search.pack_forget()
+
+
+def change_to_upload():
+    upload.pack(fill='both', expand=1)
+    category.pack_forget()
+    search.pack_forget()
+    main.pack_forget()
+
+
+def change_to_category():
+    category.pack(fill='both', expand=1)
+    upload.pack_forget()
+    search.pack_forget()
+    main.pack_forget()
+
+
+def change_to_search():
+    search.pack(fill='both', expand=1)
+    category.pack_forget()
+    upload.pack_forget()
+    main.pack_forget()
+
+
 # Welcome text on the main screen
 main_label = Label(root, text='WELCOME\n WHAT WOULD YOU LIKE TO DO TODAY?', font=('Times New Roman', '32'))
 main_label.grid(row=0, column=0, pady=20, padx=10)

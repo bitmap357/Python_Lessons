@@ -7,6 +7,7 @@ main = Frame(root)
 upload = Frame(root)
 category = Frame(root)
 search = Frame(root)
+main.pack()
 
 
 def change_to_main():
@@ -37,16 +38,21 @@ def change_to_search():
     main.pack_forget()
 
 
+home_button = Button(root, text='HOME', font=('Georgia', '14'))
+home_button.place(relx=0, rely=0)
+
+
 # Welcome text on the main screen
-main_label = Label(root, text='WELCOME\n WHAT WOULD YOU LIKE TO DO TODAY?', font=('Times New Roman', '32'))
-main_label.grid(row=0, column=0, pady=20, padx=10)
+main_label = Label(main, text='WELCOME\n WHAT WOULD YOU LIKE TO DO TODAY?', font=('Times New Roman', '32'))
+main_label.place(relx=0, rely=0)
+main_label.grid(pady=20, padx=10)
 
 # Button for file uploads
-upload_file_button = Button(root, text='UPLOAD FILE', pady=20, padx=40)
+upload_file_button = Button(main, text='UPLOAD FILE', pady=20, padx=40)
 upload_file_button.grid(row=2, column=0, padx=10, pady=10)
 
 # Button for browsing files
-browse_files_button = Button(root, text='BROWSE FILES', pady=20, padx=40)
+browse_files_button = Button(main, text='BROWSE FILES', pady=20, padx=40)
 browse_files_button.grid(row=3, column=0, padx=10, pady=10)
 
 root.mainloop()

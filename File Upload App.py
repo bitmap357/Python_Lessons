@@ -1,7 +1,13 @@
+import tkinter
 from tkinter import *
+from tkinter import ttk
+from tkinter import filedialog
+from tkinter.filedialog import askopenfile
 
 root = Tk()
 root.geometry('880x500')
+root.title('File Upload')
+
 
 main = Frame(root)
 upload = Frame(root)
@@ -118,6 +124,18 @@ other_button.place(relx=0.5, rely=0.55)
 # Search Screen
 search_label = Label(search, text='SEARCH FILES', font=('Times New Roman', '32'))
 search_label.place(relx=0.5, rely=0.1, anchor=CENTER)
+
+trv = ttk.Treeview(search)
+trv.grid(row=1, column=1, padx=30, pady=20)
+trv["columns"]=("1", "2")
+trv.column("#0", width=80, anchor='c')
+trv.column("1", width=10, anchor='c')
+trv.column("2", width=80, anchor='c')
+trv.heading("#0", text='Label', anchor='c')
+trv.heading("1", text='ID', anchor='c')
+trv.heading("2", text='Name', anchor='c')
+
+trv.insert('', 'end', iid=1, text='First', values=(1, 'n1-Alex'))
 
 root.mainloop()
 

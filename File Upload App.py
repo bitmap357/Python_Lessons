@@ -98,9 +98,26 @@ save_button = Button(upload, text='SAVE', padx=150, pady=3)
 save_button.place(relx=0.3, rely=0.9)
 
 
+# Category Screen
+categories_label = Label(category, text='CATEGORIES', font=('Times New Roman', '32'))
+categories_label.place(relx=0.5, rely=0.1, anchor=CENTER)
+
+internal_button = Button(category, text='INTERNAL', padx=110, pady=50)
+internal_button.place(relx=0.16, rely=0.2)
+
+partners_button = Button(category, text='PARTNERS', padx=90, pady=50)
+partners_button.place(relx=0.5, rely=0.2)
+
+non_partners_button = Button(category, text='NON-PARTNERS', padx=90, pady=50)
+non_partners_button.place(relx=0.16, rely=0.55)
+
+other_button = Button(category, text='OTHER', padx=100, pady=50)
+other_button.place(relx=0.5, rely=0.55)
+
+
 root.mainloop()
 
-
+###################################################################
 # Second screen for uploading of files
 upload_screen = Tk()
 upload_screen.geometry('880x500')
@@ -153,6 +170,7 @@ upload_screen.mainloop()
 category_screen = Tk()
 category_screen.geometry('880x500')
 
+# Category Screen
 categories_label = Label(category_screen, text='CATEGORIES', font=('Times New Roman', '32'))
 categories_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 

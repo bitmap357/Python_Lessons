@@ -16,6 +16,18 @@ search = Frame(root)
 main.pack()
 
 
+def upload_file():
+    file = filedialog.askopenfilename(filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx")])
+    if file:
+        fob = open(file, 'r')
+        i = 0
+        for data in fob:
+            trv.insert("", 'end', iid=i, text=data)
+            i = i+1
+    else:
+        print("No file chosen")
+
+
 def change_to_main():
     main.pack(fill='both', expand=1)
     upload.pack_forget()
@@ -66,7 +78,7 @@ browse_files_button.grid(row=3, column=0, padx=10, pady=10)
 file_upload_label = Label(upload, text='FILE UPLOAD', font=('Times New Roman', '32'))
 file_upload_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
-choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3)
+choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3, command=lambda: upload_file())
 choose_file_button.place(relx=0.01, rely=0.25, anchor=W)
 
 

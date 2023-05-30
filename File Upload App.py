@@ -55,6 +55,49 @@ upload_file_button.grid(row=2, column=0, padx=10, pady=10)
 browse_files_button = Button(main, text='BROWSE FILES', pady=20, padx=40, command=change_to_category)
 browse_files_button.grid(row=3, column=0, padx=10, pady=10)
 
+
+# Upload Screen
+file_upload_label = Label(upload, text='FILE UPLOAD', font=('Times New Roman', '32'))
+file_upload_label.place(relx=0.5, rely=0.1, anchor=CENTER)
+
+choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3)
+choose_file_button.place(relx=0.01, rely=0.25, anchor=W)
+
+
+choose_file_label = Label(upload, text='dummy file name', borderwidth=1, relief='solid', padx=330, pady=6)
+choose_file_label.place(relx=0.13, rely=0.22)
+
+frame_1 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)
+frame_1.place(relx=0.05, rely=0.3)
+
+category_label = Label(frame_1, text='SELECT CATEGORY', font=('Times New Roman', '18'), padx=30)
+category_label.pack()
+
+category1 = StringVar(value='None')
+internal_radio = Radiobutton(frame_1, text='Internal File', value='Internal', variable=category1, font=('Times New Roman', '14'))
+partners_radio = Radiobutton(frame_1, text='Partners File', value='Partners', variable=category1, font=('Times New Roman', '14'))
+non_partners_radio = Radiobutton(frame_1, text='Non-Partners File', value='Non-Partners', variable=category1, font=('Times New Roman', '14'))
+other_radio = Radiobutton(frame_1, text='Other File', value='Other', variable=category1, font=('Times New Roman', '14'))
+
+
+internal_radio.pack(padx=10, pady=10)
+partners_radio.pack(padx=10, pady=10)
+non_partners_radio.pack(padx=10, pady=10)
+other_radio.pack(padx=10, pady=10)
+
+frame_2 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)
+frame_2.place(relx=0.55, rely=0.3)
+
+description_label = Label(frame_2, text='DESCRIPTION', font=('Times New Roman', '18'), padx=80)
+description_label.pack()
+
+description_input = Entry(frame_2, width=30, border=2, font=('Times New Roman', '14'))
+description_input.pack()
+
+save_button = Button(upload, text='SAVE', padx=150, pady=3)
+save_button.place(relx=0.3, rely=0.9)
+
+
 root.mainloop()
 
 
@@ -62,7 +105,7 @@ root.mainloop()
 upload_screen = Tk()
 upload_screen.geometry('880x500')
 
-
+# Upload Screen
 file_upload_label = Label(upload_screen, text='FILE UPLOAD', font=('Times New Roman', '32'))
 file_upload_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 

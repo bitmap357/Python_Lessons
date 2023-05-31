@@ -128,16 +128,16 @@ save_button.place(relx=0.3, rely=0.9)
 categories_label = Label(category, text='CATEGORIES', font=('Times New Roman', '32'))
 categories_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
-internal_button = Button(category, text='INTERNAL', padx=110, pady=50)
+internal_button = Button(category, text='INTERNAL', padx=110, pady=50, command=change_to_search)
 internal_button.place(relx=0.16, rely=0.2)
 
-partners_button = Button(category, text='PARTNERS', padx=90, pady=50)
+partners_button = Button(category, text='PARTNERS', padx=90, pady=50, command=change_to_search)
 partners_button.place(relx=0.5, rely=0.2)
 
-non_partners_button = Button(category, text='NON-PARTNERS', padx=90, pady=50)
+non_partners_button = Button(category, text='NON-PARTNERS', padx=90, pady=50, command=change_to_search)
 non_partners_button.place(relx=0.16, rely=0.55)
 
-other_button = Button(category, text='OTHER', padx=100, pady=50)
+other_button = Button(category, text='OTHER', padx=100, pady=50, command=change_to_search)
 other_button.place(relx=0.5, rely=0.55)
 
 
@@ -147,7 +147,7 @@ search_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
 trv = ttk.Treeview(search)
 trv.grid(row=1, column=1, padx=30, pady=20)
-trv["columns"]=("1", "2")
+trv["columns"] = ("1", "2")
 trv.column("#0", width=80, anchor='c')
 trv.column("1", width=10, anchor='c')
 trv.column("2", width=80, anchor='c')

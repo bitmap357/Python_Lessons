@@ -3,12 +3,16 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 from pathlib import Path
-from tkinter.filedialog import askopenfile
 import sqlite3
+from tkinter.filedialog import askopenfile
 
 root = Tk()
 root.geometry('880x500')
 root.title('File Upload')
+
+# Creating database and cursor
+conn = sqlite3.connect('file_upload.db')
+c = conn.cursor()
 
 
 main = Frame(root)

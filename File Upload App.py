@@ -14,6 +14,14 @@ root.title('File Upload')
 conn = sqlite3.connect('file_upload.db')
 c = conn.cursor()
 
+# Create table
+
+c.execute('''CREATE TABLE file_upload.db (
+            tag text,
+            file_name text,
+            date text,
+            size text,
+            )''')
 
 main = Frame(root)
 upload = Frame(root)

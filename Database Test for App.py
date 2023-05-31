@@ -22,6 +22,18 @@ c = conn.cursor()
 #             zipcode integer
 #             )''')
 
+
+#Create submit function
+def submit():
+    # Clear text boxes
+    f_name.delete(0, END)
+    l_name.delete(0, END)
+    address.delete(0, END)
+    city.delete(0, END)
+    state.delete(0, END)
+    zipcode.delete(0, END)
+
+
 # Create text boxes
 f_name = Entry(root, width=30)
 f_name.grid(row=0, column=1, padx=20)
@@ -54,6 +66,10 @@ state_label = Label(root, text='State')
 state_label.grid(row=4, column=0)
 zipcode_label = Label(root, text='Zip code')
 zipcode_label.grid(row=5, column=0)
+
+# Create a submit button
+submit_btn = Button(root, text="Add record", command=submit)
+submit_btn.grid(row=6, column=0, columnspan=2, padx=10, pady=10, ipadx=100)
 
 # Commit changes
 conn.commit()

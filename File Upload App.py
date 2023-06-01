@@ -213,7 +213,10 @@ trv.column(3, width=100, anchor=CENTER)
 trv.heading(4, text="Size")
 trv.column(4, width=100, anchor=CENTER)
 
-trv.insert('', 'end', iid=1, text='First', values=(1, 'n1-Alex'))
+scroll = ttk.Scrollbar(search, orient='vertical', command=trv.yview)
+scroll.pack(side=RIGHT, fill=Y)
+trv.configure(yscrollcommand=scroll.set)
+
 
 root.mainloop()
 

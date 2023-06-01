@@ -264,7 +264,7 @@ search_button = Button(search, text='SEARCH', padx=50, pady=3, command=search_fi
 search_button.grid(row=0, column=1, padx=10, pady=10)
 
 
-trv = ttk.Treeview(search, columns=(1, 2, 3), show="headings", height="15")
+trv = ttk.Treeview(search, columns=(1, 2, 3), show="headings", height=15)
 trv.place(relx=0.5, rely=0.5, anchor=CENTER)
 
 trv.heading(1, text="Tag")

@@ -16,12 +16,16 @@ c = conn.cursor()
 
 # Create table
 
-c.execute('''CREATE TABLE file_upload.db (
+c.execute('''CREATE TABLE files (
             tag text,
             file_name text,
+            file blob,
             date text,
-            size text,
+            size text
             )''')
+
+
+
 
 main = Frame(root)
 upload = Frame(root)
@@ -31,9 +35,10 @@ main.pack()
 
 
 def upload_file_com():
-    file = filedialog.askopenfilename(filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx"), ("PDF files", ".pdf")])
-    file_name = Path(file).stem
-    if file:
+    file_path = filedialog.askopenfilename(filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx"), ("PDF files", ".pdf")])
+    file_name = Path(file_path).stem
+    file_data = open(file_path, 'r').read()
+    if file_path:
         # fob = open(file).read()
         # preview.insert(END, fob)
         choose_file_label.config(text=file_name)
@@ -68,6 +73,39 @@ def change_to_search():
     category.pack_forget()
     upload.pack_forget()
     main.pack_forget()
+
+
+def save(tag, file_name, file, timestamp, size):
+    # Create a database or connect to one
+    conn = sqlite3.connect('file_upload.db')
+
+    # Create cursor
+    c = conn.cursor()
+
+    # Insert into table
+    c.execute("INSERT INTO  files VALUES (:tag, :file_name, :file, :date, :size)",
+              {
+                  'tag': tag,
+                  'file_name': file_name,
+                  'file': file,
+                  'date': timestamp,
+                  'size': size,
+              })
+    # c.execute("INSERT INTO  files VALUES (?, ?, ?, ?, ?)", (tag, file_name, file, date, size))
+
+    # Commit changes
+    conn.commit()
+
+    # Close Connection
+    conn.close()
+
+    # # Clear text boxes
+    # f_name.delete(0, END)
+    # l_name.delete(0, END)
+    # address.delete(0, END)
+    # city.delete(0, END)
+    # state.delete(0, END)
+    # zipcode.delete(0, END)
 
 
 home_button = Button(root, text='HOME', font=('Georgia', '14'), command=change_to_main)

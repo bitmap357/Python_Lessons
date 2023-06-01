@@ -204,13 +204,9 @@ search_button.grid(row=2, column=1, padx=10, pady=10)
 trv = ttk.Treeview(search, columns=(1, 2, 3), show="headings", height="15")
 trv.place(relx=0.5, rely=0.5, anchor=CENTER)
 
-trv["columns"] = ("1", "2")
-trv.column("#0", width=80, anchor='c')
-trv.column("1", width=10, anchor='c')
-trv.column("2", width=80, anchor='c')
-trv.heading("#0", text='Label', anchor='c')
-trv.heading("1", text='ID', anchor='c')
-trv.heading("2", text='Name', anchor='c')
+trv.heading(1, text="Tag")
+trv.column(1, width=100, anchor=CENTER)
+
 
 trv.insert('', 'end', iid=1, text='First', values=(1, 'n1-Alex'))
 

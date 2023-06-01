@@ -16,13 +16,13 @@ c = conn.cursor()
 
 # Create table
 
-c.execute('''CREATE TABLE files (
-            tag text,
-            file_name text,
-            file blob,
-            date text,
-            size text
-            )''')
+# c.execute('''CREATE TABLE files (
+#             tag text,
+#             file_name text,
+#             file blob,
+#             date text,
+#             size text
+#             )''')
 
 
 
@@ -194,6 +194,11 @@ other_button.place(relx=0.5, rely=0.55)
 # Search Screen
 search_label = Label(search, text='SEARCH FILES', font=('Times New Roman', '32'))
 search_label.place(relx=0.5, rely=0.1, anchor=CENTER)
+
+search_entry = Entry(search, font=('Times New Roman', '14'), width=40)
+search_entry.grid(row=0, column=0, padx=10, pady=10)
+
+
 
 trv = ttk.Treeview(search)
 trv.grid(row=1, column=1, padx=30, pady=20)

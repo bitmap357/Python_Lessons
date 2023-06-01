@@ -202,7 +202,7 @@ search_button = Button(search, text='SEARCH', padx=50, pady=3)  # command=search
 search_button.grid(row=2, column=1, padx=10, pady=10)
 
 trv = ttk.Treeview(search, columns=(1, 2, 3), show="headings", height="15")
-
+trv.place(relx=0.5, rely=0.5, anchor=CENTER)
 
 trv["columns"] = ("1", "2")
 trv.column("#0", width=80, anchor='c')

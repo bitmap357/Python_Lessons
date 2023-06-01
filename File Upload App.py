@@ -208,11 +208,9 @@ trv.heading(1, text="Tag")
 trv.column(1, width=100, anchor=CENTER)
 trv.heading(2, text="File Name")
 trv.column(2, width=300, anchor=CENTER)
-trv.heading(3, text="Size")
-trv.column(3, width=100, anchor=CENTER)
+
 
 trv.insert('', 'end', iid=1, text='First', values=(1, 'n1-Alex'))
 
 root.mainloop()
 
-# Adding tag heading to the tree view and placing it on the screen

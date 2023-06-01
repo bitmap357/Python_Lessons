@@ -201,8 +201,9 @@ search_entry.grid(row=2, column=0, padx=10, pady=10)
 search_button = Button(search, text='SEARCH', padx=50, pady=3)  # command=search_files)
 search_button.grid(row=2, column=1, padx=10, pady=10)
 
-trv = ttk.Treeview(search)
-trv.grid(row=3, column=1, padx=30, pady=20)
+trv = ttk.Treeview(search, columns=(1, 2, 3), show="headings", height="15")
+
+
 trv["columns"] = ("1", "2")
 trv.column("#0", width=80, anchor='c')
 trv.column("1", width=10, anchor='c')

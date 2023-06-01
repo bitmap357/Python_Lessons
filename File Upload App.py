@@ -214,7 +214,7 @@ trv.heading(4, text="Size")
 trv.column(4, width=100, anchor=CENTER)
 
 scroll = ttk.Scrollbar(search, orient='vertical', command=trv.yview)
-scroll.pack(side=RIGHT, fill=Y)
+scroll.place(relx=0.95, rely=0.5, anchor=E)
 trv.configure(yscrollcommand=scroll.set)
 
 

@@ -109,6 +109,7 @@ category = Frame(root)
 search = Frame(root)
 main.pack()
 
+dic = {}
 
 def upload_file_com():
     file_path = filedialog.askopenfilename(
@@ -117,9 +118,11 @@ def upload_file_com():
     file_data = open(file_path, 'rb').read()
     if file_path:
         choose_file_label.config(text=file_name)
-        save(tag=category1.get(), file_name=file_name, file=file_data, date='', size='')
+        # save(tag=category1.get(), file_name=file_name, file=file_data, date='', size='')
     else:
         choose_file_label.config(text="NO FILE CHOSEN")
+    global dic
+    # dic = {....}
 
 
 def change_to_main():
@@ -150,7 +153,7 @@ def change_to_search():
     main.pack_forget()
 
 
-def save(tag, file_name, file, date, size):
+def save(tag, file_name, file):
     # Get the current timestamp
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -231,7 +234,7 @@ other_radio.pack(padx=10, pady=10)
 frame_2 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)
 frame_2.place(relx=0.55, rely=0.3)
 
-save_button = Button(upload, text='SAVE', padx=150, pady=3, command=upload_file_com)
+save_button = Button(upload, text='SAVE', padx=150, pady=3, command=lambda: save(tag=category1.get(), file_name=file_name, file=file_data, date='', size=''))
 save_button.place(relx=0.3, rely=0.9)
 
 # Category Screen

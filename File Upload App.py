@@ -201,15 +201,17 @@ search_entry.grid(row=2, column=0, padx=10, pady=10)
 search_button = Button(search, text='SEARCH', padx=50, pady=3)  # command=search_files)
 search_button.grid(row=2, column=1, padx=10, pady=10)
 
-trv = ttk.Treeview(search, columns=('1', '2', '3'), show="headings", height=15)
+trv = ttk.Treeview(search, columns=('1', '2', '3', '4'), show="headings", height=15)
 trv.place(relx=0.5, rely=0.6, anchor=CENTER)
 
 trv.heading(1, text="Tag")
 trv.column(1, width=100, anchor=CENTER)
 trv.heading(2, text="File Name")
 trv.column(2, width=300, anchor=CENTER)
-trv.heading(3, text="Size")
+trv.heading(3, text="Date")
 trv.column(3, width=100, anchor=CENTER)
+trv.heading(4, text="Size")
+trv.column(4, width=100, anchor=CENTER)
 
 trv.insert('', 'end', iid=1, text='First', values=(1, 'n1-Alex'))
 

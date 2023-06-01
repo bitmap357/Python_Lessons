@@ -196,10 +196,10 @@ search_label = Label(search, text='SEARCH FILES', font=('Times New Roman', '32')
 search_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
 search_entry = Entry(search, font=('Times New Roman', '14'), width=40)
-search_entry.grid(row=2, column=0, padx=10, pady=10)
+search_entry.place(relx=0.4, rely=0.2, anchor=CENTER)
 
 search_button = Button(search, text='SEARCH', padx=50, pady=3)  # command=search_files)
-search_button.grid(row=2, column=1, padx=10, pady=10)
+search_button.place(relx=0.7, rely=0.2, anchor=CENTER)
 
 trv = ttk.Treeview(search, columns=('1', '2', '3', '4'), show="headings", height=15)
 trv.place(relx=0.5, rely=0.6, anchor=CENTER)

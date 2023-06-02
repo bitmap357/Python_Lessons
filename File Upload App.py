@@ -36,11 +36,12 @@ main.pack()
 
 def upload_file_com():
     file_path = filedialog.askopenfilename(filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx"), ("PDF files", ".pdf")])
-    file_name = Path(file_path).stem
-    file_data = open(file_path, 'r').read()
+
     if file_path:
         # fob = open(file).read()
         # preview.insert(END, fob)
+        file_name = Path(file_path).stem
+        file_data = open(file_path, 'r').read()
         choose_file_label.config(text=file_name)
     else:
         nada = "NO FILE CHOSEN"

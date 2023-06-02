@@ -193,7 +193,7 @@ def search_files():
     keyword = search_entry.get()
 
     # Create a database connection and cursor
-    conn = sqlite3.connect('file_upload.db')
+    conn = sqlite3.connect('test.db')
     c = conn.cursor()
 
     # Fetch records matching the search keyword
@@ -286,17 +286,17 @@ other_button.place(relx=0.5, rely=0.6)
 # search_button = Button(search, text='SEARCH', padx=50, pady=3, command=search_files)
 # search_button.grid(row=0, column=1, padx=10, pady=10)
 
-search_label = Label(search, text='SEARCH FILES', font=('Times New Roman', '32'))
-search_label.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
-
-search_frame = Frame(search)
-search_frame.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
-
-search_entry = Entry(search_frame, font=('Times New Roman', '14'), width=40)
-search_entry.pack(side=LEFT, padx=5)
-
-search_button = Button(search_frame, text='SEARCH', padx=50, pady=3, command=search_files)
-search_button.pack(side=LEFT, padx=5)
+# search_label = Label(search, text='SEARCH FILES', font=('Times New Roman', '32'))
+# search_label.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
+#
+# search_frame = Frame(search)
+# search_frame.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
+#
+# search_entry = Entry(search_frame, font=('Times New Roman', '14'), width=40)
+# search_entry.pack(side=LEFT, padx=5)
+#
+# search_button = Button(search_frame, text='SEARCH', padx=50, pady=3, command=search_files)
+# search_button.pack(side=LEFT, padx=5)
 
 
 # trv = ttk.Treeview(search, columns=(1, 2, 3), show="headings", height=15)
@@ -309,19 +309,45 @@ search_button.pack(side=LEFT, padx=5)
 # trv.heading(3, text="Size")
 # trv.column(3, width=100, anchor=CENTER)
 
-trv = ttk.Treeview(search)
-trv.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
-trv["columns"] = ("1", "2")
-trv.column("#0", width=80, anchor='c')
-trv.column("1", width=10, anchor='c')
-trv.column("2", width=80, anchor='c')
-trv.heading("#0", text='Label', anchor='c')
-trv.heading("1", text='ID', anchor='c')
-trv.heading("2", text='Name', anchor='c')
+# trv = ttk.Treeview(search)
+# trv.grid(row=2, column=0, columnspan=2, padx=10, pady=10)
+# trv["columns"] = ("1", "2")
+# trv.column("#0", width=80, anchor='c')
+# trv.column("1", width=10, anchor='c')
+# trv.column("2", width=80, anchor='c')
+# trv.heading("#0", text='Label', anchor='c')
+# trv.heading("1", text='ID', anchor='c')
+# trv.heading("2", text='Name', anchor='c')
+#
+# scroll = ttk.Scrollbar(search, orient='vertical', command=trv.yview)
+# scroll.place(relx=0.95, rely=0.5, anchor=E)
+# trv.configure(yscrollcommand=scroll.set)
+
+search_label = Label(search, text='SEARCH FILES', font=('Times New Roman', '32'))
+search_label.place(relx=0.5, rely=0.1, anchor=CENTER)
+
+search_entry = Entry(search, font=('Times New Roman', '14'), width=40)
+search_entry.place(relx=0.4, rely=0.2, anchor=CENTER)
+
+search_button = Button(search, text='SEARCH', padx=50, pady=3)  # command=search_files)
+search_button.place(relx=0.7, rely=0.2, anchor=CENTER)
+
+trv = ttk.Treeview(search, columns=('1', '2', '3', '4'), show="headings", height=15)
+trv.place(relx=0.5, rely=0.6, anchor=CENTER)
+
+trv.heading(1, text="Tag")
+trv.column(1, width=100, anchor=CENTER)
+trv.heading(2, text="File Name")
+trv.column(2, width=300, anchor=CENTER)
+trv.heading(3, text="Date")
+trv.column(3, width=100, anchor=CENTER)
+trv.heading(4, text="Size")
+trv.column(4, width=100, anchor=CENTER)
 
 scroll = ttk.Scrollbar(search, orient='vertical', command=trv.yview)
 scroll.place(relx=0.95, rely=0.5, anchor=E)
 trv.configure(yscrollcommand=scroll.set)
+
 
 change_to_main()
 

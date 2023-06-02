@@ -153,6 +153,13 @@ def search_files():
         c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
         records = c.fetchall()
 
+        # Insert records into the treeview.
+        for record in records:
+            trv.insert('', 'end', values=record)
+
+        # Close the database connection.
+    conn.close()
+
 
 home_button = Button(root, text='HOME', font=('Georgia', '14'), command=change_to_main)
 home_button.place(relx=0, rely=0)

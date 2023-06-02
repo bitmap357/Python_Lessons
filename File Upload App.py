@@ -68,7 +68,35 @@ def change_to_category():
     main.pack_forget()
 
 
-def change_to_search():
+def change_to_search_all():
+    search.pack(fill='both', expand=1)
+    category.pack_forget()
+    upload.pack_forget()
+    main.pack_forget()
+
+
+def change_to_search_in():
+    search.pack(fill='both', expand=1)
+    category.pack_forget()
+    upload.pack_forget()
+    main.pack_forget()
+
+
+def change_to_search_par():
+    search.pack(fill='both', expand=1)
+    category.pack_forget()
+    upload.pack_forget()
+    main.pack_forget()
+
+
+def change_to_search_non():
+    search.pack(fill='both', expand=1)
+    category.pack_forget()
+    upload.pack_forget()
+    main.pack_forget()
+
+
+def change_to_search_oth():
     search.pack(fill='both', expand=1)
     category.pack_forget()
     upload.pack_forget()
@@ -189,6 +217,9 @@ non_partners_button.place(relx=0.16, rely=0.55)
 
 other_button = Button(category, text='OTHER', padx=100, pady=50, command=change_to_search)
 other_button.place(relx=0.5, rely=0.55)
+
+all_button = Button(category, text='ALL', padx=258, pady=15, command=change_to_search)
+all_button.place(relx=0.16, rely=0.85)
 
 
 # Search Screen

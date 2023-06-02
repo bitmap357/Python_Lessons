@@ -136,6 +136,15 @@ def save(tag, file_name, file, timestamp, size):
     # zipcode.delete(0, END)
 
 
+def search_files():
+    """Search for files in the database."""
+
+    # Clear existing treeview items.
+    trv.delete(*trv.get_children())
+
+
+
+
 home_button = Button(root, text='HOME', font=('Georgia', '14'), command=change_to_main)
 home_button.place(relx=0, rely=0)
 

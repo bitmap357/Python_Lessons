@@ -91,7 +91,7 @@ root.geometry('880x500')
 root.title('File Upload')
 
 # Creating database and cursor
-conn = sqlite3.connect('file_upload.db')
+conn = sqlite3.connect('test.db')
 c = conn.cursor()
 
 # Create table
@@ -110,6 +110,7 @@ search = Frame(root)
 main.pack()
 
 dic = {}
+
 
 def upload_file_com():
     file_path = filedialog.askopenfilename(
@@ -256,7 +257,7 @@ other_radio.pack(padx=10, pady=10)
 frame_2 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)
 frame_2.place(relx=0.55, rely=0.3)
 
-save_button = Button(upload, text='SAVE', padx=150, pady=3, command=lambda: save(tag=category1.get(), file_name=file_name, file=file_data, date='', size=''))
+save_button = Button(upload, text='SAVE', padx=150, pady=3, command=lambda: save(tag=category1.get(), file_name="file_name", file="file_data"))
 save_button.place(relx=0.3, rely=0.9)
 
 # Category Screen

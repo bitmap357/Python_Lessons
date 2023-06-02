@@ -145,6 +145,10 @@ def search_files():
    # Get the search keyword from the entry.
     keyword = search_entry.get()
 
+# Create a database connection and cursor.
+    with sqlite3.connect('test.db') as conn:
+        c = conn.cursor()
+
 
 
 

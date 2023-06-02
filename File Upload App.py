@@ -149,7 +149,9 @@ def search_files():
     with sqlite3.connect('test.db') as conn:
         c = conn.cursor()
 
-
+ # Fetch records matching the search keyword.
+        c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
+        records = c.fetchall()
 
 
 home_button = Button(root, text='HOME', font=('Georgia', '14'), command=change_to_main)

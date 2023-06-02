@@ -35,7 +35,8 @@ main.pack()
 
 
 def upload_file_com():
-    file_path = filedialog.askopenfilename(filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx"), ("PDF files", ".pdf")])
+    file_path = filedialog.askopenfilename(
+        filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx"), ("PDF files", ".pdf")])
 
     if file_path:
         # fob = open(file).read()
@@ -43,6 +44,8 @@ def upload_file_com():
         file_name = Path(file_path).stem
         file_data = open(file_path, 'r').read()
         choose_file_label.config(text=file_name)
+        trv.insert('', 'end', values=(category1.get(), file_name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), len(file_data)))
+
     else:
         nada = "NO FILE CHOSEN"
         choose_file_label.config(text=nada)

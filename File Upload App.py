@@ -142,6 +142,9 @@ def search_files():
     # Clear existing treeview items.
     trv.delete(*trv.get_children())
 
+   # Get the search keyword from the entry.
+    keyword = search_entry.get()
+
 
 
 

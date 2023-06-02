@@ -47,8 +47,7 @@ def upload_file_com():
         trv.insert('', 'end', values=(category1.get(), file_name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), len(file_data)))
 
     else:
-        nada = "NO FILE CHOSEN"
-        choose_file_label.config(text=nada)
+        choose_file_label.config(text="NO FILE CHOSEN")
 
 
 def change_to_main():

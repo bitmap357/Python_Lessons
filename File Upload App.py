@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+import tkinter.messagebox
 from tkinter import filedialog
 from pathlib import Path
 import datetime
@@ -133,37 +134,24 @@ def change_to_search_oth():
     search.pack(fill='both', expand=1)
 
 
-def save(tag, file_name, file, timestamp, size):
-    # Create a database or connect to one
-    conn = sqlite3.connect('file_upload.db')
+def save(tag, file_name, file, file_size):
+    """Save a file to the database."""
 
-    # Create cursor
-    c = conn.cursor()
+    # Get the current timestamp.
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # Insert into table
-    c.execute("INSERT INTO  files VALUES (:tag, :file_name, :file, :date, :size)",
-              {
-                  'tag': tag,
-                  'file_name': file_name,
-                  'file': file,
-                  'date': timestamp,
-                  'size': size
-              })
-    # c.execute("INSERT INTO  files VALUES (?, ?, ?, ?, ?)", (tag, file_name, file, date, size))
-
-    # Commit changes
-    conn.commit()
+    with sqlite3.connect('file_upload.db') as conn:
+        c = conn.cursor()
+        c.execute("INSERT INTO files (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
+                  (tag, file_name, file, timestamp, file_size))
+        conn.commit()
 
     # Close Connection
     conn.close()
 
-    # # Clear text boxes
-    # f_name.delete(0, END)
-    # l_name.delete(0, END)
-    # address.delete(0, END)
-    # city.delete(0, END)
-    # state.delete(0, END)
-    # zipcode.delete(0, END)
+    tkinter.messagebox.showinfo("File Uploaded", "FILE UPLOADED SUCCESSFULLY")
+    choose_file_label.config(text="")
 
 
 def search_files():

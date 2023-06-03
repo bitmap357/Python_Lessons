@@ -44,7 +44,7 @@ def upload_file_com():
 def file_size_mb(file_path):
     size_bytes = os.path.getsize(file_path)
     size_mb = size_bytes / (1024 * 1024)
-
+    return size_mb
 
 
 def change_to_main():

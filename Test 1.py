@@ -8,6 +8,9 @@ import datetime
 import os
 
 
+dic = {}
+
+
 def upload_file_com():
     """Upload a file to the database."""
 
@@ -23,14 +26,7 @@ def upload_file_com():
         file_data = open(file_path, 'rb').read()
         # Get the file size.
         file_size = file_size_mb(file_path)
-
-        # Save the file to the database.
-        with sqlite3.connect('test.db') as conn:
-            c = conn.cursor()
-            c.execute("INSERT INTO files (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
-                      (category1.get(), file_name, file_data, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                       file_size))
-            conn.commit()
+        tag = category1.get()
 
         # Update the choose_file_label with the file name.
         choose_file_label.config(text=file_name)
@@ -38,6 +34,13 @@ def upload_file_com():
         # Insert the file into the treeview.
         trv.insert('', 'end', values=(category1.get(), file_name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                                       file_size))
+        global dic
+        dic = {
+            "tag": tag,
+            "file_name": file_name,
+            "file": file_data,
+            "file_size": file_size
+        }
 
     else:
 
@@ -91,13 +94,11 @@ def change_to_search():
     search.pack(fill='both', expand=1)
 
 
-def save(tag, file_name, file):
+def save(tag, file_name, file, file_size):
     """Save a file to the database."""
 
     # Get the current timestamp.
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-
 
     # Insert into table
     with sqlite3.connect('test.db') as conn:

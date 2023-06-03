@@ -113,17 +113,24 @@ dic = {}
 
 
 def upload_file_com():
+    """Upload a file to the database."""
+
+    # Get the file path from the user.
     file_path = filedialog.askopenfilename(
         filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx"), ("PDF files", ".pdf")])
-    file_name = Path(file_path).name
-    file_data = open(file_path, 'rb').read()
+
+    # Check if the user selected a file.
     if file_path:
-        choose_file_label.config(text=file_name)
-        # save(tag=category1.get(), file_name=file_name, file=file_data, date='', size='')
+
+        # Get the file name and data.
+        file_name = Path(file_path).name
+        file_data = open(file_path, 'rb').read()
+        # Get the file size.
+       # file_size = file_size_mb(file_path)
     else:
         choose_file_label.config(text="NO FILE CHOSEN")
     global dic
-    # dic = {....}
+
 
 
 def change_to_main():

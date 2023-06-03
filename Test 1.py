@@ -5,7 +5,7 @@ from pathlib import Path
 import sqlite3
 from tkinter.filedialog import askopenfile
 import datetime
-import os.path
+import os
 
 
 def upload_file_com():
@@ -39,6 +39,9 @@ def upload_file_com():
 
         # The user did not select a file.
         choose_file_label.config(text="NO FILE CHOSEN")
+
+def get_file_size_mb(file_path):
+
 
 
 def change_to_main():

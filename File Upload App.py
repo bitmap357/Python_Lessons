@@ -145,14 +145,14 @@ def search_files():
     # Clear existing treeview items.
     trv.delete(*trv.get_children())
 
-   # Get the search keyword from the entry.
+    # Get the search keyword from the entry.
     keyword = search_entry.get()
 
-# Create a database connection and cursor.
-    with sqlite3.connect('test.db') as conn:
+    # Create a database connection and cursor.
+    with sqlite3.connect('file_upload.db') as conn:
         c = conn.cursor()
 
- # Fetch records matching the search keyword.
+    # Fetch records matching the search keyword.
         c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
         records = c.fetchall()
 
@@ -188,12 +188,6 @@ file_upload_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
 choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3, command=lambda: upload_file_com())
 choose_file_button.place(relx=0.01, rely=0.25, anchor=W)
-
-# preview = Text(upload, height=5, width=52)
-# preview.pack()
-# trv = ttk.Treeview(upload, selectmode='browse')
-# trv.grid(row=3, column=1, columnspan=4, padx=20, pady=20)
-# trv['show'] = 'tree'
 
 
 choose_file_label = Label(upload, text="", borderwidth=1, relief='solid', padx=180, pady=6)

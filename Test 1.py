@@ -258,16 +258,16 @@ save_button.place(relx=0.3, rely=0.9)
 categories_label = Label(category, text='CATEGORIES', font=('Times New Roman', '32'))
 categories_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
-internal_button = Button(category, text='INTERNAL', padx=110, pady=50, command=change_to_search)
+internal_button = Button(category, text='INTERNAL', padx=110, pady=50, command=change_to_search_in)
 internal_button.place(relx=0.16, rely=0.2)
 
-partners_button = Button(category, text='PARTNERS', padx=90, pady=50, command=change_to_search)
+partners_button = Button(category, text='PARTNERS', padx=90, pady=50, command=change_to_search_par)
 partners_button.place(relx=0.5, rely=0.2)
 
-non_partners_button = Button(category, text='NON-PARTNERS', padx=90, pady=50, command=change_to_search)
+non_partners_button = Button(category, text='NON-PARTNERS', padx=90, pady=50, command=change_to_search_non)
 non_partners_button.place(relx=0.16, rely=0.6)
 
-other_button = Button(category, text='OTHER', padx=120, pady=50, command=change_to_search)
+other_button = Button(category, text='OTHER', padx=120, pady=50, command=change_to_search_oth)
 other_button.place(relx=0.5, rely=0.6)
 
 search_label = Label(search, text='SEARCH FILES', font=('Times New Roman', '32'))

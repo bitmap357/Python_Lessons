@@ -70,6 +70,13 @@ def upload_file_com():
         choose_file_label.config(text="NO FILE CHOSEN")
 
 
+def file_size_mb(file_path):
+    size_bytes = os.path.getsize(file_path)
+    size_mb = size_bytes / (1024 * 1024)
+    rounded = str(round(size_mb, 2))+" MB"
+    return rounded
+
+
 def change_to_main():
     main.pack(fill='both', expand=1)
     upload.pack_forget()

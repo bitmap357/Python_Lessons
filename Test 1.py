@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 from pathlib import Path
+import tkinter.messagebox
 import sqlite3
 from tkinter.filedialog import askopenfile
 import datetime
@@ -85,14 +86,62 @@ def change_to_category():
     category.pack(fill='both', expand=1)
 
 
-def change_to_search():
-    """Switch to the search screen."""
+def change_to_search(tag=None):
+    """Switch to the search screen and display files with the specified tag."""
 
     # Hide all frames except the search frame.
     main.pack_forget()
     upload.pack_forget()
     category.pack_forget()
     search.pack(fill='both', expand=1)
+
+    # Clear existing treeview items.
+    trv.delete(*trv.get_children())
+
+    # Create a database connection and cursor.
+    with sqlite3.connect('test.db') as conn:
+        c = conn.cursor()
+
+        if tag:
+            # Fetch records matching the specified tag.
+            c.execute("SELECT * FROM files WHERE tag=?", (tag,))
+        else:
+            # Fetch all records.
+            c.execute("SELECT * FROM files")
+
+        records = c.fetchall()
+
+        # Insert records into the treeview.
+        for record in records:
+            trv.insert('', 'end', values=record)
+
+    # Close the database connection.
+    conn.close()
+
+
+def change_to_search_all():
+    """Switch to the search screen and display all files."""
+    change_to_search()
+
+
+def change_to_search_in():
+    """Switch to the search screen and display internal files."""
+    change_to_search("Internal")
+
+
+def change_to_search_par():
+    """Switch to the search screen and display partner files."""
+    change_to_search("Partners")
+
+
+def change_to_search_non():
+    """Switch to the search screen and display non-partner files."""
+    change_to_search("Non-Partners")
+
+
+def change_to_search_oth():
+    """Switch to the search screen and display other files."""
+    change_to_search("Other")
 
 
 def save(tag, file_name, file, file_size):
@@ -107,6 +156,9 @@ def save(tag, file_name, file, file_size):
         c.execute("INSERT INTO files (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                   (tag, file_name, file, timestamp, file_size))
         conn.commit()
+
+    tkinter.messagebox.showinfo("File Uploaded", "FILE UPLOADED SUCCESSFULLY")
+    choose_file_label.config(text="")
 
 
 def search_files():

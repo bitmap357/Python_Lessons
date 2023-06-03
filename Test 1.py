@@ -40,7 +40,10 @@ def upload_file_com():
         # The user did not select a file.
         choose_file_label.config(text="NO FILE CHOSEN")
 
-def get_file_size_mb(file_path):
+
+def file_size_mb(file_path):
+    size_bytes = os.path.getsize(file_path)
+    size_mb = size_bytes / (1024 * 1024)
 
 
 

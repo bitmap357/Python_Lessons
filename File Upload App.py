@@ -78,59 +78,59 @@ def file_size_mb(file_path):
 
 
 def change_to_main():
-    main.pack(fill='both', expand=1)
     upload.pack_forget()
     category.pack_forget()
     search.pack_forget()
+    main.pack(fill='both', expand=1)
 
 
 def change_to_upload():
-    upload.pack(fill='both', expand=1)
     category.pack_forget()
     search.pack_forget()
     main.pack_forget()
+    upload.pack(fill='both', expand=1)
 
 
 def change_to_category():
-    category.pack(fill='both', expand=1)
     upload.pack_forget()
     search.pack_forget()
     main.pack_forget()
+    category.pack(fill='both', expand=1)
 
 
 def change_to_search_all():
-    search.pack(fill='both', expand=1)
     category.pack_forget()
     upload.pack_forget()
     main.pack_forget()
+    search.pack(fill='both', expand=1)
 
 
 def change_to_search_in():
-    search.pack(fill='both', expand=1)
     category.pack_forget()
     upload.pack_forget()
     main.pack_forget()
+    search.pack(fill='both', expand=1)
 
 
 def change_to_search_par():
-    search.pack(fill='both', expand=1)
     category.pack_forget()
     upload.pack_forget()
     main.pack_forget()
+    search.pack(fill='both', expand=1)
 
 
 def change_to_search_non():
-    search.pack(fill='both', expand=1)
     category.pack_forget()
     upload.pack_forget()
     main.pack_forget()
+    search.pack(fill='both', expand=1)
 
 
 def change_to_search_oth():
-    search.pack(fill='both', expand=1)
     category.pack_forget()
     upload.pack_forget()
     main.pack_forget()
+    search.pack(fill='both', expand=1)
 
 
 def save(tag, file_name, file, timestamp, size):

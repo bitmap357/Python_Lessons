@@ -32,6 +32,8 @@ search = Frame(root)
 main.pack()
 
 
+dic = {}
+
 
 def upload_file_com():
     file_path = filedialog.askopenfilename(

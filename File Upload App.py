@@ -1,10 +1,10 @@
-import tkinter
 from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 from pathlib import Path
 import datetime
 import sqlite3
+import os
 
 root = Tk()
 root.geometry('880x500')
@@ -36,16 +36,35 @@ dic = {}
 
 
 def upload_file_com():
+    """Upload a file to the database."""
+
+    # Get the file path from the user.
     file_path = filedialog.askopenfilename(
         filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx"), ("PDF files", ".pdf")])
 
+    # Check if the user selected a file.
     if file_path:
-        # fob = open(file).read()
-        # preview.insert(END, fob)
-        file_name = Path(file_path).stem
-        file_data = open(file_path, 'r').read()
+
+        # Get the file name and data.
+        file_name = Path(file_path).name
+        file_data = open(file_path, 'rb').read()
+        # Get the file size.
+        file_size = file_size_mb(file_path)
+        tag = category1.get()
+
+        # Update the choose_file_label with the file name.
         choose_file_label.config(text=file_name)
-        trv.insert('', 'end', values=(category1.get(), file_name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), len(file_data)))
+
+        # Insert the file into the treeview.
+        trv.insert('', 'end', values=(category1.get(), file_name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                                      file_size))
+        global dic
+        dic = {
+            "tag": tag,
+            "file_name": file_name,
+            "file": file_data,
+            "file_size": file_size
+        }
 
     else:
         choose_file_label.config(text="NO FILE CHOSEN")

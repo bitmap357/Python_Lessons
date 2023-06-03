@@ -51,6 +51,7 @@ def upload_file_com():
 def file_size_mb(file_path):
     size_bytes = os.path.getsize(file_path)
     size_mb = size_bytes / (1024 * 1024)
+    rounded =
     return size_mb
 
 
@@ -197,7 +198,8 @@ other_radio.pack(padx=10, pady=10)
 frame_2 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)
 frame_2.place(relx=0.55, rely=0.3)
 
-save_button = Button(upload, text='SAVE', padx=150, pady=3, command=lambda: save(tag=category1.get(), file_name="file_name", file="file_data"))
+save_button = Button(upload, text='SAVE', padx=150, pady=3, command=lambda: save(
+    tag=dic["tag"], file_name=dic["file_name"], file=dic["file"], file_size=dic["file_size"]))
 save_button.place(relx=0.3, rely=0.9)
 
 # Category Screen

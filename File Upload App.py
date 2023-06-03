@@ -25,13 +25,12 @@ c = conn.cursor()
 #             )''')
 
 
-
-
 main = Frame(root)
 upload = Frame(root)
 category = Frame(root)
 search = Frame(root)
 main.pack()
+
 
 
 def upload_file_com():

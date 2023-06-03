@@ -21,19 +21,23 @@ def upload_file_com():
         # Get the file name and data.
         file_name = Path(file_path).name
         file_data = open(file_path, 'rb').read()
+        # Get the file size.
+        file_size = file_size_mb(file_path)
 
         # Save the file to the database.
         with sqlite3.connect('test.db') as conn:
             c = conn.cursor()
             c.execute("INSERT INTO files (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
-                      (category1.get(), file_name, file_data, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), len(file_data)))
+                      (category1.get(), file_name, file_data, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                       file_size))
             conn.commit()
 
         # Update the choose_file_label with the file name.
         choose_file_label.config(text=file_name)
 
         # Insert the file into the treeview.
-        trv.insert('', 'end', values=(category1.get(), file_name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), len(file_data)))
+        trv.insert('', 'end', values=(category1.get(), file_name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                                      file_size))
 
     else:
 
@@ -93,8 +97,7 @@ def save(tag, file_name, file):
     # Get the current timestamp.
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-    # Get the file size.
-    file_size = len(file)
+
 
     # Insert into table
     with sqlite3.connect('test.db') as conn:

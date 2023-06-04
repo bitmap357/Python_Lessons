@@ -61,6 +61,7 @@ def upload_file_com():
                                       file_size))
         # Calling global dictionary variable
         global dic
+        # Inserting necessary Key, Value pairs
         dic = {
             "tag": tag,
             "file_name": file_name,

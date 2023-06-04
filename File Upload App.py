@@ -105,6 +105,7 @@ def change_to_category():
     category.pack(fill='both', expand=1)
 
 
+# Function to change frames to the search frame
 def change_to_search(tag=None):
     """Switch to the search screen and display files with the specified tag."""
 
@@ -118,7 +119,7 @@ def change_to_search(tag=None):
     trv.delete(*trv.get_children())
 
     # Create a database connection and cursor.
-    with sqlite3.connect('test.db') as conn:
+    with sqlite3.connect('file_upload.db') as conn:
         c = conn.cursor()
 
         if tag:

@@ -25,6 +25,7 @@ c = conn.cursor()
 #             size text
 #             )''')
 
+# Frames for the whole project
 main = Frame(root)
 upload = Frame(root)
 category = Frame(root)

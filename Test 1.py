@@ -170,20 +170,26 @@ def search_files():
     # Get the search keyword from the entry.
     keyword = search_entry.get()
 
-    # Create a database connection and cursor.
-    with sqlite3.connect('test.db') as conn:
-        c = conn.cursor()
+    if keyword == "":
+        tkinter.messagebox.showinfo("File Uploaded", "FILE UPLOADED SUCCESSFULLY")
+    else:
+        # Create a database connection and cursor.
+        with sqlite3.connect('test.db') as conn:
+            c = conn.cursor()
 
-        # Fetch records matching the search keyword.
-        c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
-        records = c.fetchall()
+            # Fetch records matching the search keyword.
+            c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
+            records = c.fetchall()
 
-        # Insert records into the treeview.
-        for record in records:
-            trv.insert('', 'end', values=record)
+            # Insert records into the treeview.
+            for record in records:
+                file_size = record[4]
+                file_size_display = f"{file_size} MB"
+                record_display = (*record[:4], file_size_display)
+                trv.insert('', 'end', values=record_display)
 
-    # Close the database connection.
-    conn.close()
+        # Close the database connection.
+        conn.close()
 
 
 # Create the main window.

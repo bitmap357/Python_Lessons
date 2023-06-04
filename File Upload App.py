@@ -32,7 +32,7 @@ category = Frame(root)
 search = Frame(root)
 main.pack()
 
-
+# Declaring empty dictionary
 dic = {}
 
 

@@ -81,6 +81,7 @@ def file_size_mb(file_path):
     return rounded
 
 
+# Changing to the main screen
 def change_to_main():
     upload.pack_forget()
     category.pack_forget()

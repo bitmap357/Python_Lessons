@@ -184,6 +184,7 @@ def save(tag, file_name, file, file_size):
     choose_file_label.config(text="")
 
 
+# Function to search files on the search screen
 def search_files():
     """Search for files in the database."""
 

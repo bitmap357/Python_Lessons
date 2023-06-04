@@ -35,7 +35,7 @@ main.pack()
 # Declaring empty dictionary
 dic = {}
 
-
+# Function for choose file button to upload file into project
 def upload_file_com():
     """Upload a file to the database."""
 

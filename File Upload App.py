@@ -68,11 +68,12 @@ def upload_file_com():
             "file": file_data,
             "file_size": file_size
         }
-
+    # Else clause in case no file is selected
     else:
         choose_file_label.config(text="NO FILE CHOSEN")
 
 
+# Getting file size in MB
 def file_size_mb(file_path):
     size_bytes = os.path.getsize(file_path)
     size_mb = size_bytes / (1024 * 1024)

@@ -97,6 +97,7 @@ def change_to_upload():
     upload.pack(fill='both', expand=1)
 
 
+# Function to change frames to the category frame
 def change_to_category():
     upload.pack_forget()
     search.pack_forget()

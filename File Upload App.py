@@ -89,6 +89,7 @@ def change_to_main():
     main.pack(fill='both', expand=1)
 
 
+# Function to change frames to the upload frame
 def change_to_upload():
     category.pack_forget()
     search.pack_forget()

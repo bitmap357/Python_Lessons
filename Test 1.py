@@ -49,6 +49,7 @@ def upload_file_com():
         choose_file_label.config(text="NO FILE CHOSEN")
 
 
+
 def file_size_mb(file_path):
     size_bytes = os.path.getsize(file_path)
     size_mb = size_bytes / (1024 * 1024)
@@ -256,7 +257,7 @@ other_radio.pack(padx=10, pady=10)
 frame_2 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)
 frame_2.place(relx=0.55, rely=0.3)
 
-save_button = Button(upload, text='SAVE', padx=150, pady=3, command=lambda: save(
+save_button = Button(upload, text='SAVE', padx=150, pady=3,  command=lambda: save(
     tag=dic["tag"], file_name=dic["file_name"], file=dic["file"], file_size=dic["file_size"]))
 save_button.place(relx=0.3, rely=0.9)
 

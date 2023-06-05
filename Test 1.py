@@ -1,3 +1,4 @@
+import tkinter
 from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
@@ -31,6 +32,8 @@ def upload_file_com():
 
         # Update the choose_file_label with the file name.
         choose_file_label.config(text=file_name)
+
+        save_button['state'] = tkinter.NORMAL
 
         # Insert the file into the treeview.
         trv.insert('', 'end', values=(category1.get(), file_name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),

@@ -9,7 +9,7 @@ from tkinter.filedialog import askopenfile
 import datetime
 import os
 
-# Declaring global dictionart
+# Declaring global dictionary
 dic = {}
 
 
@@ -166,6 +166,7 @@ def save(tag, file_name, file, file_size):
                   (tag, file_name, file, timestamp, file_size))
         conn.commit()
 
+    # Pop up message for upload successful
     tkinter.messagebox.showinfo("File Uploaded", "FILE UPLOADED SUCCESSFULLY")
     choose_file_label.config(text="")
 

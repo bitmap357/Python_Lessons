@@ -50,7 +50,8 @@ def upload_file_com():
 
         # The user did not select a file.
         choose_file_label.config(text="NO FILE CHOSEN")
-        save_button['state'] = tkinter.NORMAL
+
+        save_button['state'] = tkinter.DISABLED
 
 
 

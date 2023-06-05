@@ -39,6 +39,7 @@ def upload_file_com():
         # Insert the file into the treeview.
         trv.insert('', 'end', values=(category1.get(), file_name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                                       file_size))
+        # Dictionary to accept inputs for save function
         global dic
         dic = {
             "tag": tag,

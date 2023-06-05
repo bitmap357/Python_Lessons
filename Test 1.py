@@ -51,8 +51,8 @@ def upload_file_com():
         # The user did not select a file.
         choose_file_label.config(text="NO FILE CHOSEN")
 
+        # Disabling button because no file is chosen
         save_button['state'] = tkinter.DISABLED
-
 
 
 def file_size_mb(file_path):

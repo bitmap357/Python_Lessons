@@ -33,6 +33,7 @@ def upload_file_com():
         # Update the choose_file_label with the file name.
         choose_file_label.config(text=file_name)
 
+        # Changing state of button to normal because a file is selected
         save_button['state'] = tkinter.NORMAL
 
         # Insert the file into the treeview.

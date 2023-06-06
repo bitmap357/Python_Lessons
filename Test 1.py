@@ -45,6 +45,16 @@ c.execute('''CREATE TABLE  IF NOT EXISTS internal (
             )''')
 
 
+# Creating table for other
+c.execute('''CREATE TABLE  IF NOT EXISTS other (
+            tag text,
+            file_name text,
+            file blob,
+            date text,
+            size text
+            )''')
+
+
 def upload_file_com():
     """Upload a file to the database."""
 

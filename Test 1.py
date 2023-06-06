@@ -26,7 +26,14 @@ c.execute('''CREATE TABLE  IF NOT EXISTS partners (
             size text
             )''')
 
-
+# Creating table for non-partners
+c.execute('''CREATE TABLE  IF NOT EXISTS non-partners (
+            tag text,
+            file_name text,
+            file blob,
+            date text,
+            size text
+            )''')
 
 
 def upload_file_com():

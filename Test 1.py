@@ -124,6 +124,8 @@ def change_to_search(tag=None):
         # Inside the `search_files()` function
         for record in records:
             file_size = record[4]
+            file_size_display = f"{file_size} MB"
+
 
 
     # Close the database connection.

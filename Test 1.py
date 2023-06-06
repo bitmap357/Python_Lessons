@@ -12,6 +12,22 @@ import os
 # Declaring global dictionary
 dic = {}
 
+# Creating database and cursor
+with sqlite3.connect('test.db') as conn:
+    c = conn.cursor()
+
+# Create table for partners
+
+c.execute('''CREATE TABLE  IF NOT EXISTS partners (
+            tag text,
+            file_name text,
+            file blob,
+            date text,
+            size text
+            )''')
+
+
+
 
 def upload_file_com():
     """Upload a file to the database."""

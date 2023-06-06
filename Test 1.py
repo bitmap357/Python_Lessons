@@ -160,7 +160,13 @@ def change_to_search(tag=None):
             c.execute(query, (tag,))
         else:
             # Fetch all records.
-            c.execute("SELECT * FROM files")
+            c.execute("""SELECT * FROM partners
+                         UNION ALL
+                         SELECT * FROM non_partners
+                         UNION ALL
+                         SELECT * FROM internal
+                         UNION ALL
+                         SELECT * FROM other""")
 
         records = c.fetchall()
 

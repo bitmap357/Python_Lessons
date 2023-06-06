@@ -199,10 +199,16 @@ def search_files():
             records = c.fetchall()
 
             # Insert records into the treeview.
+            # for record in records:
+            #     file_size = record[4]
+            #     file_size_display = f"{file_size} MB"
+            #     record_display = (*record[:4], file_size_display)
+            #     trv.insert('', 'end', values=record_display)
+
             for record in records:
                 file_size = record[4]
                 file_size_display = f"{file_size} MB"
-                record_display = (*record[:4], file_size_display)
+                record_display = (*record[:3], file_size_display, record[3])  # Modified line
                 trv.insert('', 'end', values=record_display)
 
         # Close the database connection.

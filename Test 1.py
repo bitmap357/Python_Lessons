@@ -121,8 +121,10 @@ def change_to_search(tag=None):
         records = c.fetchall()
 
         # Insert records into the treeview.
+        # Inside the `search_files()` function
         for record in records:
-            trv.insert('', 'end', values=record)
+            file_size = record[4]
+
 
     # Close the database connection.
     conn.close()

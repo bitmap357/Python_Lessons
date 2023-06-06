@@ -155,7 +155,9 @@ def change_to_search(tag=None):
 
         if tag:
             # Fetch records matching the specified tag.
-            c.execute("SELECT * FROM files WHERE tag=?", (tag,))
+            table_name = tag.lower()
+            query = "SELECT * FROM {} WHERE tag=?".format(table_name)
+            c.execute(query, (tag,))
         else:
             # Fetch all records.
             c.execute("SELECT * FROM files")
@@ -192,7 +194,7 @@ def change_to_search_par():
 
 def change_to_search_non():
     """Switch to the search screen and display non-partner files."""
-    change_to_search("Non-Partners")
+    change_to_search("Non_Partners")
 
 
 def change_to_search_oth():
@@ -311,7 +313,7 @@ internal_radio = Radiobutton(frame_1, text='Internal File', value='Internal', va
                              font=('Times New Roman', '14'))
 partners_radio = Radiobutton(frame_1, text='Partners File', value='Partners', variable=category1,
                              font=('Times New Roman', '14'))
-non_partners_radio = Radiobutton(frame_1, text='Non-Partners File', value='Non-Partners File',  variable=category1,
+non_partners_radio = Radiobutton(frame_1, text='Non-Partners File', value='Non_Partners',  variable=category1,
                              font=('Times New Roman', '14'))
 other_radio = Radiobutton(frame_1, text='Other File', value='Other', variable=category1, font=('Times New Roman', '14'))
 

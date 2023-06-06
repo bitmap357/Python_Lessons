@@ -134,7 +134,11 @@ def change_to_search(tag=None):
 
         # Insert records into the treeview.
         for record in records:
-            trv.insert('', 'end', values=record)
+            file_size = record[4]
+            date = record[3]
+            file_size_display = f"{file_size} MB"
+            record_display = (record[0], record[1], date, file_size)  # Modified line
+            trv.insert('', 'end', values=record_display)
 
     # Close the database connection.
     conn.close()

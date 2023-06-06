@@ -125,8 +125,7 @@ def change_to_search(tag=None):
         for record in records:
             file_size = record[4]
             file_size_display = f"{file_size} MB"
-
-
+            record_display = (*record[:3], file_size_display, record[3])  # Modified line
 
     # Close the database connection.
     conn.close()

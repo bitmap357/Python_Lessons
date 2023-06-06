@@ -60,7 +60,7 @@ def upload_file_com():
 
     # Get the file path from the user.
     file_path = filedialog.askopenfilename(
-        filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx"), ("PDF files", ".pdf")])
+        filetypes=[("DOCX files", ".docx"), ("TXT files", ".txt"), ("DOC files", ".doc"), ("PDF files", ".pdf")])
 
     # Check if the user selected a file.
     if file_path:
@@ -158,6 +158,7 @@ def change_to_search(tag=None):
             table_name = tag.lower()
             query = "SELECT * FROM {} WHERE tag=?".format(table_name)
             c.execute(query, (tag,))
+            records = c.fetchall()
         else:
             # Fetch all records.
             c.execute("""SELECT * FROM partners
@@ -167,8 +168,9 @@ def change_to_search(tag=None):
                          SELECT * FROM internal
                          UNION ALL
                          SELECT * FROM other""")
+            records = c.fetchall()
 
-        records = c.fetchall()
+
 
         # Insert records into the treeview.
         # Inside the `search_files()` function

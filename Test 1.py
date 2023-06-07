@@ -44,7 +44,6 @@ c.execute('''CREATE TABLE  IF NOT EXISTS internal (
             size text
             )''')
 
-
 # Creating table for other
 c.execute('''CREATE TABLE  IF NOT EXISTS other (
             tag text,
@@ -103,7 +102,7 @@ def upload_file_com():
 def file_size_mb(file_path):
     size_bytes = os.path.getsize(file_path)
     size_mb = size_bytes / (1024 * 1024)
-    rounded = str(round(size_mb, 2))+" MB"
+    rounded = str(round(size_mb, 2)) + " MB"
     return rounded
 
 
@@ -336,8 +335,8 @@ internal_radio = Radiobutton(frame_1, text='Internal File', value='Internal', va
                              font=('Times New Roman', '14'))
 partners_radio = Radiobutton(frame_1, text='Partners File', value='Partners', variable=category1,
                              font=('Times New Roman', '14'))
-non_partners_radio = Radiobutton(frame_1, text='Non-Partners File', value='Non_Partners',  variable=category1,
-                             font=('Times New Roman', '14'))
+non_partners_radio = Radiobutton(frame_1, text='Non-Partners File', value='Non_Partners', variable=category1,
+                                 font=('Times New Roman', '14'))
 other_radio = Radiobutton(frame_1, text='Other File', value='Other', variable=category1, font=('Times New Roman', '14'))
 
 internal_radio.pack(padx=10, pady=10)

@@ -70,6 +70,7 @@ def upload_file_com():
         # Get the file size.
         file_size = file_size_mb(file_path)
         tag = category1.get()
+        print(tag)
 
         # Update the choose_file_label with the file name.
         choose_file_label.config(text=file_name)

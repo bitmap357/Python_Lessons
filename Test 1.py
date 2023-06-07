@@ -217,9 +217,11 @@ def save(tag, file_name, file, file_size):
     # Insert into table
     with sqlite3.connect('test.db') as conn:
         c = conn.cursor()
+        # Inserting file into partners database
         if tag == "partners":
             c.execute("INSERT INTO partners (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
+        # Inserting file into partners database
         if tag == "non_partners":
             c.execute("INSERT INTO non_partners (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))

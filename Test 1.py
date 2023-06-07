@@ -170,8 +170,6 @@ def change_to_search(tag=None):
                          SELECT * FROM other""")
             records = c.fetchall()
 
-
-
         # Insert records into the treeview.
         # Inside the `search_files()` function
         for record in records:
@@ -222,13 +220,13 @@ def save(tag, file_name, file, file_size):
         if tag == "partners":
             c.execute("INSERT INTO partners (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
-        elif tag == "non_partners":
+        if tag == "non_partners":
             c.execute("INSERT INTO non_partners (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
-        elif tag == "internal":
+        if tag == "internal":
             c.execute("INSERT INTO internal (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
-        else:
+        if tag == "other":
             c.execute("INSERT INTO other (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
         conn.commit()

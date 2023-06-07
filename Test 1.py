@@ -149,12 +149,10 @@ def change_to_search(tag=None):
     # Create a database connection and cursor.
     with sqlite3.connect('test.db') as conn:
         c = conn.cursor()
-        print(tag)
 
         if tag:
             # Fetch records matching the specified tag.
             table_name = tag.lower()
-            print(table_name)
             query = "SELECT * FROM {} WHERE tag=?".format(table_name)
             c.execute(query, (tag,))
             records = c.fetchall()

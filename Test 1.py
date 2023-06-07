@@ -214,6 +214,8 @@ def save(tag, file_name, file, file_size):
     # Get the current timestamp.
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+    tag = category1.get()
+
     # Insert into table
     with sqlite3.connect('test.db') as conn:
         c = conn.cursor()

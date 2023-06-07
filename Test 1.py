@@ -69,8 +69,6 @@ def upload_file_com():
         file_data = open(file_path, 'rb').read()
         # Get the file size.
         file_size = file_size_mb(file_path)
-        tag = category1.get()
-        print(tag)
 
         # Update the choose_file_label with the file name.
         choose_file_label.config(text=file_name)
@@ -85,7 +83,6 @@ def upload_file_com():
         # Dictionary to accept inputs for save function
         global dic
         dic = {
-            "tag": tag,
             "file_name": file_name,
             "file": file_data,
             "file_size": file_size
@@ -210,12 +207,14 @@ def change_to_search_oth():
     change_to_search("Other")
 
 
-def save(tag, file_name, file, file_size):
+def save(file_name, file, file_size):
     """Save a file to the database."""
-    print(tag, file_name, file_size)
 
     # Get the current timestamp.
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Getting tag from code
+    tag = category1.get()
 
     # Insert into table
     with sqlite3.connect('test.db') as conn:
@@ -349,7 +348,7 @@ frame_2 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=1
 frame_2.place(relx=0.55, rely=0.3)
 
 save_button = Button(upload, text='SAVE', padx=150, pady=3, state=DISABLED, command=lambda: save(
-    tag=dic["tag"], file_name=dic["file_name"], file=dic["file"], file_size=dic["file_size"]))
+    file_name=dic["file_name"], file=dic["file"], file_size=dic["file_size"]))
 save_button.place(relx=0.3, rely=0.9)
 
 # Category Screen

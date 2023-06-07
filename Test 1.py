@@ -221,7 +221,7 @@ def save(tag, file_name, file, file_size):
         if tag == "partners":
             c.execute("INSERT INTO partners (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
-        # Inserting file into partners database
+        # Inserting file into non-partners database
         if tag == "non_partners":
             c.execute("INSERT INTO non_partners (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))

@@ -221,19 +221,19 @@ def save(tag, file_name, file, file_size):
     with sqlite3.connect('test.db') as conn:
         c = conn.cursor()
         # Inserting file into partners database
-        if tag == "partners":
+        if tag == "Partners":
             c.execute("INSERT INTO partners (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
         # Inserting file into non-partners database
-        if tag == "non_partners":
+        if tag == "Non_Partners":
             c.execute("INSERT INTO non_partners (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
         # Inserting file into internal database
-        if tag == "internal":
+        if tag == "Internal":
             c.execute("INSERT INTO internal (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
         # Inserting file into other database
-        if tag == "other":
+        if tag == "Other":
             c.execute("INSERT INTO other (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
         conn.commit()

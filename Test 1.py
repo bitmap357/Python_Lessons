@@ -210,11 +210,10 @@ def change_to_search_oth():
 
 def save(tag, file_name, file, file_size):
     """Save a file to the database."""
+    print(tag, file_name, file_size)
 
     # Get the current timestamp.
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    tag = category1.get()
 
     # Insert into table
     with sqlite3.connect('test.db') as conn:

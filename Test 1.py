@@ -19,12 +19,6 @@ with sqlite3.connect('test.db') as conn:
 
 # Create table for partners
 
-c.execute("DROP TABLE IF EXISTS files")
-c.execute("DROP TABLE IF EXISTS partners")
-c.execute("DROP TABLE IF EXISTS non_partners")
-c.execute("DROP TABLE IF EXISTS internal")
-c.execute("DROP TABLE IF EXISTS other")
-
 
 c.execute('''CREATE TABLE  IF NOT EXISTS partners (
             tag text,
@@ -184,8 +178,7 @@ def change_to_search(tag=None):
         for record in records:
             file_size = record[4]
             date = record[3]
-            file_size_display = f"{file_size} MB"
-            record_display = (record[0], record[1], date, file_size_display)  # Modified line
+            record_display = (record[0], record[1], date, file_size)  # Modified line
             trv.insert('', 'end', values=record_display)
 
 
@@ -273,17 +266,35 @@ def search_files():
         # Fetch records matching the search keyword.
         # Calling global table_name
         global table_name
-        print(table_name)
-        query = "SELECT * FROM {} WHERE file_name LIKE ?".format(table_name)
 
-        c.execute(query, ('%' + keyword + '%',))
-        records = c.fetchall()
+        if table_name == '':
+            query = """SELECT * FROM partners WHERE file_name LIKE ?
+                     UNION ALL
+                     SELECT * FROM non_partners WHERE file_name LIKE ?
+                     UNION ALL
+                     SELECT * FROM internal WHERE file_name LIKE ?
+                     UNION ALL
+                     SELECT * FROM other WHERE file_name LIKE ?"""
+            c.execute(query, ('%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%'))
+            records = c.fetchall()
 
-        for record in records:
-            file_size = record[4]
-            date = record[3]
-            record_display = (record[0], record[1], date, file_size)  # Modified line
-            trv.insert('', 'end', values=record_display)
+            for record in records:
+                file_size = record[4]
+                date = record[3]
+                record_display = (record[0], record[1], date, file_size)  # Modified line
+                trv.insert('', 'end', values=record_display)
+
+        else:
+            query = "SELECT * FROM {} WHERE file_name LIKE ?".format(table_name)
+
+            c.execute(query, ('%' + keyword + '%',))
+            records = c.fetchall()
+
+            for record in records:
+                file_size = record[4]
+                date = record[3]
+                record_display = (record[0], record[1], date, file_size)  # Modified line
+                trv.insert('', 'end', values=record_display)
 
 
 # Create the main window.

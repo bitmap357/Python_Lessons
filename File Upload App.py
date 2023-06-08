@@ -316,9 +316,12 @@ category_label = Label(frame_1, text='SELECT CATEGORY', font=('Times New Roman',
 category_label.pack()
 
 category1 = StringVar(value='Other')
-internal_radio = Radiobutton(frame_1, text='Internal File', value='Internal', variable=category1, font=('Times New Roman', '14'))
-partners_radio = Radiobutton(frame_1, text='Partners File', value='Partners', variable=category1, font=('Times New Roman', '14'))
-non_partners_radio = Radiobutton(frame_1, text='Non-Partners File', value='Non-Partners', variable=category1, font=('Times New Roman', '14'))
+internal_radio = Radiobutton(frame_1, text='Internal File', value='Internal', variable=category1,
+                             font=('Times New Roman', '14'))
+partners_radio = Radiobutton(frame_1, text='Partners File', value='Partners', variable=category1,
+                             font=('Times New Roman', '14'))
+non_partners_radio = Radiobutton(frame_1, text='Non-Partners File', value='Non_Partners', variable=category1,
+                                 font=('Times New Roman', '14'))
 other_radio = Radiobutton(frame_1, text='Other File', value='Other', variable=category1, font=('Times New Roman', '14'))
 
 
@@ -332,7 +335,7 @@ frame_2.place(relx=0.55, rely=0.3)
 
 
 save_button = Button(upload, text='SAVE', padx=150, pady=3, command=lambda: save(
-    tag=dic["tag"], file_name=dic["file_name"], file=dic["file"], file_size=dic["file_size"]))
+                    file_name=dic["file_name"], file=dic["file"], file_size=dic["file_size"]))
 save_button.place(relx=0.3, rely=0.9)
 
 

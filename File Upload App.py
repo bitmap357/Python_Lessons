@@ -1,3 +1,4 @@
+import tkinter
 from tkinter import *
 from tkinter import ttk
 import tkinter.messagebox
@@ -17,13 +18,40 @@ c = conn.cursor()
 
 # Create table
 
-# c.execute('''CREATE TABLE files (
-#             tag text,
-#             file_name text,
-#             file blob,
-#             date text,
-#             size text
-#             )''')
+c.execute('''CREATE TABLE  IF NOT EXISTS partners (
+            tag text,
+            file_name text,
+            file blob,
+            date text,
+            size text
+            )''')
+
+# Creating table for non-partners
+c.execute('''CREATE TABLE  IF NOT EXISTS non_partners (
+            tag text,
+            file_name text,
+            file blob,
+            date text,
+            size text
+            )''')
+
+# Creating table for internal
+c.execute('''CREATE TABLE  IF NOT EXISTS internal (
+            tag text,
+            file_name text,
+            file blob,
+            date text,
+            size text
+            )''')
+
+# Creating table for other
+c.execute('''CREATE TABLE  IF NOT EXISTS other (
+            tag text,
+            file_name text,
+            file blob,
+            date text,
+            size text
+            )''')
 
 # Frames for the whole project
 main = Frame(root)

@@ -156,6 +156,8 @@ def change_to_search(tag=None):
             query = "SELECT * FROM {} WHERE tag=?".format(table_name)
             c.execute(query, (tag,))
             records = c.fetchall()
+
+
         else:
             # Fetch all records.
             c.execute("""SELECT * FROM partners
@@ -364,6 +366,7 @@ non_partners_button.place(relx=0.16, rely=0.6)
 
 other_button = Button(category, text='OTHER', padx=120, pady=50, command=change_to_search_oth)
 other_button.place(relx=0.5, rely=0.6)
+
 
 search_label = Label(search, text='SEARCH FILES', font=('Times New Roman', '32'))
 search_label.place(relx=0.5, rely=0.1, anchor=CENTER)

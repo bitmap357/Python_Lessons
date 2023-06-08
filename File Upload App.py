@@ -157,7 +157,11 @@ def change_to_search(tag=None):
 
         if tag:
             # Fetch records matching the specified tag.
-            c.execute("SELECT * FROM files WHERE tag=?", (tag,))
+            table_name = tag.lower()
+            query = "SELECT * FROM {} WHERE tag=?".format(table_name)
+            c.execute(query, (tag,))
+            records = c.fetchall()
+
         else:
             # Fetch all records.
             c.execute("SELECT * FROM files")

@@ -146,7 +146,6 @@ def change_to_search(tag=None):
     # Clear existing treeview items.
     trv.delete(*trv.get_children())
 
-
     # Create a database connection and cursor.
     with sqlite3.connect('test.db') as conn:
         c = conn.cursor()
@@ -186,7 +185,6 @@ def change_to_search_all():
     """Switch to the search screen and display all files."""
     change_to_search()
     treeview_label.config(text="All")
-
 
 
 def change_to_search_in():
@@ -260,30 +258,34 @@ def search_files():
     # Get the search keyword from the entry.
     keyword = search_entry.get()
 
-    if keyword == "":
-        tkinter.messagebox.showinfo("File Uploaded", "FILE UPLOADED SUCCESSFULLY")
-    else:
-        # Create a database connection and cursor.
-        with sqlite3.connect('test.db') as conn:
-            c = conn.cursor()
+    # Create a database connection and cursor.
+    with sqlite3.connect('test.db') as conn:
+        c = conn.cursor()
 
-            # Fetch records matching the search keyword.
+        # Fetch records matching the search keyword.
+        if tag == "Partners":
             c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
-            records = c.fetchall()
+        # Inserting file into non-partners database
+        if tag == "Non_Partners":
+            c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
+        # Inserting file into internal database
+        if tag == "Internal":
+            c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
+        # Inserting file into other database
+        if tag == "Other":
+            c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
 
-            # Insert records into the treeview.
-            # for record in records:
-            #     file_size = record[4]
-            #     file_size_display = f"{file_size} MB"
-            #     record_display = (*record[:4], file_size_display)
-            #     trv.insert('', 'end', values=record_display)
+        c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
+        records = c.fetchall()
 
-            for record in records:
-                file_size = record[4]
-                date = record[3]
-                file_size_display = f"{file_size} MB"
-                record_display = (record[0], record[1], date, file_size_display)  # Modified line
-                trv.insert('', 'end', values=record_display)
+
+
+        for record in records:
+            file_size = record[4]
+            date = record[3]
+            file_size_display = f"{file_size} MB"
+            record_display = (record[0], record[1], date, file_size_display)  # Modified line
+            trv.insert('', 'end', values=record_display)
 
         # Close the database connection.
         conn.close()

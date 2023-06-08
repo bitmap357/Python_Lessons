@@ -370,6 +370,9 @@ non_partners_button.place(relx=0.16, rely=0.6)
 other_button = Button(category, text='OTHER', padx=120, pady=50, command=change_to_search_oth)
 other_button.place(relx=0.5, rely=0.6)
 
+all_button = Button(category, text='ALL', padx=258, pady=15, command=change_to_search_all)
+all_button.place(relx=0.16, rely=0.85)
+
 
 # Search Screen
 search_label = Label(search, text='SEARCH FILES', font=('Times New Roman', '32'))

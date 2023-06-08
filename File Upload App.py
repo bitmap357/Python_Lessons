@@ -70,7 +70,7 @@ def upload_file_com():
 
     # Get the file path from the user.
     file_path = filedialog.askopenfilename(
-        filetypes=[("TXT files", ".txt"), ("DOC files", ".doc"), ("DOCX files", ".docx"), ("PDF files", ".pdf")])
+        filetypes=[("DOCX files", ".docx"), ("TXT files", ".txt"), ("DOC files", ".doc"), ("PDF files", ".pdf")])
 
     # Check if the user selected a file.
     if file_path:
@@ -80,7 +80,6 @@ def upload_file_com():
         file_data = open(file_path, 'rb').read()
         # Get the file size.
         file_size = file_size_mb(file_path)
-        tag = category1.get()
 
         # Update the choose_file_label with the file name.
         choose_file_label.config(text=file_name)

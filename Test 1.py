@@ -11,6 +11,7 @@ import os
 
 # Declaring global dictionary
 dic = {}
+table_name = ''
 
 # Creating database and cursor
 with sqlite3.connect('test.db') as conn:
@@ -146,6 +147,9 @@ def change_to_search(tag=None):
     # Clear existing treeview items.
     trv.delete(*trv.get_children())
 
+    # Calling global table_name
+    global table_name
+
     # Create a database connection and cursor.
     with sqlite3.connect('test.db') as conn:
         c = conn.cursor()
@@ -266,28 +270,17 @@ def search_files():
         c = conn.cursor()
 
         # Fetch records matching the search keyword.
-        if tag == "Partners":
-            c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
-        # Inserting file into non-partners database
-        if tag == "Non_Partners":
-            c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
-        # Inserting file into internal database
-        if tag == "Internal":
-            c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
-        # Inserting file into other database
-        if tag == "Other":
-            c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
+        # Calling global table_name
+        global table_name
+        query = "SELECT * FROM {} WHERE file_name LIKE ?".format(table_name)
 
-        c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
+        c.execute(query, ('%' + keyword + '%',))
         records = c.fetchall()
-
-
 
         for record in records:
             file_size = record[4]
             date = record[3]
-            file_size_display = f"{file_size} MB"
-            record_display = (record[0], record[1], date, file_size_display)  # Modified line
+            record_display = (record[0], record[1], date, file_size)  # Modified line
             trv.insert('', 'end', values=record_display)
 
         # Close the database connection.

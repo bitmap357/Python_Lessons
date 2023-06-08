@@ -181,9 +181,6 @@ def change_to_search(tag=None):
             record_display = (record[0], record[1], date, file_size_display)  # Modified line
             trv.insert('', 'end', values=record_display)
 
-    # Close the database connection.
-    conn.close()
-
 
 def change_to_search_all():
     """Switch to the search screen and display all files."""

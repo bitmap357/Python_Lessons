@@ -164,14 +164,13 @@ def change_to_search(tag=None):
 
         else:
             c.execute("""SELECT * FROM partners
-                                     UNION ALL
-                                     SELECT * FROM non_partners
-                                     UNION ALL
-                                     SELECT * FROM internal
-                                     UNION ALL
-                                     SELECT * FROM other""")
+                         UNION ALL
+                         SELECT * FROM non_partners
+                         UNION ALL
+                         SELECT * FROM internal
+                         UNION ALL
+                         SELECT * FROM other""")
             records = c.fetchall()
-
 
         # Insert records into the treeview.
         for record in records:
@@ -202,7 +201,7 @@ def change_to_search_par():
 
 def change_to_search_non():
     """Switch to the search screen and display non-partner files."""
-    change_to_search("Non-Partners")
+    change_to_search("Non_Partners")
 
 
 def change_to_search_oth():
@@ -210,11 +209,14 @@ def change_to_search_oth():
     change_to_search("Other")
 
 
-def save(tag, file_name, file, file_size):
+def save(file_name, file, file_size):
     """Save a file to the database."""
 
     # Get the current timestamp.
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # Getting tag from code
+    tag = category1.get()
 
     # Insert into table
     with sqlite3.connect('file_upload.db') as conn:

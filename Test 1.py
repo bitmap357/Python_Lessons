@@ -146,6 +146,7 @@ def change_to_search(tag=None):
     # Clear existing treeview items.
     trv.delete(*trv.get_children())
 
+
     # Create a database connection and cursor.
     with sqlite3.connect('test.db') as conn:
         c = conn.cursor()
@@ -184,26 +185,32 @@ def change_to_search(tag=None):
 def change_to_search_all():
     """Switch to the search screen and display all files."""
     change_to_search()
+    treeview_label.config(text="All")
+
 
 
 def change_to_search_in():
     """Switch to the search screen and display internal files."""
     change_to_search("Internal")
+    treeview_label.config(text="Internal")
 
 
 def change_to_search_par():
     """Switch to the search screen and display partner files."""
     change_to_search("Partners")
+    treeview_label.config(text="Partners")
 
 
 def change_to_search_non():
     """Switch to the search screen and display non-partner files."""
     change_to_search("Non_Partners")
+    treeview_label.config(text="Non-Partners")
 
 
 def change_to_search_oth():
     """Switch to the search screen and display other files."""
     change_to_search("Other")
+    treeview_label.config(text="Other")
 
 
 def save(file_name, file, file_size):

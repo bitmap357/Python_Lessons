@@ -19,6 +19,13 @@ with sqlite3.connect('test.db') as conn:
 
 # Create table for partners
 
+c.execute("DROP TABLE IF EXISTS files")
+c.execute("DROP TABLE IF EXISTS partners")
+c.execute("DROP TABLE IF EXISTS non_partners")
+c.execute("DROP TABLE IF EXISTS internal")
+c.execute("DROP TABLE IF EXISTS other")
+
+
 c.execute('''CREATE TABLE  IF NOT EXISTS partners (
             tag text,
             file_name text,
@@ -256,9 +263,6 @@ def search_files():
     # Clear existing treeview items.
     trv.delete(*trv.get_children())
 
-    # Getting tag from code
-    tag = category1.get()
-
     # Get the search keyword from the entry.
     keyword = search_entry.get()
 
@@ -269,6 +273,7 @@ def search_files():
         # Fetch records matching the search keyword.
         # Calling global table_name
         global table_name
+        print(table_name)
         query = "SELECT * FROM {} WHERE file_name LIKE ?".format(table_name)
 
         c.execute(query, ('%' + keyword + '%',))

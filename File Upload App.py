@@ -221,8 +221,22 @@ def save(file_name, file, file_size):
     # Insert into table
     with sqlite3.connect('file_upload.db') as conn:
         c = conn.cursor()
-        c.execute("INSERT INTO files (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
-                  (tag, file_name, file, timestamp, file_size))
+        # Inserting file into partners database
+        if tag == "Partners":
+            c.execute("INSERT INTO partners (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
+                      (tag, file_name, file, timestamp, file_size))
+        # Inserting file into non-partners database
+        if tag == "Non_Partners":
+            c.execute("INSERT INTO non_partners (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
+                      (tag, file_name, file, timestamp, file_size))
+        # Inserting file into internal database
+        if tag == "Internal":
+            c.execute("INSERT INTO internal (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
+                      (tag, file_name, file, timestamp, file_size))
+        # Inserting file into other database
+        if tag == "Other":
+            c.execute("INSERT INTO other (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
+                      (tag, file_name, file, timestamp, file_size))
         conn.commit()
 
     # Close Connection

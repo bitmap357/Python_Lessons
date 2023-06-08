@@ -163,10 +163,15 @@ def change_to_search(tag=None):
             records = c.fetchall()
 
         else:
-            # Fetch all records.
-            c.execute("SELECT * FROM files")
+            c.execute("""SELECT * FROM partners
+                                     UNION ALL
+                                     SELECT * FROM non_partners
+                                     UNION ALL
+                                     SELECT * FROM internal
+                                     UNION ALL
+                                     SELECT * FROM other""")
+            records = c.fetchall()
 
-        records = c.fetchall()
 
         # Insert records into the treeview.
         for record in records:

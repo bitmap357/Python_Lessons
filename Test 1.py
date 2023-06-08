@@ -157,7 +157,6 @@ def change_to_search(tag=None):
             c.execute(query, (tag,))
             records = c.fetchall()
 
-
         else:
             # Fetch all records.
             c.execute("""SELECT * FROM partners

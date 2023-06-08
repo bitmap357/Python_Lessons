@@ -245,6 +245,9 @@ def save(file_name, file, file_size):
     tkinter.messagebox.showinfo("File Uploaded", "FILE UPLOADED SUCCESSFULLY")
     choose_file_label.config(text="")
 
+    # Disabling button because no file is chosen
+    save_button['state'] = tkinter.DISABLED
+
 
 # Function to search files on the search screen
 def search_files():

@@ -192,6 +192,7 @@ def change_to_search_in():
     """Switch to the search screen and display internal files."""
     change_to_search("Internal")
     treeview_label.config(text="Internal")
+    trv.column("#1", width=0, stretch=tkinter.NO)
 
 
 def change_to_search_par():
@@ -396,7 +397,7 @@ search_button = Button(search, text='SEARCH', padx=50, pady=3, command=search_fi
 search_button.place(relx=0.7, rely=0.2, anchor=CENTER)
 
 treeview_label = Label(search, text="", font=('Times New Roman', '11'))
-treeview_label.place(relx=0.158, rely=0.23)
+treeview_label.place(relx=0.5, rely=0.25, anchor=CENTER)
 
 trv = ttk.Treeview(search, columns=('1', '2', '3', '4'), show="headings", height=15)
 trv.place(relx=0.5, rely=0.6, anchor=CENTER)

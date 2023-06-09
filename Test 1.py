@@ -302,7 +302,10 @@ def search_files():
                 trv.insert('', 'end', values=record_display)
 
 
-
+def delete():
+    global table_name
+    query = "DELETE FROM {} WHERE id=?".format(table_name)
+    c.execute(query, ())
 
 
 def popup():

@@ -308,7 +308,7 @@ def delete():
     c.execute(query, ())
 
 
-def popup():
+def popup(event):
     toplevel = Toplevel(root)
 
     toplevel.title("Delete or Modify")

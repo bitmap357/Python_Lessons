@@ -302,6 +302,26 @@ def search_files():
                 trv.insert('', 'end', values=record_display)
 
 
+
+
+
+def popup():
+    toplevel = Toplevel(root)
+
+    toplevel.title("Kill window")
+    toplevel.geometry("230x100")
+
+    l1 = Label(toplevel, image="::tk::icons::question")
+    l1.grid(row=0, column=0)
+    l2 = Label(toplevel, text="Are you sure you want to Quit")
+    l2.grid(row=0, column=1, columnspan=3)
+
+    b1 = Button(toplevel, text="Yes", command=root.destroy, width=10)
+    b1.grid(row=1, column=1)
+    b2 = Button(toplevel, text="No", command=toplevel.destroy, width=10)
+    b2.grid(row=1, column=2)
+
+
 # Create the main window.
 root = Tk()
 root.geometry('880x500')
@@ -418,6 +438,8 @@ trv.column(4, width=100, anchor=CENTER)
 scroll = ttk.Scrollbar(search, orient='vertical', command=trv.yview)
 scroll.place(relx=0.95, rely=0.5, anchor=E)
 trv.configure(yscrollcommand=scroll.set)
+trv.bind("<Button-1>", popup)
+
 
 # Start the main loop.
 root.mainloop()

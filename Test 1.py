@@ -186,6 +186,7 @@ def change_to_search_all():
     """Switch to the search screen and display all files."""
     change_to_search()
     treeview_label.config(text="All")
+    trv.column("#1", width=100, stretch=tkinter.NO)
 
 
 def change_to_search_in():
@@ -410,7 +411,7 @@ trv.column(1, width=100, anchor=CENTER)
 trv.heading(2, text="File Name")
 trv.column(2, width=300, anchor=CENTER)
 trv.heading(3, text="Date")
-trv.column(3, width=100, anchor=CENTER)
+trv.column(3, width=150, anchor=CENTER)
 trv.heading(4, text="Size")
 trv.column(4, width=100, anchor=CENTER)
 

@@ -199,18 +199,21 @@ def change_to_search_par():
     """Switch to the search screen and display partner files."""
     change_to_search("Partners")
     treeview_label.config(text="Partners")
+    trv.column("#1", width=0, stretch=tkinter.NO)
 
 
 def change_to_search_non():
     """Switch to the search screen and display non-partner files."""
     change_to_search("Non_Partners")
     treeview_label.config(text="Non-Partners")
+    trv.column("#1", width=0, stretch=tkinter.NO)
 
 
 def change_to_search_oth():
     """Switch to the search screen and display other files."""
     change_to_search("Other")
     treeview_label.config(text="Other")
+    trv.column("#1", width=0, stretch=tkinter.NO)
 
 
 def save(file_name, file, file_size):

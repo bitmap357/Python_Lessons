@@ -158,9 +158,10 @@ def change_to_search(tag=None):
         if tag:
             # Fetch records matching the specified tag.
             table_name = tag.lower()
-            query = "SELECT * FROM {} WHERE tag=?".format(table_name)
+            query = "SELECT *, oid FROM {} WHERE tag=?".format(table_name)
             c.execute(query, (tag,))
             records = c.fetchall()
+            print(records)
 
         else:
             # Fetch all records.
@@ -176,8 +177,8 @@ def change_to_search(tag=None):
         # Insert records into the treeview.
         # Inside the `search_files()` function
         for record in records:
-            file_size = record[4]
-            date = record[3]
+            file_size = record[3]
+            date = record[2]
             record_display = (record[0], record[1], date, file_size)  # Modified line
             trv.insert('', 'end', values=record_display)
 

@@ -321,7 +321,7 @@ def delete():
     global table_name
     query = "DELETE FROM {} WHERE oid=?".format(table_name)
 
-    c.execute(query, ())
+    c.execute(query, (entry_id,))
 
 
 def popup(event):

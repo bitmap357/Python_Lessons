@@ -13,6 +13,7 @@ import os
 dic = {}
 table_name = ''
 toplevel = ''
+cat = ''
 
 # Creating database and cursor
 with sqlite3.connect('test.db') as conn:
@@ -151,6 +152,8 @@ def change_to_search(tag=None):
 
     # Calling global table_name
     global table_name
+    global cat
+    cat = tag
 
     # Create a database connection and cursor.
     with sqlite3.connect('test.db') as conn:
@@ -339,16 +342,16 @@ def delete():
         c = conn.cursor()
 
     global table_name
-    global tag
+    global cat
 
     query1 = "DELETE FROM {} WHERE oid=?".format(table_name)
     c.execute(query1, (entry_id,))
     trv.delete(*trv.get_children())
 
-    if tag:
+    if cat:
         # Fetch records matching the specified tag.
         query = "SELECT *, oid FROM {} WHERE tag=?".format(table_name)
-        c.execute(query, (tag,))
+        c.execute(query, (cat,))
         records = c.fetchall()
 
     else:

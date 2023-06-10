@@ -161,7 +161,6 @@ def change_to_search(tag=None):
             query = "SELECT *, oid FROM {} WHERE tag=?".format(table_name)
             c.execute(query, (tag,))
             records = c.fetchall()
-            print(records)
 
         else:
             # Fetch all records.
@@ -181,6 +180,7 @@ def change_to_search(tag=None):
             date = record[3]
             record_display = (record[0], record[1], date, file_size, record[5])  # Modified line
             trv.insert('', 'end', values=record_display)
+    conn.commit()
 
 
 def change_to_search_all():
@@ -301,6 +301,7 @@ def search_files():
                 date = record[3]
                 record_display = (record[0], record[1], date, file_size)  # Modified line
                 trv.insert('', 'end', values=record_display)
+    conn.commit()
 
 
 # Create function to delete a record
@@ -312,7 +313,7 @@ def delete():
     values = trv.item(selected_item, 'values')
 
     # Extract the file name (assuming it's in the second column)
-    entry_id = values[5]
+    entry_id = values[4]
 
     # Create a database connection and cursor.
     with sqlite3.connect('test.db') as conn:
@@ -322,6 +323,8 @@ def delete():
     query = "DELETE FROM {} WHERE oid=?".format(table_name)
 
     c.execute(query, (entry_id,))
+
+    conn.commit()
 
 
 def popup(event):

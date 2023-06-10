@@ -303,9 +303,15 @@ def search_files():
                 trv.insert('', 'end', values=record_display)
 
 
+# Create function to delete a record
 def delete():
+    # Create a database connection and cursor.
+    with sqlite3.connect('test.db') as conn:
+        c = conn.cursor()
+
     global table_name
-    query = "DELETE FROM {} WHERE id=?".format(table_name)
+    query = "DELETE FROM {} WHERE oid=?".format(table_name)
+
     c.execute(query, ())
 
 
@@ -326,7 +332,7 @@ def popup(event):
     b2.grid(row=1, column=2)
 
 
-# Create the main window.
+# Create the main window
 root = Tk()
 root.geometry('880x500')
 root.title('File Upload')

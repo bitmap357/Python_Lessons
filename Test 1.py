@@ -165,13 +165,13 @@ def change_to_search(tag=None):
 
         else:
             # Fetch all records.
-            c.execute("""SELECT * FROM partners
+            c.execute("""SELECT *, oid FROM partners
                          UNION ALL
-                         SELECT * FROM non_partners
+                         SELECT *, oid FROM non_partners
                          UNION ALL
-                         SELECT * FROM internal
+                         SELECT *, oid FROM internal
                          UNION ALL
-                         SELECT * FROM other""")
+                         SELECT *, oid FROM other""")
             records = c.fetchall()
 
         # Insert records into the treeview.
@@ -179,7 +179,7 @@ def change_to_search(tag=None):
         for record in records:
             file_size = record[4]
             date = record[3]
-            record_display = (record[0], record[1], date, file_size)  # Modified line
+            record_display = (record[0], record[1], date, file_size, record[5])  # Modified line
             trv.insert('', 'end', values=record_display)
 
 

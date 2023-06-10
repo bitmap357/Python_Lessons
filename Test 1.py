@@ -305,6 +305,10 @@ def search_files():
 
 # Create function to delete a record
 def delete():
+    # Get the selected item in the tree view
+    selected_item = trv.focus()
+
+
     # Create a database connection and cursor.
     with sqlite3.connect('test.db') as conn:
         c = conn.cursor()

@@ -12,6 +12,7 @@ import os
 # Declaring global dictionary
 dic = {}
 table_name = ''
+toplevel = ''
 
 # Creating database and cursor
 with sqlite3.connect('test.db') as conn:
@@ -328,6 +329,7 @@ def delete():
 
 
 def popup(event):
+    global toplevel
     toplevel = Toplevel(root)
 
     toplevel.title("Delete or Modify")

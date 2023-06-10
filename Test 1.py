@@ -322,6 +322,7 @@ def popup(event):
     b2 = Button(toplevel, text="Modify Entry", command=toplevel.destroy, width=10)
     b2.grid(row=1, column=2)
 
+
 # Create function to delete a record
 def delete():
     # Get the selected item in the tree view
@@ -343,6 +344,7 @@ def delete():
     c.execute(query, (entry_id,))
 
     conn.commit()
+    toplevel.destroy()
 
 
 # Create the main window

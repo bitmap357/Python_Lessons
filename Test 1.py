@@ -305,6 +305,23 @@ def search_files():
     conn.commit()
 
 
+def popup(event):
+    global toplevel
+    toplevel = Toplevel(root)
+
+    toplevel.title("Delete or Modify")
+    toplevel.geometry("230x100")
+
+    l1 = Label(toplevel, image="::tk::icons::question")
+    l1.grid(row=0, column=0)
+    l2 = Label(toplevel, text="What would you like to do?")
+    l2.grid(row=0, column=1, columnspan=3)
+
+    b1 = Button(toplevel, text="Delete Entry", command=delete, width=10)
+    b1.grid(row=1, column=1)
+    b2 = Button(toplevel, text="Modify Entry", command=toplevel.destroy, width=10)
+    b2.grid(row=1, column=2)
+
 # Create function to delete a record
 def delete():
     # Get the selected item in the tree view
@@ -326,24 +343,6 @@ def delete():
     c.execute(query, (entry_id,))
 
     conn.commit()
-
-
-def popup(event):
-    global toplevel
-    toplevel = Toplevel(root)
-
-    toplevel.title("Delete or Modify")
-    toplevel.geometry("230x100")
-
-    l1 = Label(toplevel, image="::tk::icons::question")
-    l1.grid(row=0, column=0)
-    l2 = Label(toplevel, text="What would you like to do?")
-    l2.grid(row=0, column=1, columnspan=3)
-
-    b1 = Button(toplevel, text="Delete Entry", command=delete, width=10)
-    b1.grid(row=1, column=1)
-    b2 = Button(toplevel, text="Modify Entry", command=toplevel.destroy, width=10)
-    b2.grid(row=1, column=2)
 
 
 # Create the main window

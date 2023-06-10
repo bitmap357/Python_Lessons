@@ -308,6 +308,9 @@ def delete():
     # Get the selected item in the tree view
     selected_item = trv.focus()
 
+    # Retrieve the values of the selected item
+    values = trv.item(selected_item, 'values')
+
 
     # Create a database connection and cursor.
     with sqlite3.connect('test.db') as conn:

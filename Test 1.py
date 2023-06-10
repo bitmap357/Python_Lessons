@@ -311,6 +311,8 @@ def delete():
     # Retrieve the values of the selected item
     values = trv.item(selected_item, 'values')
 
+    # Extract the file name (assuming it's in the second column)
+    entry_id = values[5]
 
     # Create a database connection and cursor.
     with sqlite3.connect('test.db') as conn:

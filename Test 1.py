@@ -181,7 +181,7 @@ def change_to_search(tag=None):
             date = record[3]
             record_display = (record[0], record[1], date, file_size, record[5])  # Modified line
             trv.insert('', 'end', values=record_display)
-    conn.commit()
+        conn.commit()
 
 
 def change_to_search_all():
@@ -302,7 +302,7 @@ def search_files():
                 date = record[3]
                 record_display = (record[0], record[1], date, file_size)  # Modified line
                 trv.insert('', 'end', values=record_display)
-    conn.commit()
+        conn.commit()
 
 
 def popup(event):

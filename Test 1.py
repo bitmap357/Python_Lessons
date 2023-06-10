@@ -335,7 +335,7 @@ def popup(event):
     l2 = Label(toplevel, text="What would you like to do?")
     l2.grid(row=0, column=1, columnspan=3)
 
-    b1 = Button(toplevel, text="Delete Entry", command=root.destroy, width=10)
+    b1 = Button(toplevel, text="Delete Entry", command=delete, width=10)
     b1.grid(row=1, column=1)
     b2 = Button(toplevel, text="Modify Entry", command=toplevel.destroy, width=10)
     b2.grid(row=1, column=2)

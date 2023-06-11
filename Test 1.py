@@ -350,8 +350,8 @@ def delete():
         c.execute(query1, (entry_id,))
         trv.delete(*trv.get_children())
     else:
-        table_name = tag.lower()
-        query1 = "DELETE FROM {} WHERE oid=?".format(table_name)
+        table_name1 = tag.lower()
+        query1 = "DELETE FROM {} WHERE oid=?".format(table_name1)
         c.execute(query1, (entry_id,))
         trv.delete(*trv.get_children())
 

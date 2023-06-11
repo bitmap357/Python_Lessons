@@ -344,9 +344,15 @@ def delete():
     global table_name
     global cat
 
-    query1 = "DELETE FROM {} WHERE oid=?".format(table_name)
-    c.execute(query1, (entry_id,))
-    trv.delete(*trv.get_children())
+    if cat:
+        query1 = "DELETE FROM {} WHERE oid=?".format(table_name)
+        c.execute(query1, (entry_id,))
+        trv.delete(*trv.get_children())
+    else:
+        query1 = "DELETE FROM partners WHERE oid=?; DELETE FROM non_partners WHERE oid=?; " \
+                 "DELETE FROM internal WHERE oid=?; DELETE FROM other WHERE oid=?"
+        c.execute(query1, (entry_id, entry_id, entry_id, entry_id,))
+        trv.delete(*trv.get_children())
 
     if cat:
         # Fetch records matching the specified tag.

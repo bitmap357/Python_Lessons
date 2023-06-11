@@ -344,7 +344,7 @@ def delete():
     global table_name
     global cat
 
-    if cat:
+    if table_name:
         query1 = "DELETE FROM {} WHERE oid=?".format(table_name)
         c.execute(query1, (entry_id,))
         trv.delete(*trv.get_children())

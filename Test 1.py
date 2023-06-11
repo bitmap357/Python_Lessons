@@ -349,11 +349,14 @@ def delete():
         c.execute(query1, (entry_id,))
         trv.delete(*trv.get_children())
     else:
-        query1 = """DELETE FROM partners WHERE oid=?; 
-                    DELETE FROM non_partners WHERE oid=?; 
-                    DELETE FROM internal WHERE oid=?; 
-                    DELETE FROM other WHERE oid=?"""
-        c.execute(query1, (entry_id, entry_id, entry_id, entry_id,))
+        query1 = "DELETE FROM partners WHERE oid=?"
+        c.execute(query1, (entry_id,))
+        query2 = "DELETE FROM non_partners WHERE oid=?"
+        c.execute(query2, (entry_id,))
+        query3 = "DELETE FROM internal WHERE oid=?"
+        c.execute(query3, (entry_id,))
+        query4 = "DELETE FROM other WHERE oid=?"
+        c.execute(query4, (entry_id,))
         trv.delete(*trv.get_children())
 
     if cat:

@@ -201,6 +201,8 @@ def change_to_search_all():
 def change_to_search_in():
     """Switch to the search screen and display internal files."""
     change_to_search("Internal")
+    treeview_label.config(text="Internal")
+    trv.column("#1", width=0, stretch=tkinter.NO)
 
 
 def change_to_search_par():

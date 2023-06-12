@@ -280,6 +280,9 @@ def search_files():
     with sqlite3.connect('file_upload.db') as conn:
         c = conn.cursor()
 
+        # Calling global table_name
+        global table_name
+
     # Fetch records matching the search keyword.
         c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
         records = c.fetchall()

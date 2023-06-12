@@ -222,6 +222,8 @@ def change_to_search_non():
 def change_to_search_oth():
     """Switch to the search screen and display other files."""
     change_to_search("Other")
+    treeview_label.config(text="Other")
+    trv.column("#1", width=0, stretch=tkinter.NO)
 
 
 def save(file_name, file, file_size):

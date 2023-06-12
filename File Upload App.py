@@ -208,6 +208,8 @@ def change_to_search_in():
 def change_to_search_par():
     """Switch to the search screen and display partner files."""
     change_to_search("Partners")
+    treeview_label.config(text="Partners")
+    trv.column("#1", width=0, stretch=tkinter.NO)
 
 
 def change_to_search_non():

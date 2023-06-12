@@ -154,6 +154,11 @@ def change_to_search(tag=None):
     # Clear existing treeview items.
     trv.delete(*trv.get_children())
 
+    # Calling global table_name
+    global table_name
+    global cat
+    cat = tag
+
     # Create a database connection and cursor.
     with sqlite3.connect('file_upload.db') as conn:
         c = conn.cursor()

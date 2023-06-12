@@ -215,6 +215,8 @@ def change_to_search_par():
 def change_to_search_non():
     """Switch to the search screen and display non-partner files."""
     change_to_search("Non_Partners")
+    treeview_label.config(text="Non-Partners")
+    trv.column("#1", width=0, stretch=tkinter.NO)
 
 
 def change_to_search_oth():

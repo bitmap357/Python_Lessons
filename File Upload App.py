@@ -194,6 +194,8 @@ def change_to_search(tag=None):
 def change_to_search_all():
     """Switch to the search screen and display all files."""
     change_to_search()
+    treeview_label.config(text="All")
+    trv.column("#1", width=100, stretch=tkinter.NO)
 
 
 def change_to_search_in():

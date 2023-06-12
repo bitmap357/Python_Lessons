@@ -62,6 +62,9 @@ main.pack()
 
 # Declaring empty dictionary
 dic = {}
+table_name = ''
+toplevel = ''
+cat = ''
 
 
 # Function for choose file button to upload file into project

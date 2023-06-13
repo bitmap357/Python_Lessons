@@ -1,6 +1,6 @@
 import tkinter
 from tkinter import *
-from tkinter import messagebox
+from tkinter.messagebox import askyesno
 from tkinter import ttk
 from tkinter import filedialog
 from pathlib import Path
@@ -19,43 +19,43 @@ cat = ''
 with sqlite3.connect('test.db') as conn:
     c = conn.cursor()
 
-# Create table for partners
+    # Create table for partners
 
 
-c.execute('''CREATE TABLE  IF NOT EXISTS partners (
-            tag text,
-            file_name text,
-            file blob,
-            date text,
-            size text
-            )''')
+    c.execute('''CREATE TABLE  IF NOT EXISTS partners (
+                tag text,
+                file_name text,
+                file blob,
+                date text,
+                size text
+                )''')
 
-# Creating table for non-partners
-c.execute('''CREATE TABLE  IF NOT EXISTS non_partners (
-            tag text,
-            file_name text,
-            file blob,
-            date text,
-            size text
-            )''')
+    # Creating table for non-partners
+    c.execute('''CREATE TABLE  IF NOT EXISTS non_partners (
+                tag text,
+                file_name text,
+                file blob,
+                date text,
+                size text
+                )''')
 
-# Creating table for internal
-c.execute('''CREATE TABLE  IF NOT EXISTS internal (
-            tag text,
-            file_name text,
-            file blob,
-            date text,
-            size text
-            )''')
+    # Creating table for internal
+    c.execute('''CREATE TABLE  IF NOT EXISTS internal (
+                tag text,
+                file_name text,
+                file blob,
+                date text,
+                size text
+                )''')
 
-# Creating table for other
-c.execute('''CREATE TABLE  IF NOT EXISTS other (
-            tag text,
-            file_name text,
-            file blob,
-            date text,
-            size text
-            )''')
+    # Creating table for other
+    c.execute('''CREATE TABLE  IF NOT EXISTS other (
+                tag text,
+                file_name text,
+                file blob,
+                date text,
+                size text
+                )''')
 
 
 def upload_file_com():
@@ -312,7 +312,7 @@ def popup(event):
     global toplevel
     toplevel = Toplevel(root)
 
-    toplevel.title("Delete or Modify")
+    toplevel.title("")
     toplevel.geometry("250x100")
 
     l1 = Label(toplevel, image="::tk::icons::question")
@@ -328,62 +328,63 @@ def popup(event):
 
 # Create function to delete a record
 def delete():
-    messagebox.askquestion("askquestion", "Are you sure?")
+    answer = askyesno(title='confirmation',
+                      message='Are you sure that you want to quit?')
+    if answer:
+        # Get the selected item in the tree view
+        selected_item = trv.focus()
 
-    # Get the selected item in the tree view
-    selected_item = trv.focus()
+        # Retrieve the values of the selected item
+        values = trv.item(selected_item, 'values')
 
-    # Retrieve the values of the selected item
-    values = trv.item(selected_item, 'values')
+        # Extract the file name (assuming it's in the second column)
+        entry_id = values[4]
+        tag = values[0]
 
-    # Extract the file name (assuming it's in the second column)
-    entry_id = values[4]
-    tag = values[0]
+        # Create a database connection and cursor.
+        with sqlite3.connect('test.db') as conn:
+            c = conn.cursor()
 
-    # Create a database connection and cursor.
-    with sqlite3.connect('test.db') as conn:
-        c = conn.cursor()
+        global table_name
+        global cat
 
-    global table_name
-    global cat
+        if table_name:
+            query1 = "DELETE FROM {} WHERE oid=?".format(table_name)
+            c.execute(query1, (entry_id,))
+            trv.delete(*trv.get_children())
+        else:
+            table_name1 = tag.lower()
+            query1 = "DELETE FROM {} WHERE oid=?".format(table_name1)
+            c.execute(query1, (entry_id,))
+            trv.delete(*trv.get_children())
 
-    if table_name:
-        query1 = "DELETE FROM {} WHERE oid=?".format(table_name)
-        c.execute(query1, (entry_id,))
-        trv.delete(*trv.get_children())
-    else:
-        table_name1 = tag.lower()
-        query1 = "DELETE FROM {} WHERE oid=?".format(table_name1)
-        c.execute(query1, (entry_id,))
-        trv.delete(*trv.get_children())
+        if cat:
+            # Fetch records matching the specified tag.
+            query = "SELECT *, oid FROM {} WHERE tag=?".format(table_name)
+            c.execute(query, (cat,))
+            records = c.fetchall()
 
-    if cat:
-        # Fetch records matching the specified tag.
-        query = "SELECT *, oid FROM {} WHERE tag=?".format(table_name)
-        c.execute(query, (cat,))
-        records = c.fetchall()
+        else:
+            # Fetch all records.
+            c.execute("""SELECT *, oid FROM partners
+                         UNION ALL
+                         SELECT *, oid FROM non_partners
+                         UNION ALL
+                         SELECT *, oid FROM internal
+                         UNION ALL
+                         SELECT *, oid FROM other""")
+            records = c.fetchall()
 
-    else:
-        # Fetch all records.
-        c.execute("""SELECT *, oid FROM partners
-                     UNION ALL
-                     SELECT *, oid FROM non_partners
-                     UNION ALL
-                     SELECT *, oid FROM internal
-                     UNION ALL
-                     SELECT *, oid FROM other""")
-        records = c.fetchall()
+        # Insert records into the treeview.
+        # Inside the `search_files()` function
+        for record in records:
+            file_size = record[4]
+            date = record[3]
+            record_display = (record[0], record[1], date, file_size, record[5])  # Modified line
+            trv.insert('', 'end', values=record_display)
 
-    # Insert records into the treeview.
-    # Inside the `search_files()` function
-    for record in records:
-        file_size = record[4]
-        date = record[3]
-        record_display = (record[0], record[1], date, file_size, record[5])  # Modified line
-        trv.insert('', 'end', values=record_display)
-
-    conn.commit()
-    toplevel.destroy()
+        conn.commit()
+        toplevel.destroy()
 
 
 # Create the main window

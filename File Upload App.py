@@ -318,6 +318,24 @@ def search_files():
         conn.close()
 
 
+def popup(event):
+    global toplevel
+    toplevel = Toplevel(root)
+
+    toplevel.title("Delete or Modify")
+    toplevel.geometry("250x100")
+
+    l1 = Label(toplevel, image="::tk::icons::question")
+    l1.place(relx=0.1, rely=0.2, anchor=CENTER)
+    l2 = Label(toplevel, text="What would you like to do?", font=('Times New Roman', '12'))
+    l2.place(relx=0.55, rely=0.2, anchor=CENTER)
+
+    b1 = Button(toplevel, text="Delete Entry", command=delete, width=10)
+    b1.place(relx=0.25, rely=0.65, anchor=CENTER)
+    b2 = Button(toplevel, text="Modify Entry", command=toplevel.destroy, width=10)
+    b2.place(relx=0.7, rely=0.65, anchor=CENTER)
+
+
 # Home button for the whole project
 home_button = Button(root, text='HOME', font=('Georgia', '14'), command=change_to_main)
 home_button.place(relx=0, rely=0)

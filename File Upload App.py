@@ -283,9 +283,17 @@ def search_files():
         # Calling global table_name
         global table_name
 
-    # Fetch records matching the search keyword.
-        c.execute("SELECT * FROM files WHERE file_name LIKE ?", ('%' + keyword + '%',))
-        records = c.fetchall()
+        # Fetch records matching the search keyword.
+        if table_name == '':
+            query = """SELECT * FROM partners WHERE file_name LIKE ?
+                     UNION ALL
+                     SELECT * FROM non_partners WHERE file_name LIKE ?
+                     UNION ALL
+                     SELECT * FROM internal WHERE file_name LIKE ?
+                     UNION ALL
+                     SELECT * FROM other WHERE file_name LIKE ?"""
+            c.execute(query, ('%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%', '%' + keyword + '%'))
+            records = c.fetchall()
 
         # Insert records into the treeview.
         for record in records:

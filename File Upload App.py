@@ -296,12 +296,24 @@ def search_files():
             records = c.fetchall()
 
         # Insert records into the treeview.
-        for record in records:
-            file_size = record[4]
-            date = record[3]
-            record_display = (record[0], record[1], date, file_size)  # Modified line
-            trv.insert('', 'end', values=record_display)
+            for record in records:
+                file_size = record[4]
+                date = record[3]
+                record_display = (record[0], record[1], date, file_size)  # Modified line
+                trv.insert('', 'end', values=record_display)
 
+        else:
+            query = "SELECT * FROM {} WHERE file_name LIKE ?".format(table_name)
+
+            c.execute(query, ('%' + keyword + '%',))
+            records = c.fetchall()
+
+            for record in records:
+                file_size = record[4]
+                date = record[3]
+                record_display = (record[0], record[1], date, file_size)  # Modified line
+                trv.insert('', 'end', values=record_display)
+        conn.commit()
         # Close the database connection.
     conn.close()
 

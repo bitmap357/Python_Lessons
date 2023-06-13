@@ -2,6 +2,7 @@ import tkinter
 from tkinter import *
 from tkinter import ttk
 import tkinter.messagebox
+from tkinter.messagebox import askyesno
 from tkinter import filedialog
 from pathlib import Path
 import datetime
@@ -337,6 +338,9 @@ def popup(event):
 
 
 def delete():
+    # Message box
+    answer = askyesno(title='Delete Entry', message='Are you sure you want to delete the entry?')
+
     # Get the selected item in the tree view
     selected_item = trv.focus()
 

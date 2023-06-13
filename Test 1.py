@@ -1,11 +1,11 @@
 import tkinter
 from tkinter import *
+from tkinter import messagebox
 from tkinter import ttk
 from tkinter import filedialog
 from pathlib import Path
 import tkinter.messagebox
 import sqlite3
-from tkinter.filedialog import askopenfile
 import datetime
 import os
 
@@ -328,6 +328,8 @@ def popup(event):
 
 # Create function to delete a record
 def delete():
+    messagebox.askquestion("askquestion", "Are you sure?")
+
     # Get the selected item in the tree view
     selected_item = trv.focus()
 

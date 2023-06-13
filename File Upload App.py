@@ -506,4 +506,3 @@ trv.bind("<Button-1>", popup)
 
 
 root.mainloop()
-

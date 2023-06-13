@@ -329,7 +329,7 @@ def popup(event):
 # Create function to delete a record
 def delete():
     # Message box
-    answer = askyesno(title='', message='Are you sure you want to delete the entry?')
+    answer = askyesno(title='Delete Entry', message='Are you sure you want to delete the entry?')
 
     # Function for message box
     if answer:

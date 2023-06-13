@@ -328,8 +328,10 @@ def popup(event):
 
 # Create function to delete a record
 def delete():
-    answer = askyesno(title='confirmation',
-                      message='Are you sure that you want to quit?')
+    # Message box
+    answer = askyesno(title='', message='Are you sure you want to delete the entry?')
+
+    # Function for message box
     if answer:
         # Get the selected item in the tree view
         selected_item = trv.focus()

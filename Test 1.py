@@ -316,7 +316,7 @@ def popup(event):
     toplevel.geometry("250x100")
 
     l1 = Label(toplevel, image="::tk::icons::question")
-    l1.place(relx=0.1, rely=0.2,anchor=CENTER)
+    l1.place(relx=0.1, rely=0.2, anchor=CENTER)
     l2 = Label(toplevel, text="What would you like to do?", font=('Times New Roman', '12'))
     l2.place(relx=0.55, rely=0.2, anchor=CENTER)
 

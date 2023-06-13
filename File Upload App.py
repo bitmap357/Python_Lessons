@@ -187,8 +187,9 @@ def change_to_search(tag=None):
             record_display = (record[0], record[1], date, file_size, record[5])  # Modified line
             trv.insert('', 'end', values=record_display)
 
-    # Close the database connection.
-    conn.close()
+        conn.commit()
+        # Close the database connection.
+        conn.close()
 
 
 def change_to_search_all():
@@ -255,9 +256,8 @@ def save(file_name, file, file_size):
             c.execute("INSERT INTO other (tag, file_name, file, date, size) VALUES (?, ?, ?, ?, ?)",
                       (tag, file_name, file, timestamp, file_size))
         conn.commit()
-
-    # Close Connection
-    conn.close()
+        # Close the database connection.
+        conn.close()
 
     tkinter.messagebox.showinfo("File Uploaded", "FILE UPLOADED SUCCESSFULLY")
     choose_file_label.config(text="")
@@ -315,7 +315,7 @@ def search_files():
                 trv.insert('', 'end', values=record_display)
         conn.commit()
         # Close the database connection.
-    conn.close()
+        conn.close()
 
 
 # Home button for the whole project

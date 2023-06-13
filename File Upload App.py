@@ -341,61 +341,63 @@ def delete():
     # Message box
     answer = askyesno(title='Delete Entry', message='Are you sure you want to delete the entry?')
 
-    # Get the selected item in the tree view
-    selected_item = trv.focus()
+    # Function for message box
+    if answer:
+        # Get the selected item in the tree view
+        selected_item = trv.focus()
 
-    # Retrieve the values of the selected item
-    values = trv.item(selected_item, 'values')
+        # Retrieve the values of the selected item
+        values = trv.item(selected_item, 'values')
 
-    # Extract the file name (assuming it's in the second column)
-    entry_id = values[4]
-    tag = values[0]
+        # Extract the file name (assuming it's in the second column)
+        entry_id = values[4]
+        tag = values[0]
 
-    # Create a database connection and cursor.
-    with sqlite3.connect('test.db') as conn:
-        c = conn.cursor()
+        # Create a database connection and cursor.
+        with sqlite3.connect('test.db') as conn:
+            c = conn.cursor()
 
-    global table_name
-    global cat
+            global table_name
+            global cat
 
-    if table_name:
-        query1 = "DELETE FROM {} WHERE oid=?".format(table_name)
-        c.execute(query1, (entry_id,))
-        trv.delete(*trv.get_children())
-    else:
-        table_name1 = tag.lower()
-        query1 = "DELETE FROM {} WHERE oid=?".format(table_name1)
-        c.execute(query1, (entry_id,))
-        trv.delete(*trv.get_children())
+            if table_name:
+                query1 = "DELETE FROM {} WHERE oid=?".format(table_name)
+                c.execute(query1, (entry_id,))
+                trv.delete(*trv.get_children())
+            else:
+                table_name1 = tag.lower()
+                query1 = "DELETE FROM {} WHERE oid=?".format(table_name1)
+                c.execute(query1, (entry_id,))
+                trv.delete(*trv.get_children())
 
-    if cat:
-        # Fetch records matching the specified tag.
-        query = "SELECT *, oid FROM {} WHERE tag=?".format(table_name)
-        c.execute(query, (cat,))
-        records = c.fetchall()
+            if cat:
+                # Fetch records matching the specified tag.
+                query = "SELECT *, oid FROM {} WHERE tag=?".format(table_name)
+                c.execute(query, (cat,))
+                records = c.fetchall()
 
-    else:
-        # Fetch all records.
-        c.execute("""SELECT *, oid FROM partners
-                     UNION ALL
-                     SELECT *, oid FROM non_partners
-                     UNION ALL
-                     SELECT *, oid FROM internal
-                     UNION ALL
-                     SELECT *, oid FROM other""")
-        records = c.fetchall()
+            else:
+                # Fetch all records.
+                c.execute("""SELECT *, oid FROM partners
+                                 UNION ALL
+                                 SELECT *, oid FROM non_partners
+                                 UNION ALL
+                                 SELECT *, oid FROM internal
+                                 UNION ALL
+                                 SELECT *, oid FROM other""")
+                records = c.fetchall()
 
-    # Insert records into the treeview.
-    # Inside the `search_files()` function
-    for record in records:
-        file_size = record[4]
-        date = record[3]
-        record_display = (record[0], record[1], date, file_size, record[5])  # Modified line
-        trv.insert('', 'end', values=record_display)
+            # Insert records into the treeview.
+            # Inside the `search_files()` function
+            for record in records:
+                file_size = record[4]
+                date = record[3]
+                record_display = (record[0], record[1], date, file_size, record[5])  # Modified line
+                trv.insert('', 'end', values=record_display)
 
-    conn.commit()
-    conn.close()
-    toplevel.destroy()
+            conn.commit()
+            conn.close()
+            toplevel.destroy()
 
 
 # Home button for the whole project

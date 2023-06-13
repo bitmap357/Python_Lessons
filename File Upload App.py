@@ -417,7 +417,7 @@ browse_files_button.grid(row=3, column=0, padx=10, pady=10)
 file_upload_label = Label(upload, text='FILE UPLOAD', font=('Times New Roman', '32'))
 file_upload_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
-choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3, command=lambda: upload_file_com())
+choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3, command=upload_file_com)
 choose_file_button.place(relx=0.01, rely=0.25, anchor=W)
 
 
@@ -492,13 +492,14 @@ trv.column(1, width=100, anchor=CENTER)
 trv.heading(2, text="File Name")
 trv.column(2, width=300, anchor=CENTER)
 trv.heading(3, text="Date")
-trv.column(3, width=100, anchor=CENTER)
+trv.column(3, width=150, anchor=CENTER)
 trv.heading(4, text="Size")
 trv.column(4, width=100, anchor=CENTER)
 
 scroll = ttk.Scrollbar(search, orient='vertical', command=trv.yview)
 scroll.place(relx=0.95, rely=0.5, anchor=E)
 trv.configure(yscrollcommand=scroll.set)
+trv.bind("<Button-1>", popup)
 
 
 root.mainloop()

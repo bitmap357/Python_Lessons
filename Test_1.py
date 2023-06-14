@@ -11,7 +11,8 @@ import os
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
-# Testing for how to backup data to cloud
+
+# Testing for how to back up data to cloud
 def backup_database_to_drive(database_file, backup_file, credentials_file):
     # Connect to the database and perform a backup operation to create the backup_file
 
@@ -19,7 +20,7 @@ def backup_database_to_drive(database_file, backup_file, credentials_file):
     # This assumes you have a JSON credentials file obtained from the Google Cloud Console
     # See the documentation for how to create and obtain the credentials file
     # https://developers.google.com/drive/api/v3/quickstart/python
-    service = build('drive', 'v3', credentials=credentials)
+    service = build('drive', 'v3', credentials=client_secret)
 
     # Upload the backup_file to Google Drive
     file_metadata = {'name': 'Database Backup', 'mimeType': 'application/octet-stream'}

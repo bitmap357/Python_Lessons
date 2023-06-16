@@ -453,7 +453,7 @@ browse_files_button = Button(main, text='BROWSE FILES', font=btn_fonts, pady=20,
 browse_files_button.grid(row=3, column=0, padx=10, pady=10)
 
 # Upload Screen
-file_upload_label = Label(upload, text='FILE UPLOAD', font=('Times New Roman', '32'))
+file_upload_label = Label(upload, text='FILE UPLOAD', font=title_fonts, background='tan')
 file_upload_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
 choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3, command=upload_file_com)

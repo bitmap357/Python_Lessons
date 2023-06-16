@@ -425,7 +425,7 @@ root.title('File Upload')
 # Create the frames.
 main = Frame(root, background='tan')
 upload = Frame(root, background='tan')
-category = Frame(root)
+category = Frame(root, background='tan')
 search = Frame(root)
 
 # Pack the main frame.

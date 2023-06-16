@@ -423,7 +423,7 @@ root.geometry('880x500')
 root.title('File Upload')
 
 # Create the frames.
-main = Frame(root)
+main = Frame(root, background='tan')
 upload = Frame(root)
 category = Frame(root)
 search = Frame(root)

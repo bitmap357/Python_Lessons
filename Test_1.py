@@ -456,13 +456,13 @@ browse_files_button.grid(row=3, column=0, padx=10, pady=10)
 file_upload_label = Label(upload, text='FILE UPLOAD', font=title_fonts, background='tan')
 file_upload_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
-choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3, command=upload_file_com)
+choose_file_button = Button(upload, text='CHOOSE FILE', padx=10, pady=3, command=upload_file_com, font=btn_fonts, background='silver')
 choose_file_button.place(relx=0.01, rely=0.25, anchor=W)
 
-choose_file_label = Label(upload, text="", borderwidth=1, relief='solid', padx=180, pady=6)
-choose_file_label.place(relx=0.13, rely=0.22)
+choose_file_label = Label(upload, text="", borderwidth=1, relief='solid', padx=180, pady=6, background='lavender')
+choose_file_label.place(relx=0.17, rely=0.22)
 
-frame_1 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=10, pady=10)
+frame_1 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=10, pady=10, background='lavender')
 frame_1.place(relx=0.3, rely=0.3)
 
 category_label = Label(frame_1, text='SELECT CATEGORY', font=('Times New Roman', '18'), padx=30)

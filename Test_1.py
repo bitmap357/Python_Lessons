@@ -428,6 +428,9 @@ upload = Frame(root, background='tan')
 category = Frame(root, background='tan')
 search = Frame(root, background='tan')
 
+# Fonts
+title_fonts = ('Algerian', '32')
+
 # Pack the main frame.
 main.pack(fill='both', expand=1)
 
@@ -436,12 +439,12 @@ home_button = Button(root, text='HOME', font=('Georgia', '14'), command=change_t
 home_button.place(relx=0, rely=0)
 
 # Welcome text on the main screen.
-main_label = Label(main, text='WELCOME\n WHAT WOULD YOU LIKE TO DO TODAY?', font=('Times New Roman', '32'))
+main_label = Label(main, text='WELCOME\n WHAT WOULD YOU LIKE TO DO TODAY?', font=title_fonts, background='tan')
 main_label.place(relx=0, rely=0)
 main_label.grid(pady=20, padx=10)
 
 # Button for file uploads.
-upload_file_button = Button(main, text='UPLOAD FILE', pady=20, padx=40, command=change_to_upload)
+upload_file_button = Button(main, text='UPLOAD FILE', font=('Times', '12'), pady=20, padx=40, command=change_to_upload)
 upload_file_button.grid(row=2, column=0, padx=10, pady=10)
 
 # Button for browsing files.

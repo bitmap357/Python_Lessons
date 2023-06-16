@@ -462,7 +462,7 @@ choose_file_button.place(relx=0.01, rely=0.25, anchor=W)
 choose_file_label = Label(upload, text="", borderwidth=1, relief='solid', padx=180, pady=6, background='lavender')
 choose_file_label.place(relx=0.17, rely=0.22)
 
-frame_1 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=10, pady=10, background='lavender')
+frame_1 = Frame(upload, highlightbackground='gray', highlightthickness=2, padx=35, pady=10, background='lavender')
 frame_1.place(relx=0.3, rely=0.3)
 
 category_label = Label(frame_1, text='SELECT CATEGORY', font=('Algerian', '18'), padx=30, background='lavender')
@@ -490,7 +490,7 @@ save_button = Button(upload, text='SAVE', padx=150, pady=3, state=DISABLED, comm
 save_button.place(relx=0.3, rely=0.9)
 
 # Category Screen
-categories_label = Label(category, text='CATEGORIES', font=('Times New Roman', '32'))
+categories_label = Label(category, text='CATEGORIES', font=title_fonts)
 categories_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
 internal_button = Button(category, text='INTERNAL', padx=110, pady=50, command=change_to_search_in)
@@ -510,7 +510,7 @@ all_button.place(relx=0.16, rely=0.85)
 
 
 # Search Screen
-search_label = Label(search, text='SEARCH FILES', font=('Times New Roman', '32'))
+search_label = Label(search, text='SEARCH FILES', font=title_fonts)
 search_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
 search_entry = Entry(search, font=('Times New Roman', '14'), width=40)

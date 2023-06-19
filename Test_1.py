@@ -8,34 +8,34 @@ import tkinter.messagebox
 import sqlite3
 import datetime
 import os
-# from googleapiclient.discovery import build
-# from googleapiclient.http import MediaFileUpload
+from googleapiclient.discovery import build
+from googleapiclient.http import MediaFileUpload
 
 
-# # Testing for how to back up data to cloud
-# def backup_database_to_drive(database_file, backup_file, credentials_file):
-#     # Connect to the database and perform a backup operation to create the backup_file
+# Testing for how to back up data to cloud
+def backup_database_to_drive(database_file, backup_file, credentials_file):
+    # Connect to the database and perform a backup operation to create the backup_file
 
-#     # Load the credentials from the credentials_file
-#     # This assumes you have a JSON credentials file obtained from the Google Cloud Console
-#     # See the documentation for how to create and obtain the credentials file
-#     # https://developers.google.com/drive/api/v3/quickstart/python
-#     service = build('drive', 'v3', credentials=client_secret)
+    # Load the credentials from the credentials_file
+    # This assumes you have a JSON credentials file obtained from the Google Cloud Console
+    # See the documentation for how to create and obtain the credentials file
+    # https://developers.google.com/drive/api/v3/quickstart/python
+    service = build('drive', 'v3', credentials=client_secret)
 
-#     # Upload the backup_file to Google Drive
-#     file_metadata = {'name': 'Database Backup', 'mimeType': 'application/octet-stream'}
-#     media = MediaFileUpload(backup_file, mimetype='application/octet-stream')
-#     drive_file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
+    # Upload the backup_file to Google Drive
+    file_metadata = {'name': 'Database Backup', 'mimeType': 'application/octet-stream'}
+    media = MediaFileUpload(backup_file, mimetype='application/octet-stream')
+    drive_file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
 
-#     print('Backup uploaded successfully. File ID: {}'.format(drive_file.get('id')))
+    print('Backup uploaded successfully. File ID: {}'.format(drive_file.get('id')))
 
 
-# # Usage example
-# database_file = 'path/to/database.db'
-# backup_file = 'path/to/backup.db'
-# credentials_file = 'path/to/credentials.json'
+# Usage example
+database_file = 'path/to/database.db'
+backup_file = 'path/to/backup.db'
+credentials_file = 'path/to/credentials.json'
 
-# backup_database_to_drive(database_file, backup_file, credentials_file)
+backup_database_to_drive(database_file, backup_file, credentials_file)
 
 # Declaring global dictionary
 dic = {}
@@ -490,7 +490,7 @@ save_button = Button(upload, text='SAVE', padx=150, pady=3, state=DISABLED, comm
 save_button.place(relx=0.3, rely=0.9)
 
 # Category Screen
-categories_label = Label(category, text='CATEGORIES', font=title_fonts)
+categories_label = Label(category, text='CATEGORIES', font=title_fonts, background='tan')
 categories_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
 internal_button = Button(category, text='INTERNAL', padx=110, pady=50, command=change_to_search_in)
@@ -510,7 +510,7 @@ all_button.place(relx=0.16, rely=0.85)
 
 
 # Search Screen
-search_label = Label(search, text='SEARCH FILES', font=title_fonts)
+search_label = Label(search, text='SEARCH FILES', font=title_fonts, background='tan')
 search_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
 search_entry = Entry(search, font=('Times New Roman', '14'), width=40)

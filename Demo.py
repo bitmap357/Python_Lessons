@@ -17,3 +17,6 @@ def insert_data():
     print('table created')
     conn.commit()
     conn.close()
+
+
+insert_data()

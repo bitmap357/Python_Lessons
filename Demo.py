@@ -16,7 +16,8 @@ def insert_data():
     name = input('Enter name: ')
     age = input('Enter age: ')
     address = input('Enter address')
-
+    query = '''INSERT INTO student(NAME, AGE, ADDRESS) VALUES (%s, %s, %s);'''
+    cur.execute(query, (name, age, address))
     print('table created')
     conn.commit()
     conn.close()

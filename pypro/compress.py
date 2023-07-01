@@ -9,3 +9,4 @@ compressed_file.write(decoded_data)
 
 
 decompressed_data = zlib.decompress(base64.b64decode(compressed_data))
+print(decompressed_data)

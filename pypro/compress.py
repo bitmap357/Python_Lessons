@@ -1,1 +1,1 @@
-open('demo.txt', 'r').read()
+data = open('demo.txt', 'r').read()

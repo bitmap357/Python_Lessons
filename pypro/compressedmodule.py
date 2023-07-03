@@ -9,3 +9,7 @@ def compress(inputfile, outputfile):
     decoded_data = compressed_data.decode('utf-8')
     compressed_file = open(outputfile, 'w')
     compressed_file.write(decoded_data)
+
+
+def decompress(inputfile, outputfile):
+    file_content = open(inputfile, 'r').read()

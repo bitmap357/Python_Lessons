@@ -13,3 +13,4 @@ def compress(inputfile, outputfile):
 
 def decompress(inputfile, outputfile):
     file_content = open(inputfile, 'r').read()
+    encoded_data = file_content.encode('utf-8')

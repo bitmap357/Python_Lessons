@@ -1,4 +1,5 @@
-import zlib,base64
+import base64
+import zlib
 
 
 def compress(inputfile, outputfile):

@@ -17,5 +17,5 @@ def decompress(inputfile, outputfile):
     decompressed_data = zlib.decompress(base64.b64decode(encoded_data))
     decoded_data = decompressed_data.decode('utf-8')
     file = open(outputfile, 'w')
-
+    file.write(decoded_data)
 

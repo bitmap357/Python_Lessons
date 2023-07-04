@@ -18,4 +18,5 @@ def decompress(inputfile, outputfile):
     decoded_data = decompressed_data.decode('utf-8')
     file = open(outputfile, 'w')
     file.write(decoded_data)
+    file.close()
 

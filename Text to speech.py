@@ -1,7 +1,7 @@
 from gtts import gTTS
 import os
 
-text = "LOL this is really funny"
+text = "Today is a good day"
 output = gTTS(text=text, lang='en', slow=False)
 output.save('output.mp3')
 

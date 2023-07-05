@@ -1,4 +1,6 @@
 import bcrypt
 
-password = "this is my password"
+password = b"this is my password"
+
+hashed = bcrypt.hashpw(password, bcrypt.gensalt())
 

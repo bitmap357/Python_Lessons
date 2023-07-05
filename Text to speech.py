@@ -9,3 +9,6 @@ import os
 
 
 text = open('demo.txt', 'r').read()
+
+language = 'en'
+

@@ -14,3 +14,5 @@ language = 'en'
 
 output = gTTS(text=text, lang=language, slow=False)
 output.save('file_output.mp3')
+os.system("start file_output.mp3")
+

@@ -9,4 +9,7 @@ print(hashed)
 entered_password = input("Enter password to login: ")
 entered_password = bytes(entered_password, encoding='utf-8')
 
-bcrypt.checkpw(entered_password)
+if bcrypt.checkpw(entered_password, hashed):
+    print("Log in successful")
+else:
+    print("Invalid password")

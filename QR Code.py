@@ -11,7 +11,8 @@ def generate():
     link = link_entry.get()
     file_name = link_name + ".png"
     url = pyqrcode.create(link)
-    url.png(file_name)
+    url.png(file_name, scale=8)
+    image = ImageTk.PhotoImage(Image.open(file_name))
 
 
 

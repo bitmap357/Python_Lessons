@@ -10,6 +10,8 @@ def generate():
     link_name = name_entry.get()
     link = link_entry.get()
     file_name = link_name + ".png"
+    url = pyqrcode.create(link)
+
 
 
 canvas = Canvas(root, width=400, height=600)

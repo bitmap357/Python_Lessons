@@ -4,6 +4,14 @@ from PIL import ImageTk, Image
 
 
 root = Tk()
+
+
+def generate():
+    link_name = name_entry.get()
+    link = link_entry.get()
+    file_name = link_name + ".png"
+
+
 canvas = Canvas(root, width=400, height=600)
 canvas.pack()
 
@@ -20,7 +28,7 @@ link_entry = Entry(root)
 canvas.create_window(200, 130, window=name_entry)
 canvas.create_window(200, 180, window=link_entry)
 
-button = Button(root, text="Generate QR Code")
+button = Button(root, text="Generate QR Code", command=generate)
 canvas.create_window(200, 230, window=button)
 
 

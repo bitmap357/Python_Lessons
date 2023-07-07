@@ -11,6 +11,7 @@ def generate():
     link = link_entry.get()
     file_name = link_name + ".png"
     url = pyqrcode.create(link)
+    url.png(file_name)
 
 
 

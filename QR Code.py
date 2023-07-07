@@ -13,6 +13,8 @@ def generate():
     url = pyqrcode.create(link)
     url.png(file_name, scale=8)
     image = ImageTk.PhotoImage(Image.open(file_name))
+    image_label = Label(image=image)
+
 
 
 

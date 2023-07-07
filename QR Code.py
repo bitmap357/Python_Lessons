@@ -14,6 +14,8 @@ def generate():
     url.png(file_name, scale=8)
     image = ImageTk.PhotoImage(Image.open(file_name))
     image_label = Label(image=image)
+    image_label.image = image
+    canvas.create_window(200, 450, window=image_label)
 
 
 

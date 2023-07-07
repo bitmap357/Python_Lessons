@@ -15,5 +15,9 @@ link_label = Label(root, text='Link')
 canvas.create_window(200, 100, window=name_label)
 canvas.create_window(200, 160, window=link_label)
 
+name_entry = Entry(root)
+link_entry = Entry(root)
+canvas.create_window(200, 130, window=name_entry)
+canvas.create_window(200, 180, window=link_entry)
 
 root.mainloop()

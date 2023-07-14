@@ -3,10 +3,10 @@ from fpdf import FPDF
 
 class PDF(FPDF):
     def header(self):
-        self.image()
+        self.image("logo.png", 10, 8, 33)
 
 
-pdf = FPDF()
+pdf = PDF()
 
 pdf.add_page()
 pdf.set_font("helvetica", "B", 16)

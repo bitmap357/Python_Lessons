@@ -1,5 +1,10 @@
 from fpdf import FPDF
 
+
+class PDF(FPDF):
+
+
+
 pdf = FPDF()
 
 pdf.add_page()

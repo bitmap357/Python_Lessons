@@ -9,6 +9,8 @@ class PDF(FPDF):
         self.cell(40, 10, "Hello world", border=1, align="C")
         self.ln(40)
 
+    def footer(self):
+
 
 pdf = PDF()
 

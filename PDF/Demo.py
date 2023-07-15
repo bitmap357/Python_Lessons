@@ -12,4 +12,6 @@ class PDF(FPDF):
 pdf = PDF()
 
 pdf.add_page()
+pdf.set_font("helvetica", "B", 16)
+
 pdf.output("sample.pdf")

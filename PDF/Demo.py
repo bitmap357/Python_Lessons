@@ -14,4 +14,6 @@ pdf = PDF()
 pdf.add_page()
 pdf.set_font("helvetica", "B", 16)
 
+for i in range(1, 41):
+    pdf.cell(0, 10, f"Printing line number (i)")
 pdf.output("sample.pdf")

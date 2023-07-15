@@ -15,8 +15,6 @@ class PDF(FPDF):
         self.cell(0, 10, f"Page {self.page_no()}/ {{nb}}", align="C")
 
 
-
-
 pdf = PDF()
 
 pdf.add_page()

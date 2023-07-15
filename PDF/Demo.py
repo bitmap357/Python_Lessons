@@ -7,6 +7,7 @@ class PDF(FPDF):
         self.set_font("helvetica", "B", 16)
         self.cell(80)
         self.cell(40, 10, "Hello world", border=1, align="C")
+        self.ln(40)
 
 
 pdf = PDF()

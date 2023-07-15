@@ -11,6 +11,8 @@ class PDF(FPDF):
 
     def footer(self):
         self.set_y(-15)
+        self.set_font("helvetica", "I", 16)
+
 
 
 

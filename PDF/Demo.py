@@ -10,6 +10,8 @@ class PDF(FPDF):
         self.ln(40)
 
     def footer(self):
+        self.set_y(-15)
+
 
 
 pdf = PDF()

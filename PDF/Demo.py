@@ -34,3 +34,6 @@ class PDF(FPDF):
 
     def footer(self):
         pass
+
+    def chapter_title(self):
+        pass

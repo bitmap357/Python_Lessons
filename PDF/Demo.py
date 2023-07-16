@@ -41,6 +41,7 @@ class PDF(FPDF):
     def chapter_body(self, filepath):
         with open(filepath, "rb") as fh:
             txt = fh.read().decode("latin-1")
+            print(txt)
         pass
 
     def print_chapter(self, filepath):

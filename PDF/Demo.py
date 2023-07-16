@@ -42,7 +42,7 @@ class PDF(FPDF):
 
         pass
 
-    def print_chapter(self):
+    def print_chapter(self, filepath):
         pass
 
 

@@ -40,3 +40,6 @@ class PDF(FPDF):
 
     def chapter_body(self):
         pass
+
+    def print_chapter(self):
+        pass

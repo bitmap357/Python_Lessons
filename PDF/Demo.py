@@ -39,6 +39,7 @@ class PDF(FPDF):
         pass
 
     def chapter_body(self, filepath):
+        with open(filepath, "rb") as fh:
 
         pass
 

@@ -23,3 +23,8 @@
 # for i in range(1, 41):
 #     pdf.cell(0, 10, f"Printing line number (i)", new_x="LMARGIN", new_y="NEXT")
 # pdf.output("sample.pdf")
+
+
+from fpdf import FPDF
+
+

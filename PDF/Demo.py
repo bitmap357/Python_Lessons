@@ -47,3 +47,4 @@ class PDF(FPDF):
 
 
 pdf = PDF()
+pdf.print_chapter("para.txt")

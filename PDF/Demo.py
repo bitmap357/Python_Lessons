@@ -46,3 +46,4 @@ class PDF(FPDF):
         pass
 
 
+pdf = PDF()

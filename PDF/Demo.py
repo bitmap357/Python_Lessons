@@ -38,8 +38,11 @@ class PDF(FPDF):
     def chapter_title(self):
         pass
 
-    def chapter_body(self):
+    def chapter_body(self, filepath):
+
         pass
 
     def print_chapter(self):
         pass
+
+

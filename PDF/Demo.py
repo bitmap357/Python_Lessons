@@ -30,7 +30,7 @@ from fpdf import FPDF
 
 class PDF(FPDF):
     def header(self):
-        self.set_font("helvetica", "B", 2)
+        self.set_font("helvetica", "B", 15)
 
         pass
 
@@ -61,6 +61,8 @@ class PDF(FPDF):
 
 
 pdf = PDF()
+pdf.set_title("100 Ways to learn")
+pdf.set_author("Edmund")
 # This creates one chapter
 pdf.print_chapter(1, "GETTING STARTED WITH PROGRAMMING", "para.txt")
 pdf.print_chapter(2, "PROGRAMMING LANG", "para.txt")

@@ -57,3 +57,4 @@ class PDF(FPDF):
 pdf = PDF()
 # This creates one chapter
 pdf.print_chapter("para.txt")
+pdf.output("sample.pdf")

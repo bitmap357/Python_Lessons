@@ -45,6 +45,7 @@ class PDF(FPDF):
         pass
 
     def print_chapter(self, filepath):
+        self.add_page()
         self.chapter_body(filepath)
         pass
 

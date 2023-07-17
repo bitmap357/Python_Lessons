@@ -35,7 +35,9 @@ class PDF(FPDF):
     def footer(self):
         pass
 
-    def chapter_title(self):
+    def chapter_title(self, num, label):
+        self.set_font("helvetica", "", 12)
+
         pass
 
     def chapter_body(self, filepath):

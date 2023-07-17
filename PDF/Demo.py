@@ -37,7 +37,8 @@ class PDF(FPDF):
 
     def chapter_title(self, num, label):
         self.set_font("helvetica", "", 12)
-
+        self.set_fill_color(200, 220, 255)
+        self.cell(0, 6, f"Chapter {num} : {label}", new_x="LMARGIN", new_y="NEXT", align="L", fill=True)
         pass
 
     def chapter_body(self, filepath):

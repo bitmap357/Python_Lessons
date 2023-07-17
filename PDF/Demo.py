@@ -42,6 +42,7 @@ class PDF(FPDF):
         with open(filepath, "rb") as fh:
             txt = fh.read().decode("latin-1")
         self.set_font("Times", size=12)
+        self.multi_cell(0, 5, txt)
         pass
 
     def print_chapter(self, filepath):

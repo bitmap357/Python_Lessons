@@ -45,7 +45,7 @@ class PDF(FPDF):
         self.multi_cell(0, 5, txt)
         self.ln()
         self.set_font(style="I")
-
+        self.cell(0, 5, "End pf excerpt")
         pass
 
     def print_chapter(self, filepath):

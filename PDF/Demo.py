@@ -48,14 +48,14 @@ class PDF(FPDF):
         self.cell(0, 5, "End pf excerpt")
         pass
 
-    def print_chapter(self, filepath):
+    def print_chapter(self, num, title, filepath):
         self.add_page()
-        self.chapter_title()
+        self.chapter_title(num, title)
         self.chapter_body(filepath)
         pass
 
 
 pdf = PDF()
 # This creates one chapter
-pdf.print_chapter("para.txt")
+pdf.print_chapter(1, "GETTING STARTED WITH PROGRAMMING", "para.txt")
 pdf.output("sample.pdf")

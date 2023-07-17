@@ -30,6 +30,8 @@ from fpdf import FPDF
 
 class PDF(FPDF):
     def header(self):
+        self.set_font("helvetica", "B", 2)
+
         pass
 
     def footer(self):

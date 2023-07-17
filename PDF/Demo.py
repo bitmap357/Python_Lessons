@@ -33,6 +33,10 @@ class PDF(FPDF):
         self.set_font("helvetica", "B", 15)
         width = self.get_string_width(self.title)+6
         self.set_x((210-width)/2)
+        self.set_draw_color(20, 80, 180)
+        self.fill_color(220, 150, 344)
+        self.set_text_color(220, 50, 50)
+
         pass
 
     def footer(self):

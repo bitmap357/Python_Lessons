@@ -61,4 +61,6 @@ class PDF(FPDF):
 pdf = PDF()
 # This creates one chapter
 pdf.print_chapter(1, "GETTING STARTED WITH PROGRAMMING", "para.txt")
+pdf.print_chapter(2, "PROGRAMMING LANG", "para.txt")
+
 pdf.output("sample.pdf")

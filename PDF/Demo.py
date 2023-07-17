@@ -44,6 +44,7 @@ class PDF(FPDF):
         self.set_font("Times", size=12)
         self.multi_cell(0, 5, txt)
         self.ln()
+        self.set_font(style="I")
 
         pass
 

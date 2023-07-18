@@ -44,6 +44,7 @@ class PDF(FPDF):
         self.set_y(-15)
         self.set_font("helvetica", "I", 12)
         self.set_text_color(128)
+        self.cell(0, 10, f"Page {self.page_no()}", align='C')
 
     def chapter_title(self, num, label):
         self.set_font("helvetica", "", 12)

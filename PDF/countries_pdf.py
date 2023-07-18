@@ -14,3 +14,5 @@ with pdf.table() as table:
         row = table.row()
         for datum in data_row:
             row.cell(datum)
+
+pdf.output("table.pdf")

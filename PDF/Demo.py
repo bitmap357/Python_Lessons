@@ -43,6 +43,7 @@ class PDF(FPDF):
     def footer(self):
         self.set_y(-15)
         self.set_font("helvetica", "I", 12)
+        self.set_text_color(128)
 
     def chapter_title(self, num, label):
         self.set_font("helvetica", "", 12)

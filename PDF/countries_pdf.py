@@ -9,4 +9,5 @@ pdf.set_font("helvetica", size=14)
 
 
 pdf.add_page()
-with pdf.ta
+with pdf.table() as table:
+    for data_

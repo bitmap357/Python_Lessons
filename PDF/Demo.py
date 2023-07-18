@@ -34,8 +34,7 @@ class PDF(FPDF):
         width = self.get_string_width(self.title)+6
         self.set_x((210-width)/2)
         self.set_draw_color(20, 80, 180)
-        self.fill_color(220, 150, 344)
-        self.set_text_color(220, 50, 50)
+        self.set_text_color(20, 50, 50)
         self.set_line_width(1)
         self.cell(width, 9, self.title, new_x="LMARGIN", new_y="NEXT", align="C", fill=True)
         self.ln(10)

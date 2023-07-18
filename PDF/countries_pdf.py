@@ -6,3 +6,7 @@ with open("countries.txt", encoding="utf8") as csv_file:
 
 pdf = FPDF()
 pdf.set_font("helvetica", size=14)
+
+
+pdf.add_page()
+with pdf.ta

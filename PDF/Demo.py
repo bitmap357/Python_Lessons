@@ -40,10 +40,9 @@ class PDF(FPDF):
         self.cell(width, 9, self.title, new_x="LMARGIN", new_y="NEXT", align="C", fill=True)
         self.ln(10)
 
-
     def footer(self):
         self.set_y(-15)
-
+        self.set_font("helvetica", "I", 12)
 
     def chapter_title(self, num, label):
         self.set_font("helvetica", "", 12)

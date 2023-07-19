@@ -12,7 +12,9 @@ pdf.add_page()
 with pdf.table(
     borders_layout="NO_HORIZONTAL_LINES",
     cell_fill_color=(224, 235, 255),
-    col_widths=(42, 39, 35, 42)
+    col_widths=(42, 39, 35, 42),
+    line_hight=6,
+
 ) as table:
     for data_row in data:
         row = table.row()

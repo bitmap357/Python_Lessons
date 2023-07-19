@@ -10,6 +10,8 @@ pdf.set_font("helvetica", size=14)
 
 
 pdf.add_page()
+pdf.set_draw_color(225, 0, 0)
+
 headings_style = FontFace(emphasis="BOLD", color=255, fill_color=(255, 100, 0))
 with pdf.table(
     borders_layout="NO_HORIZONTAL_LINES",

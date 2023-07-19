@@ -14,8 +14,8 @@ with pdf.table(
     cell_fill_color=(224, 235, 255),
     col_widths=(42, 39, 35, 42),
     line_hight=6,
-    text_align=("LEFT", "CENTER", "RIGHT", "RIGHT")
-
+    text_align=("LEFT", "CENTER", "RIGHT", "RIGHT"),
+    width=160
 ) as table:
     for data_row in data:
         row = table.row()

@@ -1,4 +1,5 @@
 from fpdf import FPDF
+from fpdf.fonts import FontFace
 import csv
 
 with open("countries.txt", encoding="utf8") as csv_file:

@@ -10,7 +10,8 @@ pdf.set_font("helvetica", size=14)
 
 pdf.add_page()
 with pdf.table(
-    borders_layout="NO_HORIZONTAL_LINES"
+    borders_layout="NO_HORIZONTAL_LINES",
+    cell_fill_color=(224, 235, 255),
 ) as table:
     for data_row in data:
         row = table.row()

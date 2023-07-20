@@ -14,5 +14,6 @@ pdf.write(5, " here", link)
 pdf.add_page()
 pdf.image("logo.png", 10, 10, 50, 0, "", "https://www.google.com")
 pdf.set_left_margin(60)
+pdf.set_font_size(18)
 
 pdf.output("link.pdf")

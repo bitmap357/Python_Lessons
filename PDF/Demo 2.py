@@ -11,3 +11,4 @@ pdf.write(5, "here", link)
 
 
 # Second page
+pdf.add_page()

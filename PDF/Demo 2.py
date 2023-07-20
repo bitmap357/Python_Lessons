@@ -13,3 +13,5 @@ pdf.write(5, "here", link)
 # Second page
 pdf.add_page()
 pdf.image("logo.png", 10, 10, 50, 0, "", "https://www.google.com")
+
+pdf.output("link.pdf")

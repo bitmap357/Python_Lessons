@@ -25,4 +25,6 @@ class Calculate:
         return x * y
 
     def div(self, x, y):
+        if y == 0:
+            raise ValueError("Division by zero")
         return x / y

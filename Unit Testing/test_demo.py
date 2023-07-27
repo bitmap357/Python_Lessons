@@ -32,22 +32,20 @@ import Demo
 
 
 class TestCalculate(unittest.TestCase):
+    def setUp(self) -> None:
+        self.calculate = Demo.Calculate()
 
     def test_add(self):
-        calculate = Demo.Calculate()
-        self.assertEquals(calculate.add(4, 5), 9)
+        self.assertEquals(self.calculate.add(4, 5), 9)
 
     def test_sub(self):
-        calculate = Demo.Calculate()
-        self.assertEquals(calculate.sub(4, 5), -1)
+        self.assertEquals(self.calculate.sub(4, 5), -1)
 
     def test_mul(self):
-        calculate = Demo.Calculate()
-        self.assertEquals(calculate.mul(4, 5), 20)
+        self.assertEquals(self.calculate.mul(4, 5), 20)
 
     def test_div(self):
-        calculate = Demo.Calculate()
-        self.assertEquals(calculate.div(10, 5), 2)
+        self.assertEquals(self.calculate.div(10, 5), 2)
 
 
 if __name__ == "__main__":

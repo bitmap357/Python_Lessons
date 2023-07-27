@@ -31,7 +31,7 @@ import unittest
 import Demo
 
 
-@unittest.skip("Skipping this test for some reason")
+# @unittest.skip("Skipping this test for some reason")
 class TestCalculate(unittest.TestCase):
     def setUp(self) -> None:
         self.calculate = Demo.Calculate()
@@ -45,6 +45,7 @@ class TestCalculate(unittest.TestCase):
     def test_sub(self):
         self.assertEquals(self.calculate.sub(4, 5), -1)
 
+    @unittest.skipIf(True, "Skipping because condition is true")
     def test_mul(self):
         self.assertEquals(self.calculate.mul(4, 5), 20)
 

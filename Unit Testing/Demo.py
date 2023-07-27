@@ -21,6 +21,8 @@ class Calculate:
     def sub(self, x, y):
         return x - y
 
-   def mul(self, x, y):
+    def mul(self, x, y):
         return x * y
 
+    def div(self, x, y):
+        return x / y

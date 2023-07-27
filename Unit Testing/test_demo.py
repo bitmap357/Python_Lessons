@@ -36,3 +36,7 @@ class TestCalculate(unittest.TestCase):
     def test_add(self):
         calculate = Demo.Calculate()
         self.assertEquals(calculate.add(4, 5), 9)
+
+
+if __name__ == "__main__":
+    unittest.main()

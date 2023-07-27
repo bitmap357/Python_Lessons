@@ -14,3 +14,7 @@ def div(a, b):
     if b == 0:
         raise ValueError("Division Error")
     return a / b
+
+
+def discount_season():
+    return True

@@ -35,6 +35,9 @@ class TestCalculate(unittest.TestCase):
     def setUp(self) -> None:
         self.calculate = Demo.Calculate()
 
+    def tearDown(self) -> None:
+        print("This is a teardown method")
+
     def test_add(self):
         self.assertEquals(self.calculate.add(4, 5), 9)
 

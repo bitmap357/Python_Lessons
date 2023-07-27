@@ -49,6 +49,8 @@ class TestCalculate(unittest.TestCase):
 
     def test_div(self):
         self.assertEquals(self.calculate.div(10, 5), 2)
+        with self.assertRaises(ValueError):
+            self.calculate.div(10, 0)
 
 
 if __name__ == "__main__":

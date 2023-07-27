@@ -1,4 +1,4 @@
-from app.demo import add
+from demo import add
 
 
 def test_add():

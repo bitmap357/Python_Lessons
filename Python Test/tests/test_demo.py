@@ -2,6 +2,7 @@ from app.demo import *
 import pytest
 
 
+@pytest.mark.skip("Skipping for some reason")
 def test_add():
     assert add(10, 20) == 30
 

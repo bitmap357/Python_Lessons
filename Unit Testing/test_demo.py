@@ -37,6 +37,12 @@ class TestCalculate(unittest.TestCase):
         calculate = Demo.Calculate()
         self.assertEquals(calculate.add(4, 5), 9)
 
+    def test_sub(self):
+        calculate = Demo.Calculate()
+        self.assertEquals(calculate.sub(4, 5), -1)
+
+
+
 
 if __name__ == "__main__":
     unittest.main()

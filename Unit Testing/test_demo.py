@@ -15,8 +15,14 @@ class TestDemo(unittest.TestCase):
 
     def test_mul(self):
         self.assertEquals(Demo.mul(2, 3), 6)
-        self.assertEquals(Demo.add(10, 4), 40)
-        self.assertEquals(Demo.add(2, 7), 14)
+        self.assertEquals(Demo.mul(10, 4), 40)
+        self.assertEquals(Demo.mul(2, 7), 14)
+
+    def test_div(self):
+        self.assertEquals(Demo.div(4, 2), 2)
+        self.assertEquals(Demo.div(12, 4), 34)
+        self.assertEquals(Demo.div(25, 5), 50)
+
 
 
 

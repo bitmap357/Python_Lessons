@@ -13,6 +13,13 @@ class TestDemo(unittest.TestCase):
         self.assertEquals(Demo.sub(10, 5), 5)
         self.assertEquals(Demo.sub(4, 5), -1)
 
+    def test_mul(self):
+        self.assertEquals(Demo.mul(2, 3), 6)
+        self.assertEquals(Demo.add(10, 4), 40)
+        self.assertEquals(Demo.add(2, 7), 14)
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

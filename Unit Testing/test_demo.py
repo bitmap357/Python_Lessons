@@ -28,3 +28,7 @@
 #     unittest.main()
 
 import  unittest
+
+class TestCalculate(unittest.TestCase):
+
+    def test_add(self):

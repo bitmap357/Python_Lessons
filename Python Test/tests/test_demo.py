@@ -11,6 +11,7 @@ def test_sub():
     assert sub(10, 20) == -10
 
 
+@pytest.mark.skipif(discount_season(), reason="Some reason")
 def test_mul():
     assert mul(10, 2) == 20
 

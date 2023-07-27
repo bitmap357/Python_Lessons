@@ -1,4 +1,5 @@
 from app.demo import *
+import pytest
 
 
 def test_add():
@@ -15,3 +16,7 @@ def test_mul():
 
 def test_div():
     assert div(10, 5) == 2
+
+    # Case for exception
+    with pytest.raises(ValueError):
+        div(5 / 0)

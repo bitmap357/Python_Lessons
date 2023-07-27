@@ -45,6 +45,9 @@ class TestCalculate(unittest.TestCase):
         calculate = Demo.Calculate()
         self.assertEquals(calculate.mul(4, 5), 20)
 
+    def test_div(self):
+        calculate = Demo.Calculate()
+        self.assertEquals(calculate.div(10, 5), 2)
 
 
 if __name__ == "__main__":

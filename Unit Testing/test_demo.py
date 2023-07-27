@@ -41,6 +41,9 @@ class TestCalculate(unittest.TestCase):
         calculate = Demo.Calculate()
         self.assertEquals(calculate.sub(4, 5), -1)
 
+    def test_mul(self):
+        calculate = Demo.Calculate()
+        self.assertEquals(calculate.mul(4, 5), 20)
 
 
 

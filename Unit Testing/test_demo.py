@@ -24,8 +24,5 @@ class TestDemo(unittest.TestCase):
         self.assertEquals(Demo.div(25, 5), 50)
 
 
-
-
-
 if __name__ == '__main__':
     unittest.main()

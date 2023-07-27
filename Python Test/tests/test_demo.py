@@ -19,4 +19,4 @@ def test_div():
 
     # Case for exception
     with pytest.raises(ValueError):
-        div(5 / 0)
+        div(5, 0)

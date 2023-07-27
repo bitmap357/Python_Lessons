@@ -20,8 +20,8 @@ class TestDemo(unittest.TestCase):
 
     def test_div(self):
         self.assertEquals(Demo.div(4, 2), 2)
-        self.assertEquals(Demo.div(12, 4), 34)
-        self.assertEquals(Demo.div(25, 5), 50)
+        self.assertEquals(Demo.div(12, 4), 3)
+        self.assertEquals(Demo.div(25, 5), 5)
 
 
 if __name__ == '__main__':
